@@ -30,14 +30,15 @@ const generateThemeOptions = (appTheme) => {
     typography: {
       overflow: "hidden",
       fontFamily: ["Dubai"],
-      body1: {
-        noWrap: true,
-        fontWeight: 400,
-        lineHeight: 1,
-        textOverflow: "ellipsis",
-      },
       body2: {
         noWrap: true,
+        lineHeight: 1,
+        fontWeight: 400,
+        textOverflow: "ellipsis",
+      },
+      body1: {
+        noWrap: true,
+        lineHeight: 1,
         fontWeight: 400,
         textOverflow: "ellipsis",
       },

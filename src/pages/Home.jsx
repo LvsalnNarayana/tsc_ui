@@ -295,7 +295,7 @@ const Home = () => {
             justifyContent="center"
             alignItems="center"
             minHeight="100vh"
-            position="absolute"
+            position="relative"
           >
             <Typography fontSize={60}>Smart Solution</Typography>
             <Typography

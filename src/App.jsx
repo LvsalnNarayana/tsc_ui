@@ -12,7 +12,7 @@ import ContactUs from "./pages/ContactUs";
 const App = () => {
   return (
     <Suspense>
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />

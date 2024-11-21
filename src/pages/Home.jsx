@@ -11,6 +11,9 @@ import {
   useMediaQuery,
 } from "@mui/material";
 
+import HowWeWorkSVG from "../components/SVGComponents/HowWeWorkSVG";
+import HeroBackground from "../components/Backgrounds/HeroBackground";
+
 const Home = () => {
   const mobileView = useMediaQuery((mobileTheme) => {
     return mobileTheme.breakpoints.down("tablet");
@@ -31,7 +34,7 @@ const Home = () => {
       {tabletView && <Typography variant="h5">Home Tablet View</Typography>}
       {laptopView && <Typography variant="h5">Home Laptop View</Typography>}
       {desktopView && (
-        <Stack width="100%" sx={{ color: "#fff", backgroundColor: "#000" }}>
+        <Stack width="100%" sx={{ color: "#fff", backgroundColor: "#040B12" }}>
           {/*
           .##.....##.########.########...#######.
           .##.....##.##.......##.....##.##.....##
@@ -48,7 +51,7 @@ const Home = () => {
             height="100vh"
             sx={{ zIndex: 1, position: "relative" }}
           >
-            <Box
+            {/* <Box
               component="img"
               src="/hero_pattern.png"
               sx={{
@@ -61,6 +64,16 @@ const Home = () => {
                 position: "absolute",
                 maskImage:
                   "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(255, 255, 255, 0.4))",
+              }}
+            /> */}
+            <HeroBackground
+              style={{
+                top: 0,
+                left: 0,
+                zIndex: -1,
+                width: "100%",
+                objectFit: "cover",
+                position: "absolute",
               }}
             />
             <Container maxWidth="desktop">
@@ -137,8 +150,8 @@ const Home = () => {
                         fontSize: 18,
                         lineHeight: 1,
                         color: "#fff",
-                        borderRadius: 20,
-                        backgroundColor: "#ffffff20",
+                        borderRadius: "99px",
+                        background: "rgba(255, 255, 255, 0.10)",
                       }}
                     >
                       Our Services
@@ -150,12 +163,11 @@ const Home = () => {
                         fontSize: 18,
                         lineHeight: 1,
                         color: "#fff",
-                        borderRadius: 20,
-                        background: "linear-gradient(180deg, #525252, #292929)",
-                        "&:hover": {
-                          background:
-                            "linear-gradient(180deg, #6b6b6b, #3d3d3d)",
-                        },
+                        borderRadius: "99px",
+                        boxShadow:
+                          "0px 1px 0px 0px rgba(255, 255, 255, 0.10) inset",
+                        background:
+                          "linear-gradient(180deg, #525252 -61.82%, #292929 100%)",
                       }}
                     >
                       Get In Touch
@@ -211,74 +223,19 @@ const Home = () => {
             >
               How we work
             </Typography>
-            <Typography fontSize={60} textAlign="center">
+            <Typography
+              fontSize={60}
+              textAlign="center"
+              sx={{
+                backgroundClip: "text",
+                background: "linear-gradient(180deg, #FFF 0%, #040B12 139.86%)",
+              }}
+            >
               We guide your journey in adapting to evolving
               <br /> business demands, creating tangible value for
               <br /> your organization and customers.
             </Typography>
-            <Stack direction="row" justifyContent="space-between">
-              <Stack
-                gap={3}
-                width={300}
-                direction="column"
-                alignItems="center"
-                justifyContent="center"
-                p={2}
-              >
-                <Typography
-                  fontSize={30}
-                  lineHeight={1.2}
-                  textAlign="center"
-                  fontWeight={400}
-                >
-                  Innovate
-                </Typography>
-                <Typography fontSize={18} lineHeight={1.2} textAlign="center">
-                  Create value and make a positive change with our solutions
-                </Typography>
-              </Stack>
-              <Stack
-                gap={3}
-                width={300}
-                direction="column"
-                alignItems="center"
-                justifyContent="center"
-                p={2}
-              >
-                <Typography
-                  fontSize={30}
-                  lineHeight={1.2}
-                  textAlign="center"
-                  fontWeight={400}
-                >
-                  Accelerate
-                </Typography>
-                <Typography fontSize={18} lineHeight={1.2} textAlign="center">
-                  Use data and emerging tech for fast business growth.
-                </Typography>
-              </Stack>
-              <Stack
-                gap={3}
-                width={300}
-                direction="column"
-                alignItems="center"
-                justifyContent="center"
-                p={2}
-              >
-                <Typography
-                  fontSize={30}
-                  lineHeight={1.2}
-                  textAlign="center"
-                  fontWeight={400}
-                >
-                  Thrive
-                </Typography>
-                <Typography fontSize={18} lineHeight={1.2} textAlign="center">
-                  Reboot your business through digital transformation and beat
-                  the competition
-                </Typography>
-              </Stack>
-            </Stack>
+            <HowWeWorkSVG />
           </Stack>
           {/*
           ..######...#######..##.......##.....##.########.####..#######..##....##

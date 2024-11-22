@@ -1,23 +1,78 @@
 /* eslint-disable max-lines */
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 
 const HowWeWorkSVG = () => {
+  const controls = useAnimation();
+
+  const [gradientProps, setGradientProps] = useState({
+    x1: 187,
+    y1: 162,
+    y2: 162,
+    x2: 1094.41,
+  });
+
+  useEffect(() => {
+    let direction = 1;
+    const interval = setInterval(() => {
+      setGradientProps((prev) => {
+        const { x1, x2 } = prev;
+        const newX1 = x1 + direction * 10;
+        const newX2 = x2 + direction * 10;
+
+        if (newX2 > 1200 || newX1 < 100) direction *= -1;
+
+        return {
+          ...prev,
+          x1: newX1,
+          x2: newX2,
+        };
+      });
+    }, 50);
+
+    return () => {
+      return clearInterval(interval);
+    };
+  }, []);
+
   return (
     <div style={{ height: "700px", width: "fit-content" }}>
-      <svg
+      <motion.svg
         width="1300"
         height="684"
         viewBox="0 0 1300 684"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path
+        <defs>
+          <linearGradient
+            id="paint0_linear_2016_5334"
+            x1={gradientProps.x1}
+            y1={gradientProps.y1}
+            x2={gradientProps.x2}
+            y2={gradientProps.y2}
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#45BDD6" stopOpacity="0.2" />
+            <stop offset="0.25" stopColor="white" stopOpacity="0.866667" />
+            <stop offset="0.849179" stopColor="white" stopOpacity="0.3" />
+            <stop offset="1" stopColor="#45BDD6" stopOpacity="0.2" />
+          </linearGradient>
+        </defs>
+        <motion.path
+          transition={{
+            duration: 2,
+            repeatDelay: 1,
+            repeat: Infinity,
+            ease: "easeInOut",
+            repeatType: "loop",
+          }}
           d="M187 249V156.661V156.661C187.7 111.358 224.625 75 269.933 75H650.631H1028.05C1074.97 75 1113 113.032 1113 159.946V159.946V249"
           stroke="url(#paint0_linear_2016_5334)"
           strokeOpacity="0.8"
           strokeWidth="2"
         />
-        <path
+        <motion.path
           d="M650.629 75V306.25V517"
           stroke="url(#paint1_linear_2016_5334)"
           strokeOpacity="0.8"
@@ -345,7 +400,7 @@ const HowWeWorkSVG = () => {
             />
           </clipPath>
         </defs>
-      </svg>
+      </motion.svg>
     </div>
   );
 };

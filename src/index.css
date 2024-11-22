@@ -29,3 +29,18 @@
   scroll-behavior: smooth;
 }
 
+#paint0_linear_2016_5334 {
+  animation: gradientShift 3s infinite alternate;
+}
+
+@keyframes gradientShift {
+  0% {
+    gradienttransform: translate(0, 0);
+  }
+  50% {
+    gradienttransform: translate(50%, 0);
+  }
+  100% {
+    gradienttransform: translate(0, 0);
+  }
+}

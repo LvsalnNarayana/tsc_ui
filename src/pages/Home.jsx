@@ -13,6 +13,8 @@ import {
 
 import HowWeWorkSVG from "../components/SVGComponents/HowWeWorkSVG";
 import HeroBackground from "../components/Backgrounds/HeroBackground";
+import WorkflowProcessSVGComponent from "../components/SVGComponents/WorkflowProcessSVGComponent";
+import StrategySectionBackgroundSVG from "../components/SVGComponents/StrategySectionBackgroundSVG";
 
 const Home = () => {
   const mobileView = useMediaQuery((mobileTheme) => {
@@ -51,21 +53,6 @@ const Home = () => {
             height="100vh"
             sx={{ zIndex: 1, position: "relative" }}
           >
-            {/* <Box
-              component="img"
-              src="/hero_pattern.png"
-              sx={{
-                top: 0,
-                left: 0,
-                zIndex: -1,
-                width: "100%",
-                height: "60vh",
-                objectFit: "cover",
-                position: "absolute",
-                maskImage:
-                  "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(255, 255, 255, 0.4))",
-              }}
-            /> */}
             <HeroBackground
               style={{
                 top: 0,
@@ -203,7 +190,8 @@ const Home = () => {
           ..###..###...#######..##.....##.##....##
           */}
           <Stack
-            py={3}
+            minHeight="100vh"
+            py={5}
             gap={10}
             direction="column"
             justifyContent="center"
@@ -214,11 +202,13 @@ const Home = () => {
               sx={{
                 px: 6,
                 py: 1.7,
-                fontSize: 18,
+                fontSize: 24,
                 lineHeight: 1,
                 color: "#fff",
-                borderRadius: 20,
-                background: "linear-gradient(180deg, #525252, #292929)",
+                borderRadius: "99px",
+                border: " 1px solid rgba(255, 255, 255, 0.10)",
+                background:
+                  "conic-gradient(from 181deg at 50% 50%, rgba(0, 0, 0, 0.00) 172.66420125961304deg, rgba(73, 53, 130, 0.30) 281.25deg, rgba(71, 47, 140, 0.12) 360deg), rgba(255, 255, 255, 0.05)",
               }}
             >
               How we work
@@ -227,8 +217,11 @@ const Home = () => {
               fontSize={60}
               textAlign="center"
               sx={{
-                backgroundClip: "text",
                 background: "linear-gradient(180deg, #FFF 0%, #040B12 139.86%)",
+                // eslint-disable-next-line perfectionist/sort-objects
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
               }}
             >
               We guide your journey in adapting to evolving
@@ -247,15 +240,28 @@ const Home = () => {
           ..######...#######..########..#######.....##....####..#######..##....##
           */}
           <Stack
-            gap={8}
+            py={10}
             direction="column"
             justifyContent="center"
             alignItems="center"
             minHeight="100vh"
             position="relative"
           >
-            <Typography fontSize={60}>Smart Solution</Typography>
             <Typography
+              mb={4}
+              fontSize={60}
+              sx={{
+                background: "linear-gradient(180deg, #FFF 0%, #040B12 139.86%)",
+                // eslint-disable-next-line perfectionist/sort-objects
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              Smart Solution
+            </Typography>
+            <Typography
+              mb={15}
               fontSize={18}
               width="60%"
               textAlign="center"
@@ -367,38 +373,150 @@ const Home = () => {
             justifyContent="center"
             alignItems="center"
             height="fit-content"
+            sx={{
+              position: "relative",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundAttachment: "fixed",
+              backgroundImage: "url(../../public/hexagon_background.gif)",
+              "&::before": {
+                top: 0,
+                left: 0,
+                zIndex: 0,
+                content: "''",
+                width: "100%",
+                height: "100%",
+                position: "absolute",
+                background: "#00000080",
+              },
+            }}
           >
-            <Typography variant="h5" textAlign="center" fontSize={40}>
+            <Typography
+              variant="h5"
+              textAlign="center"
+              fontSize={40}
+              sx={{ zIndex: 2 }}
+            >
               Win the market where competitors are
               <br /> getting stronger, smarter and faster.
             </Typography>
           </Stack>
-          <Container maxWidth="laptop">
-            <Stack
-              gap={3}
-              py={10}
-              direction="column"
-              justifyContent="flex-start"
-              alignItems="flex-start"
-              height="fit-content"
-            >
-              <Typography variant="h5" textAlign="left" fontSize={60}>
-                Innovative Services
-              </Typography>
-              <Typography
-                width="50%"
-                variant="body1"
-                fontSize={18}
-                color="#ffffff80"
-                lineHeight={1.5}
+          <Stack sx={{ backgroundColor: "#06101A" }}>
+            <Container maxWidth="desktop">
+              <Stack
+                py={10}
+                direction="column"
+                justifyContent="flex-start"
+                alignItems="flex-start"
+                height="fit-content"
               >
-                Our range of innovative services is designed to deliver maximum
-                value in technology, user experience, and client satisfaction.
-                We ensure our clients get maximum ROl on their innovation
-                investments and scale exponentially.
-              </Typography>
-            </Stack>
-          </Container>
+                <Typography
+                  mb={4}
+                  fontSize={60}
+                  sx={{
+                    background:
+                      "linear-gradient(180deg, #FFF 0%, #040B12 139.86%)",
+                    // eslint-disable-next-line perfectionist/sort-objects
+                    backgroundClip: "text",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  Innovative Services
+                </Typography>
+                <Typography
+                  mb={3}
+                  fontSize={18}
+                  width="60%"
+                  textAlign="left"
+                  lineHeight={1.5}
+                >
+                  Our range of innovative services is designed to deliver
+                  maximum value in technology,
+                  <br /> user experience, and client satisfaction. We ensure our
+                  clients get maximum ROl on their
+                  <br /> innovation investments and scale exponentially.
+                </Typography>
+                {[
+                  {
+                    id: 1,
+                    title: "Mobile App Development",
+                    description:
+                      "Grab attention with robust user-friendly mobile app solutions \n built with the latest technologies.",
+                  },
+                  {
+                    id: 2,
+                    title: "Web Development",
+                    description:
+                      "Boost your online presence with our premium services. We build \n fast, intuitive websites and online solutions for any complexity.",
+                  },
+                  {
+                    id: 3,
+                    title: "E-commerce Services",
+                    description:
+                      "Get more from your business with a feature-rich eStore. Enjoy\n customized, mobile-friendly solutions that enhance the shopping \nexperience and deliver results.",
+                  },
+                  {
+                    id: 4,
+                    title: "Cloud Consulting",
+                    description:
+                      "Transform your business with industry-specific cloud solutions.\n Leverage our cloud infrastructure, software, storage, and\n security services expertise.",
+                  },
+                ]?.map((service) => {
+                  return (
+                    <Stack
+                      my={4}
+                      key={service?.id}
+                      width="100%"
+                      height={246}
+                      justifyContent="center"
+                      alignItems="center"
+                      sx={{
+                        borderRadius: "20px",
+                        border: "2px solid rgba(255, 255, 255, 0.10)",
+                      }}
+                    >
+                      <Stack width="50%" gap={2}>
+                        <Stack
+                          gap={4}
+                          direction="row"
+                          justifyContent="flex-start"
+                          alignItems="center"
+                        >
+                          <Typography
+                            fontSize={51}
+                            letterSpacing="-1.53px"
+                            lineHeight="120%"
+                          >
+                            {service?.title}
+                          </Typography>
+                          <Box
+                            component="img"
+                            src="/blue_right_arrow.png"
+                            width={60}
+                            height={60}
+                          />
+                        </Stack>
+                        <Typography
+                          fontSize={18}
+                          textAlign="left"
+                          lineHeight={2}
+                          fontWeight={400}
+                          dangerouslySetInnerHTML={{
+                            __html: service?.description.replace(
+                              /\n/gu,
+                              "<br />"
+                            ),
+                          }}
+                        />
+                      </Stack>
+                    </Stack>
+                  );
+                })}
+              </Stack>
+            </Container>
+          </Stack>
           {/*
           ..######..########.########.....###....########.########..######...##....##
           .##....##....##....##.....##...##.##......##....##.......##....##...##..##.
@@ -409,12 +527,44 @@ const Home = () => {
           ..######.....##....##.....##.##.....##....##....########..######......##...
           */}
           <Stack
-            direction="row"
+            gap={4}
+            direction="column"
             justifyContent="center"
             alignItems="center"
-            height="100vh"
+            height="500px"
+            sx={{ position: "relative" }}
           >
-            <Typography variant="h5">Strategy section</Typography>
+            <StrategySectionBackgroundSVG
+              style={{
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "450px",
+                position: "absolute",
+              }}
+            />
+            <Typography
+              variant="body1"
+              fontSize={56}
+              fontWeight={700}
+              textAlign="center"
+              sx={{ zIndex: 2 }}
+            >
+              Supercharge Your Social Strategy
+              <br /> with TSC Social!
+            </Typography>
+            <Button
+              sx={{
+                py: 1,
+                px: 5,
+                fontSize: 18,
+                color: "#000",
+                borderRadius: "8px",
+                background: "#41C4DA",
+              }}
+            >
+              Get Started Today!
+            </Button>
           </Stack>
           {/*
           .##......##..#######..########..##....##.########.##........#######..##......##
@@ -432,6 +582,7 @@ const Home = () => {
             height="100vh"
           >
             <Typography variant="h5">Workflow process</Typography>
+            <WorkflowProcessSVGComponent />
           </Stack>
           {/*
           ..######..##.....##.##.......########.##.....##.########..########

@@ -1,6 +1,7 @@
 import React from "react";
 
-import { Typography, useMediaQuery } from "@mui/material";
+import { Stack, Typography, useMediaQuery } from "@mui/material";
+import ContactHeroSection from "../components/contact/ContactHeroSection";
 
 const ContactUs = () => {
   const mobileView = useMediaQuery((mobileTheme) => {
@@ -28,7 +29,9 @@ const ContactUs = () => {
         <Typography variant="h5">ContactUs Laptop View</Typography>
       )}
       {desktopView && (
-        <Typography variant="h5">ContactUs Desktop View</Typography>
+        <Stack width="100%" sx={{ color: "#fff", backgroundColor: "#040B12" }}>
+          <ContactHeroSection />
+        </Stack>
       )}
     </>
   );

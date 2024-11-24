@@ -13,7 +13,11 @@ import {
 
 const HomeConnectSection = () => {
   return (
-    <Container>
+    <Container
+      sx={{
+        zIndex: 2,
+      }}
+    >
       <Stack
         p={8}
         gap={3}

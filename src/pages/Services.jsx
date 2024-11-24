@@ -1,6 +1,11 @@
 import React from "react";
 
-import { Typography, useMediaQuery } from "@mui/material";
+import { Stack, Typography, useMediaQuery } from "@mui/material";
+
+import HomeConnectSection from "../components/home/HomeConnectSection";
+import ServiceHeroSection from "../components/services/ServiceHeroSection";
+import ServicesListSection from "../components/services/ServicesListSection";
+import ServicesEvolutionSection from "../components/services/ServicesEvolutionSection";
 
 const Services = () => {
   const mobileView = useMediaQuery((mobileTheme) => {
@@ -22,7 +27,12 @@ const Services = () => {
       {tabletView && <Typography variant="h5">Services Tablet View</Typography>}
       {laptopView && <Typography variant="h5">Services Laptop View</Typography>}
       {desktopView && (
-        <Typography variant="h5">Services Desktop View</Typography>
+        <Stack width="100%" sx={{ color: "#fff", backgroundColor: "#040B12" }}>
+          <ServiceHeroSection />
+          <ServicesListSection />
+          <ServicesEvolutionSection />
+          <HomeConnectSection />
+        </Stack>
       )}
     </>
   );

@@ -6,9 +6,9 @@ import { Stack, Typography, useMediaQuery } from "@mui/material";
 
 import AboutHeroSection from "../components/about/AboutHeroSection";
 import AboutLiveSection from "../components/about/AboutLiveSection";
+import HomeConnectSection from "../components/home/HomeConnectSection";
 import AboutVisionSection from "../components/about/AboutVisionSection";
 import AboutCultureSection from "../components/about/AboutCultureSection";
-import AboutCultureSVG from "../components/SVGComponents/AboutCultureSVG";
 import AboutEvolutionSection from "../components/about/AboutEvolutionSection";
 
 const AboutUs = () => {
@@ -37,7 +37,7 @@ const AboutUs = () => {
           <AboutLiveSection />
           <AboutCultureSection />
           <AboutEvolutionSection />
-          <AboutCultureSVG />
+          <HomeConnectSection />
         </Stack>
       )}
     </>

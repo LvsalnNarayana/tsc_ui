@@ -2,7 +2,7 @@ import React from "react";
 
 import { Box, Stack, Container, Typography } from "@mui/material";
 
-const HomeEvolutionSection = () => {
+const ServicesEvolutionSection = () => {
   return (
     <Container maxWidth="desktop">
       <Stack
@@ -27,16 +27,6 @@ const HomeEvolutionSection = () => {
           }}
         >
           Embrace Evolution
-        </Typography>
-        <Typography
-          textAlign="center"
-          fontSize={18}
-          lineHeight={1.5}
-          color="rgba(255, 255, 255, 0.70)"
-        >
-          Our innovative digital solutions that empower your business to thrive
-          in the
-          <br /> modern landscape
         </Typography>
         <Stack
           direction="row"
@@ -113,4 +103,4 @@ const HomeEvolutionSection = () => {
   );
 };
 
-export default HomeEvolutionSection;
+export default ServicesEvolutionSection;

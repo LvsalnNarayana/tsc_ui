@@ -1,10 +1,8 @@
 /* eslint-disable max-lines */
+import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
 
 const HowWeWorkSVG = () => {
-  const controls = useAnimation();
-
   const [gradientProps, setGradientProps] = useState({
     x1: 187,
     y1: 162,

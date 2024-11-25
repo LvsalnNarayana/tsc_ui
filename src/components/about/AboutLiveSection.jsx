@@ -68,7 +68,6 @@ const AboutLiveSection = () => {
                   height: "100%",
                   position: "relative",
                   borderRadius: "20px",
-                  background: "#1E1E21",
                   border: "1px solid #1E1E21",
                 }}
               >
@@ -102,9 +101,11 @@ const AboutLiveSection = () => {
                   variant="body2"
                   color="#929292"
                   textAlign="center"
-                  fontSize={18}
+                  fontSize={16}
                   lineHeight={1.4}
-                  fontWeight={300}
+                  fontWeight={400}
+                  className="lato"
+                  letterSpacing={1}
                 >
                   {livesItem?.description}
                 </Typography>

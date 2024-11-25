@@ -28,9 +28,14 @@ const HomeDriveSection = () => {
               on our promises.
             </Typography>
             <Button
+              className="lato"
               sx={{
                 px: "24px",
                 py: "12px",
+                fontSize: 18,
+                color: "#fff",
+                fontWeight: 500,
+                lineHeight: 1.5,
                 width: "fit-content",
                 borderRadius: "99px",
                 border: " 1px solid rgba(255, 255, 255, 0.10)",

@@ -85,6 +85,8 @@ const AboutHeroSection = () => {
             sx={{
               width: 490,
             }}
+            className="lato"
+            letterSpacing={1}
           >
             At TSC we are a startup with a purpose to deliver transformative IT
             solutions. Our mission is to enable businesses through technology,

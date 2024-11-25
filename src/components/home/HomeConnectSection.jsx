@@ -19,8 +19,11 @@ const HomeConnectSection = () => {
       }}
     >
       <Stack
+        width="95%"
         p={8}
         gap={3}
+        mb={8}
+        mx="auto"
         sx={{
           borderRadius: "35px",
           background: "#081420",

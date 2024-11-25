@@ -16,7 +16,7 @@ const HomeHowWeWorkSection = () => {
       alignItems="center"
       height="fit-content"
     >
-      <Typography
+      {/* <Typography
         sx={{
           px: 6,
           py: 1.7,
@@ -30,7 +30,7 @@ const HomeHowWeWorkSection = () => {
         }}
       >
         How we work
-      </Typography>
+      </Typography> */}
       <Typography
         fontSize={60}
         textAlign="center"

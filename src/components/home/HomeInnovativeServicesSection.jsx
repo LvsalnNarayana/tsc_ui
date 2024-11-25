@@ -32,6 +32,9 @@ const HomeInnovativeServicesSection = () => {
             width="60%"
             textAlign="left"
             lineHeight={1.5}
+            className="lato"
+            color="rgba(255, 255, 255, 0.80)"
+            letterSpacing="1px"
           >
             Our range of innovative services is designed to deliver maximum
             value in technology,
@@ -79,8 +82,18 @@ const HomeInnovativeServicesSection = () => {
                 justifyContent="center"
                 alignItems="center"
                 sx={{
+                  overflow: "hidden",
+                  position: "relative",
                   borderRadius: "20px",
                   border: "2px solid rgba(255, 255, 255, 0.10)",
+                  "&:hover .hover-element": {
+                    // Target the child element with the class "hover-element"
+                    opacity: 1,
+                  },
+                  "&:hover .right-arrow-animation": {
+                    // Target the child element with the class "hover-element"
+                    transform: "translateX(20px)",
+                  },
                 }}
               >
                 <Stack width="60%" gap={2}>
@@ -98,10 +111,14 @@ const HomeInnovativeServicesSection = () => {
                       {service?.title}
                     </Typography>
                     <Box
+                      className="right-arrow-animation"
                       component="img"
                       src="/blue_right_arrow.png"
                       width={60}
                       height={60}
+                      sx={{
+                        transition: "transform 0.3s ease-in-out",
+                      }}
                     />
                   </Stack>
                   <Typography
@@ -115,6 +132,59 @@ const HomeInnovativeServicesSection = () => {
                   />
                 </Stack>
                 <Box component="img" src={service?.icon} width={90} />
+                <Box
+                  className="hover-element"
+                  sx={{
+                    top: 0,
+                    left: 0,
+                    zIndex: 2,
+                    opacity: 0,
+                    position: "absolute",
+                    transition: "opacity 0.3s ease-in-out",
+                  }}
+                >
+                  <svg
+                    width="480"
+                    height="246"
+                    viewBox="0 0 480 246"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g opacity="1" filter="url(#filter0_f_2093_10)">
+                      <ellipse
+                        cx="-53"
+                        cy="257.5"
+                        rx="185"
+                        ry="137.5"
+                        fill="#41C4DA"
+                        fillOpacity="0.4"
+                      />
+                    </g>
+                    <defs>
+                      <filter
+                        id="filter0_f_2093_10"
+                        x="-586"
+                        y="-228"
+                        width="1066"
+                        height="971"
+                        filterUnits="userSpaceOnUse"
+                        colorInterpolationFilters="sRGB"
+                      >
+                        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                        <feBlend
+                          mode="normal"
+                          in="SourceGraphic"
+                          in2="BackgroundImageFix"
+                          result="shape"
+                        />
+                        <feGaussianBlur
+                          stdDeviation="174"
+                          result="effect1_foregroundBlur_2093_10"
+                        />
+                      </filter>
+                    </defs>
+                  </svg>
+                </Box>
               </Stack>
             );
           })}

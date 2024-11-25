@@ -15,8 +15,7 @@ const ServicesListSection = () => {
           lineHeight={1.2}
           color="transparent"
           sx={{
-            background:
-              "linear-gradient(180deg, rgb(255,255,255) 0%, rgb(4,11,18) 100%)",
+            background: "linear-gradient(180deg, #FFF 0%, #040B12 139.86%)",
             // eslint-disable-next-line perfectionist/sort-objects
             zIndex: 2,
             whiteSpace: "nowrap",
@@ -36,6 +35,8 @@ const ServicesListSection = () => {
           textAlign="center"
           lineHeight={1.4}
           color="rgba(255, 255, 255, 0.80)"
+          className="lato"
+          letterSpacing={1}
         >
           By leveraging innovation and technology, we transform your ideas into
           reality, propelling your business forward swiftly.
@@ -228,11 +229,13 @@ const ServicesListSection = () => {
             </Typography>
             <Typography
               width="80%"
-              fontSize={18}
+              fontSize={16}
               fontWeight={400}
               lineHeight={1.5}
               color="#8C8C8C"
               sx={{ mx: "auto", listStyle: "disc", minHeight: "270px" }}
+              className="lato"
+              letterSpacing={1}
             >
               Get innovative mobile solutions for your business. We redefine
               user appointments using the latest technologies to deliver robust
@@ -473,11 +476,13 @@ const ServicesListSection = () => {
             </Typography>
             <Typography
               width="80%"
-              fontSize={18}
+              fontSize={16}
               fontWeight={400}
               lineHeight={1.5}
               color="#8C8C8C"
               sx={{ mx: "auto", listStyle: "disc", minHeight: "270px" }}
+              className="lato"
+              letterSpacing={1}
             >
               Get bespoke web solutions for your online presence. We put user
               experience first, using the latest technologies to create
@@ -718,11 +723,13 @@ const ServicesListSection = () => {
             </Typography>
             <Typography
               width="80%"
-              fontSize={18}
+              fontSize={16}
               fontWeight={400}
               lineHeight={1.5}
               color="#8C8C8C"
               sx={{ mx: "auto", listStyle: "disc", minHeight: "270px" }}
+              className="lato"
+              letterSpacing={1}
             >
               Get business with the cloud. Leverage the cloud for streamlined
               performance. Adopt industry-specific cloud solutions for a faster
@@ -957,11 +964,13 @@ const ServicesListSection = () => {
             </Typography>
             <Typography
               width="80%"
-              fontSize={18}
+              fontSize={16}
               fontWeight={400}
               lineHeight={1.5}
               color="#8C8C8C"
               sx={{ mx: "auto", listStyle: "disc", minHeight: "270px" }}
+              className="lato"
+              letterSpacing={1}
             >
               Reach global markets and engage customers 24/7 with robust and
               feature-rich online stores. Show your products and services to the
@@ -1195,11 +1204,13 @@ const ServicesListSection = () => {
             </Typography>
             <Typography
               width="80%"
-              fontSize={18}
+              fontSize={16}
               fontWeight={400}
               lineHeight={1.5}
               color="#8C8C8C"
               sx={{ mx: "auto", listStyle: "disc", minHeight: "270px" }}
+              className="lato"
+              letterSpacing={1}
             >
               Experience a new level of QA and software testing. We redefine
               user interactions using a data-driven approach to boost speed,
@@ -1439,11 +1450,13 @@ const ServicesListSection = () => {
             </Typography>
             <Typography
               width="80%"
-              fontSize={18}
+              fontSize={16}
               fontWeight={400}
               lineHeight={1.5}
               color="#8C8C8C"
               sx={{ mx: "auto", listStyle: "disc", minHeight: "270px" }}
+              className="lato"
+              letterSpacing={1}
             >
               Stay ahead in a rapidly evolving market—while we manage your
               workforce with tailored HR as a Service, providing skilled

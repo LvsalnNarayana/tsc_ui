@@ -13,7 +13,7 @@ const HomeCultureSection = () => {
         alignItems="center"
         height="fit-content"
       >
-        <Typography
+        {/* <Typography
           sx={{
             px: 6,
             py: 1.7,
@@ -27,7 +27,7 @@ const HomeCultureSection = () => {
           }}
         >
           Culture
-        </Typography>
+        </Typography> */}
         <Typography
           fontSize={60}
           lineHeight={1.2}
@@ -114,18 +114,25 @@ const HomeCultureSection = () => {
                   }}
                 />
                 {/* Section Content */}
-                <Stack direction="row" alignItems="flex-end" width="100%">
+                <Stack
+                  direction="row"
+                  alignItems="flex-end"
+                  width="100%"
+                  gap={2}
+                >
                   <Typography
                     fontSize={120}
                     lineHeight={1}
                     fontWeight={600}
                     color="#41C4DA"
                     sx={{ flexShrink: 0 }}
+                    marginBottom={-2}
                   >
                     {number}
                   </Typography>
                   <Stack width="100%">
                     <Typography
+                      className="lato"
                       fontSize={44}
                       color="#fff"
                       lineHeight={1.2}

@@ -12,6 +12,7 @@ const Header = () => {
       justifyContent="center"
       alignItems="center"
       width="100%"
+      minHeight="100px"
     >
       <Link to="/">Home</Link>
       <Link to="/about-us">About Us</Link>

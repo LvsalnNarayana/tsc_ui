@@ -4,6 +4,7 @@ import React from "react";
 import { Stack, Typography, useMediaQuery } from "@mui/material";
 
 import HomeHeroSection from "../components/home/HomeHeroSection";
+import HomeDriveSection from "../components/home/HomeDriveSection";
 import HomeMarketSection from "../components/home/HomeMarketSection";
 import HomeCultureSection from "../components/home/HomeCultureSection";
 import HomeConnectSection from "../components/home/HomeConnectSection";
@@ -11,10 +12,9 @@ import HomeHowWeWorkSection from "../components/home/HomeHowWeWorkSection";
 import HomeEvolutionSection from "../components/home/HomeEvolutionSection";
 import HomeSmartSolutionSection from "../components/home/HomeSmartSolutionSection";
 import HomeSocialStrategySection from "../components/home/HomeSocialStrategySection";
+import HomeSustainabilitySection from "../components/home/HomeSustainabilitySection";
 import HomeWorkflowProcessSection from "../components/home/HomeWorkflowProcessSection";
 import HomeInnovativeServicesSection from "../components/home/HomeInnovativeServicesSection";
-import HomeDriveSection from "./../components/home/HomeDriveSection";
-import HomeSustainabilitySection from "./../components/home/HomeSustainabilitySection";
 
 const Home = () => {
   const mobileView = useMediaQuery((mobileTheme) => {

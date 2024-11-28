@@ -49,3 +49,13 @@
 .lato {
   font-family: "Lato", sans-serif !important;
 }
+
+@media (max-width: 600px) {
+  .responsive-text {
+    white-space: normal; /* Allows text to wrap normally */
+  }
+
+  .responsive-text br {
+    display: none; /* Hides <br> tags on smaller screens */
+  }
+}

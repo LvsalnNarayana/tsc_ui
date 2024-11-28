@@ -23,17 +23,18 @@ const Services = () => {
 
   return (
     <>
-      {mobileView && <Typography variant="h5">Services Mobile View</Typography>}
+      <Stack width="100%" sx={{ color: "#fff", backgroundColor: "#040B12" }}>
+        <ServiceHeroSection />
+        <ServicesListSection />
+        <ServicesEvolutionSection />
+        <HomeConnectSection />
+      </Stack>
+      {/* {mobileView && <Typography variant="h5">Services Mobile View</Typography>}
       {tabletView && <Typography variant="h5">Services Tablet View</Typography>}
       {laptopView && <Typography variant="h5">Services Laptop View</Typography>}
       {desktopView && (
-        <Stack width="100%" sx={{ color: "#fff", backgroundColor: "#040B12" }}>
-          <ServiceHeroSection />
-          <ServicesListSection />
-          <ServicesEvolutionSection />
-          <HomeConnectSection />
-        </Stack>
-      )}
+        
+      )} */}
     </>
   );
 };

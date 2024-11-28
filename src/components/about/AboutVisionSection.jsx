@@ -5,9 +5,28 @@ import { Box, Stack, Container, Typography } from "@mui/material";
 const AboutVisionSection = () => {
   return (
     <Container maxWidth="desktop">
-      <Stack py={8} gap={10} alignItems="center">
+      <Stack
+        py={{
+          laptop: 20,
+          tablet: 10,
+          mobile: 10,
+          desktop: 20,
+        }}
+        gap={{
+          laptop: 10,
+          tablet: 15,
+          mobile: 15,
+          desktop: 10,
+        }}
+        alignItems="center"
+      >
         <Typography
-          fontSize={60}
+          fontSize={{
+            laptop: 60,
+            tablet: 32,
+            mobile: 32,
+            desktop: 60,
+          }}
           lineHeight={1.2}
           textAlign="center"
           sx={{
@@ -71,10 +90,16 @@ const AboutVisionSection = () => {
           </Box>
           <Typography
             color="#fff"
-            fontSize={48}
+            fontSize={{
+              laptop: 48,
+              tablet: 24,
+              mobile: 24,
+              desktop: 48,
+            }}
             fontWeight={400}
             lineHeight={1.2}
             textAlign="center"
+            className="responsive-text"
           >
             “We are more than a team; we are a community of
             <br /> people who believe in the power of technology. our
@@ -84,7 +109,12 @@ const AboutVisionSection = () => {
           <Typography
             width="90%"
             color="rgba(255, 255, 255, 0.70)"
-            fontSize={40}
+            fontSize={{
+              laptop: 40,
+              tablet: 24,
+              mobile: 24,
+              desktop: 40,
+            }}
             fontWeight={400}
             lineHeight={1.2}
             textAlign="right"

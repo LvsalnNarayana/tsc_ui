@@ -7,7 +7,12 @@ const HomeInnovativeServicesSection = () => {
     <Stack sx={{ backgroundColor: "#06101A" }}>
       <Container maxWidth="desktop">
         <Stack
-          py={10}
+          py={{
+            mobile: 4,
+            tablet: 4,
+            laptop: 10,
+            desktop: 10,
+          }}
           direction="column"
           justifyContent="flex-start"
           alignItems="flex-start"
@@ -15,7 +20,19 @@ const HomeInnovativeServicesSection = () => {
         >
           <Typography
             mb={4}
-            fontSize={60}
+            fontSize={{
+              laptop: 60,
+              mobile: 40,
+              tablet: 40,
+              desktop: 60,
+            }}
+            textAlign={{
+              laptop: "left",
+              desktop: "left",
+              mobile: "center",
+              tablet: "center",
+            }}
+            width="100%"
             sx={{
               background: "linear-gradient(180deg, #FFF 0%, #040B12 139.86%)",
               // eslint-disable-next-line perfectionist/sort-objects
@@ -29,10 +46,20 @@ const HomeInnovativeServicesSection = () => {
           <Typography
             mb={3}
             fontSize={18}
-            width="60%"
-            textAlign="left"
+            width={{
+              laptop: "60%",
+              desktop: "60%",
+              mobile: "100%",
+              tablet: "100%",
+            }}
+            textAlign={{
+              laptop: "left",
+              desktop: "left",
+              mobile: "center",
+              tablet: "center",
+            }}
             lineHeight={1.5}
-            className="lato"
+            className="lato responsive-text"
             color="rgba(255, 255, 255, 0.80)"
             letterSpacing="1px"
           >
@@ -77,7 +104,25 @@ const HomeInnovativeServicesSection = () => {
                 my={4}
                 key={service?.id}
                 width="100%"
-                height={246}
+                gap={2}
+                height={{
+                  laptop: "fit-content",
+                  mobile: "fit-content",
+                  tablet: "fit-content",
+                  desktop: "fit-content",
+                }}
+                minHeight={{
+                  laptop: 246,
+                  desktop: 246,
+                  mobile: "fit-content",
+                  tablet: "fit-content",
+                }}
+                py={{
+                  mobile: 4,
+                  tablet: 4,
+                  laptop: 1,
+                  desktop: 1,
+                }}
                 direction="row"
                 justifyContent="center"
                 alignItems="center"
@@ -96,16 +141,49 @@ const HomeInnovativeServicesSection = () => {
                   },
                 }}
               >
-                <Stack width="60%" gap={2}>
+                <Stack
+                  width={{
+                    laptop: "60%",
+                    mobile: "70%",
+                    tablet: "70%",
+                    desktop: "60%",
+                  }}
+                  pl={{
+                    laptop: 0,
+                    mobile: 3,
+                    tablet: 3,
+                    desktop: 0,
+                  }}
+                  gap={2}
+                  sx={{
+                    zIndex: 3,
+                    position: "relative",
+                  }}
+                >
                   <Stack
-                    gap={4}
+                    gap={{
+                      laptop: 4,
+                      mobile: 2,
+                      tablet: 2,
+                      desktop: 4,
+                    }}
                     direction="row"
                     justifyContent="flex-start"
                     alignItems="center"
                   >
                     <Typography
-                      fontSize={51}
-                      letterSpacing="-1.53px"
+                      fontSize={{
+                        laptop: 51,
+                        mobile: 18,
+                        tablet: 18,
+                        desktop: 51,
+                      }}
+                      letterSpacing={{
+                        mobile: "0px",
+                        tablet: "0px",
+                        laptop: "-1.53px",
+                        desktop: "-1.53px",
+                      }}
                       lineHeight="120%"
                     >
                       {service?.title}
@@ -114,17 +192,38 @@ const HomeInnovativeServicesSection = () => {
                       className="right-arrow-animation"
                       component="img"
                       src="/blue_right_arrow.png"
-                      width={60}
-                      height={60}
+                      width={{
+                        laptop: 60,
+                        mobile: 20,
+                        tablet: 20,
+                        desktop: 60,
+                      }}
+                      height={{
+                        laptop: 60,
+                        mobile: 20,
+                        tablet: 20,
+                        desktop: 60,
+                      }}
                       sx={{
                         transition: "transform 0.3s ease-in-out",
                       }}
                     />
                   </Stack>
                   <Typography
-                    fontSize={18}
+                    fontSize={{
+                      laptop: 18,
+                      mobile: 14,
+                      tablet: 14,
+                      desktop: 18,
+                    }}
                     textAlign="left"
-                    lineHeight={2}
+                    lineHeight={{
+                      laptop: 2,
+                      desktop: 2,
+                      mobile: 1.5,
+                      tablet: 1.5,
+                    }}
+                    className="lato responsive-text"
                     fontWeight={400}
                     dangerouslySetInnerHTML={{
                       __html: service?.description.replace(/\n/gu, "<br />"),

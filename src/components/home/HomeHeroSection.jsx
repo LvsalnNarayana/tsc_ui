@@ -7,11 +7,22 @@ import HeroBackground from "../Backgrounds/HeroBackground";
 const HomeHeroSection = () => {
   return (
     <Stack
+      width="100%"
       direction="row"
       justifyContent="center"
       alignItems="center"
-      height="100vh"
-      sx={{ zIndex: 1, position: "relative" }}
+      minHeight="100vh"
+      maxWidth="100vw"
+      sx={{
+        zIndex: 1,
+        position: "relative",
+        paddingTop: {
+          mobile: 15,
+          tablet: 15,
+          laptop: "87px",
+          desktop: "87px",
+        },
+      }}
     >
       <HeroBackground
         style={{
@@ -25,20 +36,35 @@ const HomeHeroSection = () => {
       />
       <Container maxWidth="desktop">
         <Stack
-          direction="row"
+          direction={{
+            laptop: "row",
+            desktop: "row",
+            tablet: "column",
+            mobile: "column",
+          }}
           justifyContent="space-between"
           alignItems="center"
         >
           <Stack
             gap={0}
-            width="60%"
+            width={{
+              laptop: "50%",
+              mobile: "100%",
+              tablet: "100%",
+              desktop: "50%",
+            }}
             direction="column"
             justifyContent="flex-start"
             alignItems="flex-start"
           >
             <Typography
               variant="body1"
-              fontSize={120}
+              fontSize={{
+                mobile: 55,
+                tablet: 55,
+                laptop: 120,
+                desktop: 120,
+              }}
               sx={{
                 color: "#fff",
                 display: "inline-block",
@@ -49,7 +75,12 @@ const HomeHeroSection = () => {
             </Typography>
             <Typography
               variant="body1"
-              fontSize={120}
+              fontSize={{
+                mobile: 55,
+                tablet: 55,
+                laptop: 120,
+                desktop: 120,
+              }}
               sx={{
                 color: "#fff",
                 display: "inline-block",
@@ -60,7 +91,12 @@ const HomeHeroSection = () => {
             </Typography>
             <Typography
               variant="body1"
-              fontSize={120}
+              fontSize={{
+                mobile: 55,
+                tablet: 55,
+                laptop: 120,
+                desktop: 120,
+              }}
               sx={{
                 color: "#fff",
                 display: "inline-block",
@@ -78,34 +114,45 @@ const HomeHeroSection = () => {
                 color: "#ffffff80",
                 display: "inline-block",
               }}
+              className="lato responsive-text"
               fontWeight="normal"
             >
-              Empower, Innovate, and Accelerate with TSC—Pioneering Businesses{" "}
+              Empower, Innovate, and Accelerate with TSC—Pioneering Businesses
               <br /> in Ever-Evolving Technology Landscapes
             </Typography>
             <Stack
               mt={4}
               direction="row"
-              justifyContent="flex-start"
+              justifyContent={{
+                mobile: "flex-start",
+                tablet: "flex-start",
+                laptop: "flex-start",
+                desktop: "flex-start",
+              }}
+              width="100%"
               alignItems="center"
               gap={2}
             >
               <Button
                 sx={{
-                  px: 6,
                   py: 1.7,
                   fontSize: 18,
                   lineHeight: 1,
                   color: "#fff",
                   borderRadius: "99px",
                   background: "rgba(255, 255, 255, 0.10)",
+                  px: {
+                    mobile: 3,
+                    tablet: 3,
+                    laptop: 6,
+                    desktop: 6,
+                  },
                 }}
               >
                 Our Services
               </Button>
               <Button
                 sx={{
-                  px: 6,
                   py: 1.7,
                   fontSize: 18,
                   lineHeight: 1,
@@ -114,6 +161,12 @@ const HomeHeroSection = () => {
                   boxShadow: "0px 1px 0px 0px rgba(255, 255, 255, 0.10) inset",
                   background:
                     "linear-gradient(180deg, #525252 -61.82%, #292929 100%)",
+                  px: {
+                    mobile: 3,
+                    tablet: 3,
+                    laptop: 6,
+                    desktop: 6,
+                  },
                 }}
               >
                 Get In Touch
@@ -121,16 +174,23 @@ const HomeHeroSection = () => {
             </Stack>
           </Stack>
           <Stack
-            width="40%"
+            width={{
+              laptop: "50%",
+              mobile: "100%",
+              tablet: "100%",
+              desktop: "50%",
+            }}
             direction="column"
             justifyContent="flex-start"
             alignItems="center"
+            overflow="hidden"
           >
             <Box
               component="img"
-              src="/hero_image.png"
+              src="/home_hero_animation.gif"
               sx={{
-                width: "90%",
+                width: "120%",
+                maxWidth: "100%",
                 objectFit: "contain",
                 height: "fit-content",
               }}

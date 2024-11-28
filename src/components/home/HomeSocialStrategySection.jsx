@@ -25,10 +25,22 @@ const HomeSocialStrategySection = () => {
       />
       <Typography
         variant="body1"
-        fontSize={56}
+        fontSize={{
+          laptop: 48,
+          tablet: 24,
+          mobile: 24,
+          desktop: 56,
+        }}
         fontWeight={700}
         textAlign="center"
         sx={{ zIndex: 2 }}
+        width={{
+          laptop: "80%",
+          tablet: "80%",
+          mobile: "80%",
+          desktop: "80%",
+        }}
+        lineHeight={1.5}
       >
         Supercharge Your Social Strategy
         <br /> with TSC Social!

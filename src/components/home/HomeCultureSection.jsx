@@ -6,30 +6,25 @@ const HomeCultureSection = () => {
   return (
     <Container maxWidth="desktop">
       <Stack
-        py={5}
+        py={{
+          tablet: 2,
+          mobile: 2,
+          laptop: 20,
+          desktop: 20,
+        }}
         gap={5}
         direction="column"
         justifyContent="center"
         alignItems="center"
         height="fit-content"
       >
-        {/* <Typography
-          sx={{
-            px: 6,
-            py: 1.7,
-            fontSize: 24,
-            lineHeight: 1,
-            color: "#fff",
-            borderRadius: "99px",
-            border: "1px solid rgba(255, 255, 255, 0.10)",
-            background:
-              "conic-gradient(from 181deg at 50% 50%, rgba(0, 0, 0, 0.00) 172.66420125961304deg, rgba(73, 53, 130, 0.30) 281.25deg, rgba(71, 47, 140, 0.12) 360deg), rgba(255, 255, 255, 0.05)",
-          }}
-        >
-          Culture
-        </Typography> */}
         <Typography
-          fontSize={60}
+          fontSize={{
+            laptop: 60,
+            tablet: 32,
+            mobile: 32,
+            desktop: 60,
+          }}
           lineHeight={1.2}
           textAlign="center"
           sx={{
@@ -44,6 +39,7 @@ const HomeCultureSection = () => {
           <br /> Culture
         </Typography>
         <Typography
+          className="lato responsive-text"
           textAlign="center"
           fontSize={18}
           lineHeight={1.5}
@@ -54,7 +50,15 @@ const HomeCultureSection = () => {
           <br /> everyone, so we have a high-performing team that exceeds
           expectations.
         </Typography>
-        <Stack display="grid" gridTemplateColumns="repeat(2, 1fr)">
+        <Stack
+          display="grid"
+          gridTemplateColumns={{
+            laptop: "repeat(2, 1fr)",
+            tablet: "repeat(1, 1fr)",
+            mobile: "repeat(1, 1fr)",
+            desktop: "repeat(2, 1fr)",
+          }}
+        >
           {[
             {
               number: "01",

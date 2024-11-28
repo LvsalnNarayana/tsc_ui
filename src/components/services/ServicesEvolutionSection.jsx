@@ -6,16 +6,31 @@ const ServicesEvolutionSection = () => {
   return (
     <Container maxWidth="desktop">
       <Stack
-        pt={5}
+        pt={{
+          laptop: 10,
+          tablet: 10,
+          mobile: 10,
+          desktop: 10,
+        }}
         pb={10}
-        gap={5}
+        gap={{
+          laptop: 10,
+          tablet: 10,
+          mobile: 10,
+          desktop: 10,
+        }}
         direction="column"
         justifyContent="center"
         alignItems="center"
         height="fit-content"
       >
         <Typography
-          fontSize={60}
+          fontSize={{
+            laptop: 60,
+            tablet: 32,
+            mobile: 32,
+            desktop: 60,
+          }}
           lineHeight={1.2}
           textAlign="center"
           sx={{
@@ -29,12 +44,24 @@ const ServicesEvolutionSection = () => {
           Embrace Evolution
         </Typography>
         <Stack
-          direction="row"
+          direction={{
+            laptop: "row",
+            desktop: "row",
+            tablet: "column",
+            mobile: "column",
+          }}
+          width="100%"
           alignItems="center"
           justifyContent="center"
           gap={4}
         >
           <Stack
+            width={{
+              tablet: "100%",
+              mobile: "100%",
+              laptop: "fit-content",
+              desktop: "fit-content",
+            }}
             direction="column"
             alignItems="center"
             justifyContent="center"
@@ -56,6 +83,12 @@ const ServicesEvolutionSection = () => {
             </Typography>
           </Stack>
           <Stack
+            width={{
+              tablet: "100%",
+              mobile: "100%",
+              laptop: "fit-content",
+              desktop: "fit-content",
+            }}
             direction="column"
             alignItems="center"
             justifyContent="center"
@@ -77,6 +110,12 @@ const ServicesEvolutionSection = () => {
             </Typography>
           </Stack>
           <Stack
+            width={{
+              tablet: "100%",
+              mobile: "100%",
+              laptop: "fit-content",
+              desktop: "fit-content",
+            }}
             direction="column"
             alignItems="center"
             justifyContent="center"

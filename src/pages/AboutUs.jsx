@@ -27,7 +27,19 @@ const AboutUs = () => {
 
   return (
     <>
-      {mobileView && <Typography variant="h5">AboutUs Mobile View</Typography>}
+      <Stack
+        width="100%"
+        maxWidth="100%"
+        sx={{ color: "#fff", backgroundColor: "#040B12" }}
+      >
+        <AboutHeroSection />
+        <AboutVisionSection />
+        <AboutLiveSection />
+        <AboutCultureSection />
+        <AboutEvolutionSection />
+        <HomeConnectSection />
+      </Stack>
+      {/* {mobileView && <Typography variant="h5">AboutUs Mobile View</Typography>}
       {tabletView && <Typography variant="h5">AboutUs Tablet View</Typography>}
       {laptopView && <Typography variant="h5">AboutUs Laptop View</Typography>}
       {desktopView && (
@@ -39,7 +51,7 @@ const AboutUs = () => {
           <AboutEvolutionSection />
           <HomeConnectSection />
         </Stack>
-      )}
+      )} */}
     </>
   );
 };

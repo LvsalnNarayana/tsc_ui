@@ -5,7 +5,7 @@ const AboutCultureSVG = () => {
   return (
     <div>
       <svg
-        width="1440"
+        width="100%"
         height="1672"
         viewBox="0 0 1440 1672"
         fill="none"

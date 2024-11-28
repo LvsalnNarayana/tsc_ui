@@ -32,7 +32,19 @@ const HomeMarketSection = () => {
       <Typography
         variant="h5"
         textAlign="center"
-        fontSize={40}
+        fontSize={{
+          laptop: 40,
+          mobile: 24,
+          tablet: 24,
+          desktop: 40,
+        }}
+        width={{
+          mobile: "90%",
+          tablet: "90%",
+          laptop: "100%",
+          desktop: "100%",
+        }}
+        className="responsive-text"
         sx={{ zIndex: 2 }}
       >
         Win the market where competitors are

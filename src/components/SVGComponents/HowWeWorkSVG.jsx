@@ -38,8 +38,8 @@ const HowWeWorkSVG = () => {
   return (
     <div>
       <svg
-        width="1300"
-        height="684"
+        width="100%"
+        height="100%"
         viewBox="0 0 1300 684"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

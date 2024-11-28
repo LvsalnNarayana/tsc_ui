@@ -8,14 +8,24 @@ const HomeEvolutionSection = () => {
       <Stack
         pt={5}
         pb={10}
-        gap={5}
+        gap={{
+          laptop: 5,
+          tablet: 5,
+          mobile: 5,
+          desktop: 5,
+        }}
         direction="column"
         justifyContent="center"
         alignItems="center"
         height="fit-content"
       >
         <Typography
-          fontSize={60}
+          fontSize={{
+            laptop: 60,
+            tablet: 32,
+            mobile: 32,
+            desktop: 60,
+          }}
           lineHeight={1.2}
           textAlign="center"
           sx={{
@@ -33,18 +43,31 @@ const HomeEvolutionSection = () => {
           fontSize={18}
           lineHeight={1.5}
           color="rgba(255, 255, 255, 0.70)"
+          className="lato responsive-text"
         >
           Our innovative digital solutions that empower your business to thrive
           in the
           <br /> modern landscape
         </Typography>
         <Stack
-          direction="row"
+          direction={{
+            laptop: "row",
+            desktop: "row",
+            tablet: "column",
+            mobile: "column",
+          }}
+          width="100%"
           alignItems="center"
           justifyContent="center"
           gap={4}
         >
           <Stack
+            width={{
+              tablet: "100%",
+              mobile: "100%",
+              laptop: "fit-content",
+              desktop: "fit-content",
+            }}
             direction="column"
             alignItems="center"
             justifyContent="center"
@@ -66,6 +89,12 @@ const HomeEvolutionSection = () => {
             </Typography>
           </Stack>
           <Stack
+            width={{
+              tablet: "100%",
+              mobile: "100%",
+              laptop: "fit-content",
+              desktop: "fit-content",
+            }}
             direction="column"
             alignItems="center"
             justifyContent="center"
@@ -87,6 +116,12 @@ const HomeEvolutionSection = () => {
             </Typography>
           </Stack>
           <Stack
+            width={{
+              tablet: "100%",
+              mobile: "100%",
+              laptop: "fit-content",
+              desktop: "fit-content",
+            }}
             direction="column"
             alignItems="center"
             justifyContent="center"

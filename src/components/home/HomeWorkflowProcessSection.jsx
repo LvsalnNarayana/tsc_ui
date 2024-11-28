@@ -9,7 +9,12 @@ const HomeWorkflowProcessSection = () => {
     <Container maxWidth="desktop">
       <Typography
         my={6}
-        fontSize={60}
+        fontSize={{
+          laptop: 60,
+          tablet: 32,
+          mobile: 32,
+          desktop: 60,
+        }}
         sx={{
           textAlign: "center",
           background: "linear-gradient(180deg, #FFF 0%, #040B12 139.86%)",

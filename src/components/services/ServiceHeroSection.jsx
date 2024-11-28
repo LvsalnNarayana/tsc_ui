@@ -7,10 +7,11 @@ import AboutHeroPattern from "../SVGComponents/AboutHeroPattern";
 const ServiceHeroSection = () => {
   return (
     <Stack
-      gap={3}
+      gap={4}
       style={{
         display: "flex",
         minHeight: "100vh",
+        paddingTop: "87px",
         position: "relative",
         alignItems: "center",
         justifyContent: "center",
@@ -20,30 +21,39 @@ const ServiceHeroSection = () => {
       <Typography
         variant="h1"
         align="center"
-        fontSize={88}
-        lineHeight={1.4}
+        fontSize={{
+          laptop: 88,
+          tablet: 55,
+          mobile: 55,
+          desktop: 88,
+        }}
+        lineHeight={1.2}
         color="transparent"
         sx={{
           zIndex: 2,
           background:
             "linear-gradient(180deg, rgb(255,255,255) 0%, rgb(4,11,18) 100%)",
           // eslint-disable-next-line perfectionist/sort-objects
-          whiteSpace: "nowrap",
           backgroundClip: "text",
           WebkitBackgroundClip: "text",
           textFillColor: "transparent",
           WebkitTextFillColor: "transparent",
-          fontFamily: "'Dubai-Regular', Helvetica",
         }}
       >
         Explore New Horizons
       </Typography>
       <Typography
-        fontSize={32}
+        fontSize={{
+          laptop: 32,
+          tablet: 20,
+          mobile: 20,
+          desktop: 32,
+        }}
         lineHeight={1.4}
         color="rgba(255, 255, 255, 0.30)"
         fontWeight={400}
         textAlign="center"
+        className="responsive-text"
       >
         Unlock sustainable growth opportunities and empower your brand with
         <br />

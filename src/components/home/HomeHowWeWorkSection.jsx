@@ -8,31 +8,29 @@ import HowWeWorkSVG from "../SVGComponents/HowWeWorkSVG";
 const HomeHowWeWorkSection = () => {
   return (
     <Stack
-      minHeight="100vh"
-      py={5}
+      py={{
+        tablet: 6,
+        mobile: 6,
+        laptop: 15,
+        desktop: 15,
+      }}
       gap={10}
       direction="column"
       justifyContent="center"
       alignItems="center"
       height="fit-content"
+      width="100%"
+      maxWidth="100vw"
+      sx={{ overflowX: "hidden" }}
     >
-      {/* <Typography
-        sx={{
-          px: 6,
-          py: 1.7,
-          fontSize: 24,
-          lineHeight: 1,
-          color: "#fff",
-          borderRadius: "99px",
-          border: " 1px solid rgba(255, 255, 255, 0.10)",
-          background:
-            "conic-gradient(from 181deg at 50% 50%, rgba(0, 0, 0, 0.00) 172.66420125961304deg, rgba(73, 53, 130, 0.30) 281.25deg, rgba(71, 47, 140, 0.12) 360deg), rgba(255, 255, 255, 0.05)",
-        }}
-      >
-        How we work
-      </Typography> */}
       <Typography
-        fontSize={60}
+        fontSize={{
+          laptop: 60,
+          tablet: 32,
+          mobile: 32,
+          desktop: 60,
+        }}
+        lineHeight={1.2}
         textAlign="center"
         sx={{
           background: "linear-gradient(180deg, #FFF 0%, #040B12 139.86%)",
@@ -41,6 +39,7 @@ const HomeHowWeWorkSection = () => {
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
         }}
+        className="responsive-text"
       >
         We guide your journey in adapting to evolving
         <br /> business demands, creating tangible value for

@@ -1,14 +1,59 @@
 import React from "react";
 
-import { Box, Stack, Button, Container, Typography } from "@mui/material";
+import {
+  Box,
+  Stack,
+  Button,
+  Container,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 
 const HomeDriveSection = () => {
+  const mobileView = useMediaQuery((mobileTheme) => {
+    return mobileTheme.breakpoints.down("tablet");
+  });
+  const tabletView = useMediaQuery((tabletTheme) => {
+    return tabletTheme.breakpoints.between("tablet", "laptop");
+  });
+  const laptopView = useMediaQuery((laptopTheme) => {
+    return laptopTheme.breakpoints.between("laptop", "desktop");
+  });
+  const desktopView = useMediaQuery((desktopTheme) => {
+    return desktopTheme.breakpoints.up("desktop");
+  });
+
   return (
-    <Stack py={10}>
+    <Stack
+      py={{
+        mobile: 5,
+        tablet: 5,
+        laptop: 10,
+        desktop: 10,
+      }}
+    >
       <Container maxWidth="desktop">
-        <Stack direction="row" justifyContent="center" alignItems="center">
+        <Stack
+          direction={{
+            laptop: "row",
+            desktop: "row",
+            tablet: "column",
+            mobile: "column",
+          }}
+          justifyContent="center"
+          alignItems="center"
+        >
           <Stack width="100%" gap={3}>
-            <Typography fontSize={40} fontWeight={500} lineHeight={1.2}>
+            <Typography
+              fontSize={{
+                laptop: 48,
+                tablet: 32,
+                mobile: 32,
+                desktop: 48,
+              }}
+              fontWeight={500}
+              lineHeight={1.2}
+            >
               We Drive Your Business
               <br /> Forward Strategically
             </Typography>
@@ -17,6 +62,7 @@ const HomeDriveSection = () => {
               color="rgba(255, 255, 255, 0.70)"
               fontWeight={400}
               lineHeight={1.5}
+              className="lato responsive-text"
             >
               Our mission is to fuel the growth journey of our partners by
               simplifying their
@@ -27,29 +73,46 @@ const HomeDriveSection = () => {
               <br /> your business goals. At TSC, businesses trust us to deliver
               on our promises.
             </Typography>
-            <Button
-              className="lato"
-              sx={{
-                px: "24px",
-                py: "12px",
-                fontSize: 18,
-                color: "#fff",
-                fontWeight: 500,
-                lineHeight: 1.5,
-                width: "fit-content",
-                borderRadius: "99px",
-                border: " 1px solid rgba(255, 255, 255, 0.10)",
-                background:
-                  "conic-gradient(from 181deg at 50% 50%, rgba(0, 0, 0, 0.00) 172.66420125961304deg, rgba(73, 53, 130, 0.30) 281.25deg, rgba(71, 47, 140, 0.12) 360deg), rgba(255, 255, 255, 0.05)",
-              }}
-            >
-              Get More from Your Business:
-            </Button>
+            {(desktopView || laptopView) && (
+              <Button
+                className="lato"
+                sx={{
+                  px: "24px",
+                  py: "12px",
+                  fontSize: 18,
+                  color: "#fff",
+                  fontWeight: 500,
+                  lineHeight: 1.5,
+                  width: "fit-content",
+                  borderRadius: "99px",
+                  border: " 1px solid rgba(255, 255, 255, 0.10)",
+                  background:
+                    "conic-gradient(from 181deg at 50% 50%, rgba(0, 0, 0, 0.00) 172.66420125961304deg, rgba(73, 53, 130, 0.30) 281.25deg, rgba(71, 47, 140, 0.12) 360deg), rgba(255, 255, 255, 0.05)",
+                }}
+              >
+                Get More from Your Business:
+              </Button>
+            )}
+            {(mobileView || tabletView) && (
+              <Box
+                component="img"
+                src="/drive.png"
+                height={570}
+                width={447}
+                sx={{ mx: "auto", borderRadius: "20px" }}
+              />
+            )}
             <Typography
               fontSize={28}
               lineHeight={1.4}
               fontWeight={500}
               letterSpacing="-0.56px"
+              textAlign={{
+                laptop: "left",
+                desktop: "left",
+                tablet: "center",
+                mobile: "center",
+              }}
             >
               60% faster time to market
             </Typography>
@@ -58,6 +121,12 @@ const HomeDriveSection = () => {
               lineHeight={1.4}
               fontWeight={500}
               letterSpacing="-0.56px"
+              textAlign={{
+                laptop: "left",
+                desktop: "left",
+                tablet: "center",
+                mobile: "center",
+              }}
             >
               40% reduction in development costs
             </Typography>
@@ -72,6 +141,12 @@ const HomeDriveSection = () => {
                 borderRadius: "100px",
                 justifyContent: "center",
                 border: " 1px solid #45BDD6",
+                mx: {
+                  laptop: 0,
+                  desktop: 0,
+                  tablet: "auto",
+                  mobile: "auto",
+                },
               }}
             >
               Let’s talk
@@ -100,15 +175,17 @@ const HomeDriveSection = () => {
               </Stack>
             </Button>
           </Stack>
-          <Stack width="100%" justifyContent="center" alignItems="center">
-            <Box
-              component="img"
-              src="/drive.png"
-              height={570}
-              width={447}
-              sx={{ borderRadius: "20px" }}
-            />
-          </Stack>
+          {(desktopView || laptopView) && (
+            <Stack width="100%" justifyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src="/drive.png"
+                height={570}
+                width={447}
+                sx={{ borderRadius: "20px" }}
+              />
+            </Stack>
+          )}
         </Stack>
       </Container>
     </Stack>

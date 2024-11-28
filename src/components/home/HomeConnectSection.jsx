@@ -9,9 +9,23 @@ import {
   Container,
   TextField,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 
 const HomeConnectSection = () => {
+  const mobileView = useMediaQuery((mobileTheme) => {
+    return mobileTheme.breakpoints.down("tablet");
+  });
+  const tabletView = useMediaQuery((tabletTheme) => {
+    return tabletTheme.breakpoints.between("tablet", "laptop");
+  });
+  const laptopView = useMediaQuery((laptopTheme) => {
+    return laptopTheme.breakpoints.between("laptop", "desktop");
+  });
+  const desktopView = useMediaQuery((desktopTheme) => {
+    return desktopTheme.breakpoints.up("desktop");
+  });
+
   return (
     <Container
       sx={{
@@ -19,8 +33,12 @@ const HomeConnectSection = () => {
       }}
     >
       <Stack
-        width="95%"
-        p={8}
+        p={{
+          laptop: 8,
+          mobile: 5,
+          tablet: 5,
+          desktop: 8,
+        }}
         gap={3}
         mb={8}
         mx="auto"
@@ -31,15 +49,26 @@ const HomeConnectSection = () => {
         }}
       >
         <Typography
-          fontSize={56}
+          fontSize={{
+            laptop: 56,
+            mobile: 24,
+            tablet: 24,
+            desktop: 56,
+          }}
           lineHeight={1}
           fontWeight={700}
           textAlign="center"
+          className="responsive-text"
         >
           Let&apos;s Begin the Dialogue
         </Typography>
         <Typography
-          fontSize={20}
+          fontSize={{
+            laptop: 20,
+            mobile: 16,
+            tablet: 16,
+            desktop: 20,
+          }}
           lineHeight={1.5}
           fontWeight={400}
           textAlign="center"
@@ -49,18 +78,53 @@ const HomeConnectSection = () => {
           for your business.
         </Typography>
         <Stack
-          mt={7}
+          mt={{
+            laptop: 7,
+            mobile: 2,
+            tablet: 2,
+            desktop: 7,
+          }}
           gap={10}
-          direction="row"
+          direction={{
+            laptop: "row",
+            desktop: "row",
+            mobile: "column",
+            tablet: "column",
+          }}
           alignItems="flex-start"
           justifyContent="flex-start"
         >
           <Stack width="100%" gap={4}>
-            <Stack>
-              <Typography fontWeight={700} fontSize={40} lineHeight={1.2}>
+            <Stack
+              gap={{
+                laptop: 1,
+                mobile: 2,
+                tablet: 2,
+                desktop: 1,
+              }}
+            >
+              <Typography
+                fontWeight={700}
+                fontSize={{
+                  laptop: 40,
+                  mobile: 20,
+                  tablet: 20,
+                  desktop: 40,
+                }}
+                lineHeight={1.2}
+              >
                 Connect With Us
               </Typography>
-              <Typography fontSize={20} lineHeight={1.5} fontWeight={400}>
+              <Typography
+                fontSize={{
+                  laptop: 20,
+                  mobile: 16,
+                  tablet: 16,
+                  desktop: 20,
+                }}
+                lineHeight={1.5}
+                fontWeight={400}
+              >
                 Tell us about your requirements. We’ll get back to you soon.
               </Typography>
             </Stack>
@@ -185,14 +249,25 @@ const HomeConnectSection = () => {
             </Button>
           </Stack>
           <Divider
-            orientation="vertical"
+            orientation={
+              laptopView || desktopView
+                ? "vertical"
+                : tabletView || mobileView
+                  ? "horizontal"
+                  : "vertical"
+            }
             flexItem
             sx={{
-              width: "0px",
               borderTop: "0px",
               borderWidth: "2px",
               position: "relative",
               borderColor: "rgba(255, 255, 255, 0.50)",
+              width: {
+                laptop: "0px",
+                desktop: "0px",
+                mobile: "100%",
+                tablet: "100%",
+              },
             }}
           >
             <Box
@@ -218,17 +293,40 @@ const HomeConnectSection = () => {
           </Divider>
 
           <Stack width="100%" gap={4}>
-            <Typography fontSize={32} fontWeight={700} lineHeight={1.5}>
-              Quick Connect
-            </Typography>
-            <Typography
-              fontSize={20}
-              fontWeight={400}
-              lineHeight={1.5}
-              color="rgba(255, 255, 255, 0.80)"
+            <Stack
+              gap={{
+                laptop: 1,
+                mobile: 2,
+                tablet: 2,
+                desktop: 1,
+              }}
             >
-              We are just a tap away! Reach out to us for more information
-            </Typography>
+              <Typography
+                fontSize={{
+                  laptop: 40,
+                  mobile: 20,
+                  tablet: 20,
+                  desktop: 40,
+                }}
+                fontWeight={700}
+                lineHeight={1.5}
+              >
+                Quick Connect
+              </Typography>
+              <Typography
+                fontSize={{
+                  laptop: 20,
+                  mobile: 16,
+                  tablet: 16,
+                  desktop: 20,
+                }}
+                fontWeight={400}
+                lineHeight={1.5}
+                color="rgba(255, 255, 255, 0.80)"
+              >
+                We are just a tap away! Reach out to us for more information
+              </Typography>
+            </Stack>
             <Stack
               gap={2}
               px={4}

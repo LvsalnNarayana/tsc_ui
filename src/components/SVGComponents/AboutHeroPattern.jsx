@@ -8,7 +8,7 @@ const AboutHeroPattern = ({ style }) => {
         xmlns="http://www.w3.org/2000/svg"
         style={{
           width: "100%",
-          height: "auto",
+          height: "100%",
         }}
       >
         <g clipPath="url(#clip0_411_2537)">

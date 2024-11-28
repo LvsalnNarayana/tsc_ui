@@ -1,7 +1,7 @@
 /* eslint-disable max-lines */
 import React from "react";
 
-import { Stack, Typography, useMediaQuery } from "@mui/material";
+import { Stack } from "@mui/material";
 
 import HomeHeroSection from "../components/home/HomeHeroSection";
 import HomeDriveSection from "../components/home/HomeDriveSection";
@@ -17,22 +17,23 @@ import HomeWorkflowProcessSection from "../components/home/HomeWorkflowProcessSe
 import HomeInnovativeServicesSection from "../components/home/HomeInnovativeServicesSection";
 
 const Home = () => {
-  const mobileView = useMediaQuery((mobileTheme) => {
-    return mobileTheme.breakpoints.down("tablet");
-  });
-  const tabletView = useMediaQuery((tabletTheme) => {
-    return tabletTheme.breakpoints.between("tablet", "laptop");
-  });
-  const laptopView = useMediaQuery((laptopTheme) => {
-    return laptopTheme.breakpoints.between("laptop", "desktop");
-  });
-  const desktopView = useMediaQuery((desktopTheme) => {
-    return desktopTheme.breakpoints.up("desktop");
-  });
-
   return (
     <>
-      {mobileView && <Typography variant="h5">Home Mobile View</Typography>}
+      <Stack width="100%" maxWidth="100vw">
+        <HomeHeroSection />
+        <HomeHowWeWorkSection />
+        <HomeSmartSolutionSection />
+        <HomeMarketSection />
+        <HomeInnovativeServicesSection />
+        <HomeSocialStrategySection />
+        <HomeDriveSection />
+        <HomeWorkflowProcessSection />
+        <HomeSustainabilitySection />
+        <HomeCultureSection />
+        <HomeEvolutionSection />
+        <HomeConnectSection />
+      </Stack>
+      {/* {mobileView && <Typography variant="h5">Home Mobile View</Typography>}
       {tabletView && <Typography variant="h5">Home Tablet View</Typography>}
       {laptopView && <Typography variant="h5">Home Laptop View</Typography>}
       {desktopView && (
@@ -50,7 +51,7 @@ const Home = () => {
           <HomeEvolutionSection />
           <HomeConnectSection />
         </Stack>
-      )}
+      )} */}
     </>
   );
 };

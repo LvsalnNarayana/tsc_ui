@@ -8,7 +8,7 @@ const AboutCultureSection = () => {
   return (
     <Container maxWidth="desktop">
       <Stack
-        height="950px"
+        height="100%"
         direction="column"
         justifyContent="flex-start"
         alignItems="center"

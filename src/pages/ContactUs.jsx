@@ -19,23 +19,26 @@ const ContactUs = () => {
 
   return (
     <>
-      {mobileView && (
-        <Typography variant="h5">ContactUs Mobile View</Typography>
-      )}
-      {tabletView && (
-        <Typography variant="h5">ContactUs Tablet View</Typography>
-      )}
-      {laptopView && (
-        <Typography variant="h5">ContactUs Laptop View</Typography>
-      )}
-      {desktopView && (
-        <Stack
-          width="100%"
-          sx={{ color: "#fff", backgroundColor: "#040B12" }}
-        >
-          <ContactHeroSection />
-        </Stack>
-      )}
+      <Stack width="100%" sx={{ color: "#fff", backgroundColor: "#040B12" }}>
+        <ContactHeroSection />
+      </Stack>
+        {/* {mobileView && (
+          <Typography variant="h5">ContactUs Mobile View</Typography>
+        )}
+        {tabletView && (
+          <Typography variant="h5">ContactUs Tablet View</Typography>
+        )}
+        {laptopView && (
+          <Typography variant="h5">ContactUs Laptop View</Typography>
+        )}
+        {desktopView && (
+          <Stack
+            width="100%"
+            sx={{ color: "#fff", backgroundColor: "#040B12" }}
+          >
+            <ContactHeroSection />
+          </Stack>
+        )} */}
     </>
   );
 };

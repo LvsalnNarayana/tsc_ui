@@ -4,14 +4,14 @@ import React from "react";
 
 import { Stack, Typography, useMediaQuery } from "@mui/material";
 
+import Eclipe1 from "../components/shared/Eclipe1";
+import Eclipse2 from "../components/shared/Eclipse2";
 import AboutHeroSection from "../components/about/AboutHeroSection";
 import AboutLiveSection from "../components/about/AboutLiveSection";
 import HomeConnectSection from "../components/home/HomeConnectSection";
 import AboutVisionSection from "../components/about/AboutVisionSection";
 import AboutCultureSection from "../components/about/AboutCultureSection";
 import AboutEvolutionSection from "../components/about/AboutEvolutionSection";
-import Eclipe1 from "../components/shared/Eclipe1";
-import Eclipse2 from "../components/shared/Eclipse2";
 
 const AboutUs = () => {
   const mobileView = useMediaQuery((mobileTheme) => {
@@ -32,20 +32,20 @@ const AboutUs = () => {
       <Stack
         width="100%"
         maxWidth="100%"
-        sx={{ color: "#fff", backgroundColor: "#040B12", position: "relative" }}
+        sx={{ color: "#fff", position: "relative", backgroundColor: "#040B12" }}
       >
         <Eclipe1
           style={{
-            position: "absolute",
-            top: "100vh",
             right: 0,
+            top: "100vh",
+            position: "absolute",
           }}
         />
         <Eclipse2
           style={{
-            position: "absolute",
-            top: "100vh",
             left: 0,
+            top: "100vh",
+            position: "absolute",
           }}
         />
         <AboutHeroSection />

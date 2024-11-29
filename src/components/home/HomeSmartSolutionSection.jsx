@@ -43,7 +43,7 @@ const HomeSmartSolutionSection = () => {
       <Stack
         ref={containerRef}
         sx={{
-          height: "600vh",
+          height: "200vh",
           overflowY: "clip",
           position: "relative",
         }}

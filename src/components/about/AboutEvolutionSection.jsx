@@ -4,7 +4,17 @@ import { Box, Stack, Container, Typography } from "@mui/material";
 
 const AboutEvolutionSection = () => {
   return (
-    <Container maxWidth="desktop">
+    <Container
+      maxWidth="desktop"
+      sx={{
+        mt: {
+          dektop: "-700px",
+          laptop: "-500px",
+          tablet: "-300px",
+          mobile: "-200px",
+        },
+      }}
+    >
       <Stack
         pt={5}
         pb={10}

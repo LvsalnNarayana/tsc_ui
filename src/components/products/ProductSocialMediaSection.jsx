@@ -112,6 +112,12 @@ const ProductSocialMediaSection = () => {
                 key={livesItem.id}
                 px={5}
                 py={5}
+                gap={{
+                  laptop: 3,
+                  desktop: 3,
+                  tablet: 8,
+                  mobile: 8,
+                }}
                 direction={{
                   laptop: "row",
                   desktop: "row",

@@ -242,7 +242,8 @@ const HomeSmartSolutionSection = () => {
                   }}
                   fontWeight="normal"
                 >
-                  Social Media CRM
+                  {currentSlide === 1 && "Custom CRM Development"}
+                  {currentSlide === 2 && "When you work with us"}
                 </Typography>
                 <Typography
                   fontSize={{
@@ -256,9 +257,10 @@ const HomeSmartSolutionSection = () => {
                   letterSpacing="1px"
                   className="lato"
                 >
-                  Engage and retain customers with our advanced social media CRM
-                  solutions. Harness the power of social platforms to build
-                  meaningful relationships and drive business growth.
+                  {currentSlide === 1 &&
+                    "Does your business require precise CRM for unique workflows? We offer custom and latest CRM solutions, intuitive, feature-rich, and powered with advanced analytics. Simplify your processes, get insights, and build better relationships."}
+                  {currentSlide === 2 &&
+                    "Get custom CRM Apps and cloud-based SaaS. Personalized Workflow Automation to improve customer experience. Build and deploy custom CRM modules as per your needs."}
                 </Typography>
                 <Button
                   sx={{

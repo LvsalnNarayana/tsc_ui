@@ -50,7 +50,12 @@ const HomeSmartSolutionSection = () => {
       >
         {/* Sticky Content */}
         <Stack
-          py={10}
+          py={{
+            laptop: 10,
+            desktop: 10,
+            tablet: 0,
+            mobile: 0,
+          }}
           direction="column"
           justifyContent="center"
           alignItems="center"
@@ -91,8 +96,8 @@ const HomeSmartSolutionSection = () => {
               mobile: "100%",
             }}
             textAlign={{
-              tablet: "left",
-              mobile: "left",
+              tablet: "center",
+              mobile: "center",
               laptop: "center",
               desktop: "center",
             }}
@@ -231,8 +236,8 @@ const HomeSmartSolutionSection = () => {
                 <Typography
                   fontSize={{
                     laptop: 40,
-                    tablet: 18,
-                    mobile: 18,
+                    tablet: 24,
+                    mobile: 24,
                     desktop: 40,
                   }}
                   fontWeight="normal"

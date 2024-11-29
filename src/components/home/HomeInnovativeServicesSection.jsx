@@ -1,8 +1,13 @@
 /* eslint-disable max-lines */
 import React from "react";
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 
 import { Box, Stack, Container, Typography } from "@mui/material";
+
+import phoneJson from "../../../public/phone-02.json";
+import cloudJson from "../../../public/cloud-01.json";
+import laptopJson from "../../../public/laptop-02.json";
+import cartJson from "../../../public/shopping-cart-01.json";
 
 const HomeInnovativeServicesSection = () => {
   return (
@@ -74,28 +79,28 @@ const HomeInnovativeServicesSection = () => {
           {[
             {
               id: 1,
-              icon: "/home_phone.svg",
+              icon: phoneJson,
               title: "Mobile App Development",
               description:
                 "Grab attention with robust user-friendly mobile app solutions \n built with the latest technologies.",
             },
             {
               id: 2,
+              icon: laptopJson,
               title: "Web Development",
-              icon: "/home_laptop.svg",
               description:
                 "Boost your online presence with our premium services. We build \n fast, intuitive websites and online solutions for any complexity.",
             },
             {
               id: 3,
+              icon: cartJson,
               title: "E-commerce Services",
-              icon: "/home_shopping_cart.svg",
               description:
                 "Get more from your business with a feature-rich eStore. Enjoy\n customized, mobile-friendly solutions that enhance the shopping \nexperience and deliver results.",
             },
             {
               id: 4,
-              icon: "/home_cloud.svg",
+              icon: cloudJson,
               title: "Cloud Consulting",
               description:
                 "Transform your business with industry-specific cloud solutions.\n Leverage our cloud infrastructure, software, storage, and\n security services expertise.",
@@ -233,17 +238,7 @@ const HomeInnovativeServicesSection = () => {
                   />
                 </Stack>
                 {/* <Box component="img" src={service?.icon} width={90} /> */}
-                <Lottie
-                  width={90}
-                  options={{
-                    loop: true,
-                    autoplay: true,
-                    animationData: "/phone-02.json",
-                    rendererSettings: {
-                      preserveAspectRatio: "xMidYMid slice",
-                    },
-                  }}
-                />
+                <Lottie width={90} animationData={service?.icon} />
                 <Box
                   className="hover-element"
                   sx={{

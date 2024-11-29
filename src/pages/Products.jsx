@@ -14,6 +14,8 @@ import ProductPerformanceSection from "../components/products/ProductPerformance
 import ProductSocialMediaSection from "../components/products/ProductSocialMediaSection";
 import ProductEvolutionSection from "../components/products/ProductEvolutionSection";
 import HomeConnectSection from "./../components/home/HomeConnectSection";
+import Eclipse4 from "../components/shared/Eclipse4";
+import Eclipse3 from "../components/shared/Eclipse3";
 
 const Products = () => {
   const mobileView = useMediaQuery((mobileTheme) => {
@@ -31,7 +33,63 @@ const Products = () => {
 
   return (
     <>
-      <Stack width="100%" maxWidth="100vw">
+      <Stack width="100%" maxWidth="100vw" style={{ position: "relative" }}>
+        <Eclipse3
+          style={{
+            left: 0,
+            top: "100vh",
+            position: "absolute",
+          }}
+        />
+        <Eclipse4
+          style={{
+            right: 0,
+            top: "150vh",
+            position: "absolute",
+          }}
+        />
+        <Eclipse3
+          style={{
+            left: 0,
+            top: "200vh",
+            position: "absolute",
+          }}
+        />
+        <Eclipse4
+          style={{
+            right: 0,
+            top: "250vh",
+            position: "absolute",
+          }}
+        />
+        <Eclipse3
+          style={{
+            left: 0,
+            top: "300vh",
+            position: "absolute",
+          }}
+        />
+        <Eclipse4
+          style={{
+            right: 0,
+            top: "500vh",
+            position: "absolute",
+          }}
+        />
+        <Eclipse3
+          style={{
+            left: 0,
+            top: "1500vh",
+            position: "absolute",
+          }}
+        />
+        <Eclipse4
+          style={{
+            right: 0,
+            top: "1600vh",
+            position: "absolute",
+          }}
+        />
         <ProductsHeroSection />
         <ProductPerformanceSection />
         <ProductMustHavesSection />

@@ -151,6 +151,9 @@ const HomeHeroSection = () => {
                     desktop: 6,
                   },
                 }}
+                onClick={() => {
+                  navigate("/services");
+                }}
               >
                 Our Services
               </Button>

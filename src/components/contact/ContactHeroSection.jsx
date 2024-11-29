@@ -15,6 +15,7 @@ const ContactHeroSection = () => {
         position: "relative",
         alignItems: "center",
         justifyContent: "center",
+        paddingTop: "200px",
       }}
     >
       <AboutHeroPattern

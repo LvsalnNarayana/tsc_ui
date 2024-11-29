@@ -29,7 +29,10 @@ const ContactUs = () => {
         <Typography variant="h5">ContactUs Laptop View</Typography>
       )}
       {desktopView && (
-        <Stack width="100%" sx={{ color: "#fff", backgroundColor: "#040B12" }}>
+        <Stack
+          width="100%"
+          sx={{ color: "#fff", backgroundColor: "#040B12" }}
+        >
           <ContactHeroSection />
         </Stack>
       )}

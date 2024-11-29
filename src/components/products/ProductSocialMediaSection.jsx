@@ -78,31 +78,31 @@ const ProductSocialMediaSection = () => {
           {[
             {
               id: 1,
-              icon: "/worklife.3gp",
+              icon: "/control social media_1.mp4",
               title: "Measure and Prove Your Social Media ROI",
               description: `You know social media is more than brand awareness. Now you can prove it by finding out what posts and conversations drive sales, leads, and traffic. Pull data from Google Analytics. Tie your social media to real revenue goals. Know where to spend your budget.`,
             },
             {
               id: 2,
-              icon: "/worklife.3gp",
+              icon: "/ethics.mp4",
               title: "Control Your Social Media Content",
               description: `Plan and schedule your social media content across all platforms with a simple post scheduler and shared calendars. Manage your content. Customize your post content for each platform. Collaborate with internal and external teams.`,
             },
             {
               id: 3,
-              icon: "/worklife.3gp",
+              icon: "/listen.mp4",
               title: "Listen to the Conversations that Matter",
               description: `Monitor and track mentions of your brand, industry, and competitors. Capture conversations from social networks, news sites, and blogs. Measure and protect your brand reputation. Get inspiration for content. Find out what your customers want and increase brand loyalty.`,
             },
             {
               id: 4,
-              icon: "/worklife.3gp",
+              icon: "/charts.mp4",
               title: "Create Reports Without the Pain",
               description: `Make better decisions with social media reports that don’t take all day to create. Compare key social metrics across all channels from one dashboard. See your top posts for each platform. Build and automate custom, presentation-ready social media reports.`,
             },
             {
               id: 5,
-              icon: "/worklife.3gp",
+              icon: "/Measure_1.mp4",
               title: "Integrates with Your Existing Tools and Platforms",
               description: `No more switching between social networks and other tools. Use our Social Media CRM to manage all your team’s social media marketing in one place.`,
             },
@@ -183,7 +183,6 @@ const ProductSocialMediaSection = () => {
                     autoPlay
                     loop
                     muted
-                    controls
                     playsInline
                     style={{
                       objectFit: "cover",
@@ -211,6 +210,9 @@ const ProductSocialMediaSection = () => {
               laptop: 6,
               desktop: 6,
             },
+            display: "flex",
+            alignItems: "center",
+            gap: 1,
           }}
           onClick={() => {
             const element = document.getElementById("connect");
@@ -228,6 +230,8 @@ const ProductSocialMediaSection = () => {
           }}
         >
           Lets talk
+          
+        <img alt="arrow" src="/ArrowUpRight.svg" />
         </Button>
       </Stack>
     </Container>

@@ -4,10 +4,10 @@ import Lottie from "lottie-react";
 
 import { Box, Stack, Container, Typography } from "@mui/material";
 
-import phoneJson from "../../../public/phone-02.json";
-import cloudJson from "../../../public/cloud-01.json";
-import laptopJson from "../../../public/laptop-02.json";
-import cartJson from "../../../public/shopping-cart-01.json";
+import phoneJson from "../../assets/phone-02.json";
+import cloudJson from "../../assets/cloud-01.json";
+import laptopJson from "../../assets/laptop-02.json";
+import cartJson from "../../assets/shopping-cart-01.json";
 
 const HomeInnovativeServicesSection = () => {
   return (

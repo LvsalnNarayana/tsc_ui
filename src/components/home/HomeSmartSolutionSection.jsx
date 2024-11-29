@@ -64,7 +64,7 @@ const HomeSmartSolutionSection = () => {
             top: 0,
             zIndex: 10,
             position: "sticky",
-            backgroundColor: "rgba(0, 0, 0, 0.8)",
+            // backgroundColor: "rgba(0, 0, 0, 0.8)",
           }}
         >
           <Typography

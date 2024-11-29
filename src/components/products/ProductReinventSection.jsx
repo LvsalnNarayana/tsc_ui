@@ -3,7 +3,8 @@ import React from "react";
 import { Stack, Typography } from "@mui/material";
 
 import StrategySectionBackgroundSVG from "../SVGComponents/StrategySectionBackgroundSVG";
-
+import reinventSection from "../../assets/Reinvent Your Business.json";
+import Lottie from "lottie-react";
 const ProductReinventSection = () => {
   return (
     <Stack
@@ -12,15 +13,16 @@ const ProductReinventSection = () => {
       justifyContent="center"
       alignItems="center"
       height="500px"
-      sx={{ position: "relative" }}
+      sx={{ my: 8, position: "relative", width: "100%" }} // Ensure Stack takes full width
     >
-      <StrategySectionBackgroundSVG
+      <Lottie
+        animationData={reinventSection}
         style={{
           top: 0,
           left: 0,
-          width: "100%",
-          height: "450px",
-          position: "absolute",
+          width: "110vw", // Full width of the viewport
+          height: "100%", // Match parent height
+          position: "absolute", // Stays absolutely positioned within the parent
         }}
       />
       <Typography

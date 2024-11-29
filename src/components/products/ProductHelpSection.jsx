@@ -65,9 +65,15 @@ const ProductHelpSection = () => {
             laptop: 6,
             desktop: 6,
           },
+          display: "flex",
+          alignItems: "center",
+          gap: 1,
+          zIndex: 2,
         }}
       >
         Lets talk
+        
+        <img alt="arrow" src="/ArrowUpRight.svg" />
       </Button>
     </Stack>
   );

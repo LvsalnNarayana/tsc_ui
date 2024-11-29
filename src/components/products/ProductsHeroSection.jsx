@@ -4,6 +4,7 @@ import { Stack, Button, Container, Typography } from "@mui/material";
 
 import HeroBackground from "../Backgrounds/HeroBackground";
 
+
 const ProductsHeroSection = () => {
   return (
     <Stack

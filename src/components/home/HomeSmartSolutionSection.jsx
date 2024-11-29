@@ -24,7 +24,7 @@ const HomeSmartSolutionSection = () => {
 
   useEffect(() => {
     const unsubscribe = scrollPercentage.onChange((latest) => {
-      console.log("Scroll Percentage:", latest);
+      // console.log("Scroll Percentage:", latest);
 
       if (latest > 50) {
         setCurrentSlide(2);

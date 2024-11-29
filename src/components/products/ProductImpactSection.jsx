@@ -2,10 +2,19 @@ import React from "react";
 
 import { Box, Stack, Container, Typography } from "@mui/material";
 
-const AboutLiveSection = () => {
+const ProductImpactSection = () => {
   return (
     <Container maxWidth="desktop">
-      <Stack py={8} gap={10} alignItems="center">
+      <Stack
+        py={8}
+        gap={{
+          laptop: 7,
+          desktop: 7,
+          tablet: 10,
+          mobile: 10,
+        }}
+        alignItems="center"
+      >
         <Typography
           fontSize={{
             laptop: 60,
@@ -23,19 +32,36 @@ const AboutLiveSection = () => {
             WebkitTextFillColor: "transparent",
           }}
         >
-          We Live By
+          Drive Real Impact on Social Media
+        </Typography>
+        <Typography
+          fontSize={{
+            laptop: 18,
+            tablet: 16,
+            mobile: 16,
+            desktop: 18,
+          }}
+          lineHeight={1.5}
+          textAlign="center"
+          color="#ffffff80"
+          className="lato responsive-text"
+        >
+          From Engagement to ROI. Save time, get organized and manage your
+          social media with our Social
+          <br /> Media CRM. Measure and drive real business impact from your
+          social campaigns in one place.
         </Typography>
 
         <Stack
           my={{
-            laptop: 7,
+            laptop: 9,
             tablet: 2,
             mobile: 2,
-            desktop: 7,
+            desktop: 9,
           }}
           gap={{
-            laptop: 4,
-            desktop: 4,
+            laptop: 7,
+            desktop: 7,
             tablet: 10,
             mobile: 10,
           }}
@@ -46,46 +72,40 @@ const AboutLiveSection = () => {
             tablet: "column",
             mobile: "column",
           }}
-          justifyContent="space-around"
+          justifyContent="center"
           alignItems="center"
         >
           {[
             {
               id: 1,
-              icon: "/hand_greeting.svg",
-              title: "Honesty in all dealings",
-              description: `We follow ethical business practices and prioritize trust and
-                  integrity in every interaction we have. This leads to long-term
-                  partnerships that grow.`,
+              icon: "/like.svg",
+              title: "Manage Your Social Content",
+              description: `Everything you need to manage your content and grow your brand across all major social media platforms.
+`,
             },
             {
               id: 2,
-              icon: "/key.svg",
-              title: "Innovation is key",
-              description: `We believe innovation is the way to global transformation. We go
-                  beyond providing solutions; we explore ideas, push limits, and
-                  shape the future of our client's businesses.`,
+              icon: "/hand_greeting.svg",
+              title: "Collaborate with Your Team",
+              description: `No more internal friction and multiple emails and messages to get approvals.`,
             },
             {
               id: 3,
               icon: "/check.svg",
-              title: "Values-Based Culture",
-              description: `At TSC we have a culture where personal values align with our
-                  company mission. This alignment creates a positive work
-                  environment where everyone can bring their best.`,
+              title: "Give Your Team Actionable Insights",
+              description: `Measure the metrics that matter to your brand. Get the insights and data to write posts and start conversations that grow your business.`,
             },
           ]?.map((livesItem) => {
             return (
               <Stack
                 key={livesItem.id}
                 px={5}
-                py={8}
-                gap={2}
-                justifyContent="center"
+                py={9}
+                justifyContent="flex-start"
                 alignItems="center"
                 sx={{
-                  width: 364,
-                  minHeight: 310,
+                  width: "100%",
+                  minHeight: 315,
                   height: "100%",
                   position: "relative",
                   borderRadius: "20px",
@@ -107,7 +127,7 @@ const AboutLiveSection = () => {
                     overflow: "hidden",
                     borderRadius: "20px",
                     position: "absolute",
-                    backgroundColor: "rgba(0, 0, 0, 0.5)",
+                    // backgroundColor: "rgba(0, 0, 0, 0.5)",
                     transition: "opacity 0.3s ease-in-out",
                   }}
                 >
@@ -122,7 +142,7 @@ const AboutLiveSection = () => {
                       <path
                         d="M337 230C337 270.317 304.317 303 264 303C223.683 303 191 270.317 191 230C191 189.683 223.683 157 264 157C304.317 157 337 189.683 337 230Z"
                         fill="#41C4DA"
-                        fillOpacity="0.6"
+                        fillOpacity="1"
                       />
                     </g>
                     <defs>
@@ -151,7 +171,13 @@ const AboutLiveSection = () => {
                   </svg>
                 </Box>
 
-                <Stack width="100%" height="100%" sx={{ zIndex: 3 }}>
+                <Stack
+                  gap={2}
+                  alignItems="center"
+                  width="100%"
+                  height="100%"
+                  sx={{ zIndex: 3 }}
+                >
                   <Stack
                     width={100}
                     height={100}
@@ -179,7 +205,7 @@ const AboutLiveSection = () => {
                     textAlign="center"
                     fontSize={26}
                     lineHeight={1.4}
-                    fontWeight={500}
+                    fontWeight={400}
                   >
                     {livesItem?.title}
                   </Typography>
@@ -205,4 +231,4 @@ const AboutLiveSection = () => {
   );
 };
 
-export default AboutLiveSection;
+export default ProductImpactSection;

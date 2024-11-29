@@ -1,4 +1,6 @@
+/* eslint-disable max-lines */
 import React from "react";
+import Lottie from "react-lottie";
 
 import { Box, Stack, Container, Typography } from "@mui/material";
 
@@ -230,7 +232,18 @@ const HomeInnovativeServicesSection = () => {
                     }}
                   />
                 </Stack>
-                <Box component="img" src={service?.icon} width={90} />
+                {/* <Box component="img" src={service?.icon} width={90} /> */}
+                <Lottie
+                  width={90}
+                  options={{
+                    loop: true,
+                    autoplay: true,
+                    animationData: "/phone-02.json",
+                    rendererSettings: {
+                      preserveAspectRatio: "xMidYMid slice",
+                    },
+                  }}
+                />
                 <Box
                   className="hover-element"
                   sx={{

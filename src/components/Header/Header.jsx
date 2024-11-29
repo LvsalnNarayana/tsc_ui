@@ -150,7 +150,6 @@ const Header = () => {
                 fill="white"
               />
             </svg>
-            ;
           </Link>
           {mobileView || tabletView ? (
             <IconButton

@@ -1,15 +1,16 @@
 import React from "react";
 
-import { Stack, Typography } from "@mui/material";
+import { Stack, Button, Typography } from "@mui/material";
 
-const HomeMarketSection = () => {
+const ProductHelpSection = () => {
   return (
     <Stack
       py={20}
-      direction="row"
+      direction="column"
       justifyContent="center"
       alignItems="center"
       height="fit-content"
+      gap={4}
       sx={{
         position: "relative",
         backgroundSize: "cover",
@@ -47,11 +48,29 @@ const HomeMarketSection = () => {
         className="responsive-text"
         sx={{ zIndex: 2 }}
       >
-        Win the market where competitors are
-        <br /> getting stronger, smarter and faster.
+        We Can Help You Reinvent Your Business!
       </Typography>
+      <Button
+        sx={{
+          py: 1.7,
+          fontSize: 18,
+          lineHeight: 1,
+          color: "#fff",
+          borderRadius: "99px",
+          boxShadow: "0px 1px 0px 0px rgba(255, 255, 255, 0.10) inset",
+          background: "linear-gradient(180deg, #525252 -61.82%, #292929 100%)",
+          px: {
+            mobile: 3,
+            tablet: 3,
+            laptop: 6,
+            desktop: 6,
+          },
+        }}
+      >
+        Lets talk
+      </Button>
     </Stack>
   );
 };
 
-export default HomeMarketSection;
+export default ProductHelpSection;

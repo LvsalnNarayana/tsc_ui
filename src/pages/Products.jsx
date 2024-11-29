@@ -1,6 +1,19 @@
 import React from "react";
 
-import { Typography, useMediaQuery } from "@mui/material";
+import { Stack, useMediaQuery } from "@mui/material";
+
+import ProductServices from "../components/products/ProductServices";
+import ProductHelpSection from "../components/products/ProductHelpSection";
+import ProductsHeroSection from "../components/products/ProductsHeroSection";
+import ProductPersonalized from "../components/products/ProductPersonalized";
+import ProductImpactSection from "../components/products/ProductImpactSection";
+import ProductModulesSection from "../components/products/ProductModulesSection";
+import ProductReinventSection from "../components/products/ProductReinventSection";
+import ProductMustHavesSection from "../components/products/ProductMustHavesSection";
+import ProductPerformanceSection from "../components/products/ProductPerformanceSection";
+import ProductSocialMediaSection from "../components/products/ProductSocialMediaSection";
+import ProductEvolutionSection from "../components/products/ProductEvolutionSection";
+import HomeConnectSection from "./../components/home/HomeConnectSection";
 
 const Products = () => {
   const mobileView = useMediaQuery((mobileTheme) => {
@@ -18,12 +31,26 @@ const Products = () => {
 
   return (
     <>
-      {mobileView && <Typography variant="h5">Products Mobile View</Typography>}
+      <Stack width="100%" maxWidth="100vw">
+        <ProductsHeroSection />
+        <ProductPerformanceSection />
+        <ProductMustHavesSection />
+        <ProductImpactSection />
+        <ProductSocialMediaSection />
+        <ProductReinventSection />
+        <ProductPersonalized />
+        <ProductServices />
+        <ProductModulesSection />
+        <ProductHelpSection />
+        <ProductEvolutionSection />
+        <HomeConnectSection />
+      </Stack>
+      {/* {mobileView && <Typography variant="h5">Products Mobile View</Typography>}
       {tabletView && <Typography variant="h5">Products Tablet View</Typography>}
       {laptopView && <Typography variant="h5">Products Laptop View</Typography>}
       {desktopView && (
         <Typography variant="h5">Products Desktop View</Typography>
-      )}
+      )} */}
     </>
   );
 };

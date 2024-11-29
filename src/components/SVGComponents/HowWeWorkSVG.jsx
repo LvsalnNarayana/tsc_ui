@@ -1,42 +1,9 @@
 /* eslint-disable max-lines */
-import React, { useState, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
+import React from "react";
 
 const HowWeWorkSVG = () => {
-  const controls = useAnimation();
-
-  const [gradientProps, setGradientProps] = useState({
-    x1: 187,
-    y1: 162,
-    y2: 162,
-    x2: 1094.41,
-  });
-
-  useEffect(() => {
-    let direction = 1;
-    const interval = setInterval(() => {
-      setGradientProps((prev) => {
-        const { x1, x2 } = prev;
-        const newX1 = x1 + direction * 10;
-        const newX2 = x2 + direction * 10;
-
-        if (newX2 > 1200 || newX1 < 100) direction *= -1;
-
-        return {
-          ...prev,
-          x1: newX1,
-          x2: newX2,
-        };
-      });
-    }, 50);
-
-    return () => {
-      return clearInterval(interval);
-    };
-  }, []);
-
   return (
-    <div>
+    <div style={{ width: "100%", height: "100%" }}>
       <svg
         width="100%"
         height="100%"

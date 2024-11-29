@@ -46,12 +46,12 @@ const HomeHeroSection = () => {
           alignItems="center"
         >
           <Stack
-            gap={0}
+            gap={2}
             width={{
-              laptop: "50%",
+              laptop: "60%",
               mobile: "100%",
               tablet: "100%",
-              desktop: "50%",
+              desktop: "60%",
             }}
             direction="column"
             justifyContent="flex-start"

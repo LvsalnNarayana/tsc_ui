@@ -1,9 +1,9 @@
 /* eslint-disable max-lines */
 import React from "react";
 
-const AboutCultureSVG = () => {
+const AboutCultureSVG = ({ style }) => {
   return (
-    <div>
+    <div style={{ width: "100%", height: "auto", ...style }}>
       <svg
         width="100%"
         height="1672"

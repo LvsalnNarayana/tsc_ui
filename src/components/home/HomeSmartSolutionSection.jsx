@@ -56,7 +56,7 @@ const HomeSmartSolutionSection = () => {
           alignItems="center"
           minHeight="100vh"
           sx={{
-            top: 10,
+            top: 0,
             zIndex: 10,
             position: "sticky",
             backgroundColor: "rgba(0, 0, 0, 0.8)",
@@ -82,7 +82,7 @@ const HomeSmartSolutionSection = () => {
             Smart Solution
           </Typography>
           <Typography
-            mb={10}
+            mb={8}
             fontSize={18}
             width={{
               laptop: "60%",
@@ -108,6 +108,10 @@ const HomeSmartSolutionSection = () => {
           </Typography>
 
           <Stack
+            style={{
+              zIndex: 10,
+              minHeight: "420px",
+            }}
             width={{
               laptop: "60%",
               desktop: "60%",
@@ -125,16 +129,16 @@ const HomeSmartSolutionSection = () => {
               direction="row"
               justifyContent="flex-start"
               alignItems={{
-                laptop: "center",
-                desktop: "center",
+                laptop: "flex-start",
                 tablet: "flex-start",
                 mobile: "flex-start",
+                desktop: "flex-start",
               }}
             >
               <Stack
                 width="40%"
                 flexShrink={0}
-                justifyContent="center"
+                justifyContent="flex-start"
                 alignItems="center"
               >
                 <Box
@@ -183,7 +187,7 @@ const HomeSmartSolutionSection = () => {
                   orientation="vertical"
                   sx={{
                     borderWidth: 3,
-                    height: "150px",
+                    height: "120px",
                     borderColor: currentSlide === 1 ? "#41c4da" : "#112334",
                   }}
                 />
@@ -191,7 +195,7 @@ const HomeSmartSolutionSection = () => {
                   orientation="vertical"
                   sx={{
                     borderWidth: 3,
-                    height: "150px",
+                    height: "120px",
                     borderColor: currentSlide === 2 ? "#41c4da" : "#112334",
                   }}
                 />
@@ -215,10 +219,10 @@ const HomeSmartSolutionSection = () => {
                 flexShrink={0}
                 gap={3}
                 justifyContent={{
-                  laptop: "cenyter",
-                  desktop: "center",
+                  laptop: "flex-start",
                   tablet: "flex-start",
                   mobile: "flex-start",
+                  desktop: "flex-start",
                 }}
                 alignItems="flex-start"
                 flexGrow={1}
@@ -226,10 +230,10 @@ const HomeSmartSolutionSection = () => {
               >
                 <Typography
                   fontSize={{
-                    laptop: 60,
+                    laptop: 40,
                     tablet: 18,
                     mobile: 18,
-                    desktop: 60,
+                    desktop: 40,
                   }}
                   fontWeight="normal"
                 >
@@ -285,13 +289,13 @@ const HomeSmartSolutionSection = () => {
               left: 0,
               bottom: 0,
               zIndex: 1,
-              opacity: 0.4,
+              opacity: 1,
               width: "100%",
               height: "60vh",
               objectFit: "cover",
               position: "absolute",
               maskImage:
-                "linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(255, 255, 255, 0.4))",
+                "linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.5))",
             }}
           />
         </Stack>

@@ -4,7 +4,6 @@ import { Stack, Button, Container, Typography } from "@mui/material";
 
 import HeroBackground from "../Backgrounds/HeroBackground";
 
-
 const ProductsHeroSection = () => {
   return (
     <Stack
@@ -33,6 +32,17 @@ const ProductsHeroSection = () => {
           width: "100%",
           objectFit: "cover",
           position: "absolute",
+        }}
+      />
+      <img
+        alt="product-hero"
+        src={"/product_hero.gif"}
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          position: "absolute",
+          zIndex: -1,
         }}
       />
       <Container maxWidth="desktop">
@@ -87,11 +97,14 @@ const ProductsHeroSection = () => {
           </Typography>
           <Button
             sx={{
+              gap: 1,
               py: 1.7,
               fontSize: 18,
               lineHeight: 1,
               color: "#fff",
+              display: "flex",
               borderRadius: "99px",
+              alignItems: "center",
               boxShadow: "0px 1px 0px 0px rgba(255, 255, 255, 0.10) inset",
               background:
                 "linear-gradient(180deg, #525252 -61.82%, #292929 100%)",
@@ -102,8 +115,23 @@ const ProductsHeroSection = () => {
                 desktop: 6,
               },
             }}
+            onClick={() => {
+              const element = document.getElementById("connect");
+
+              if (element) {
+                const elementPosition =
+                  element.getBoundingClientRect().top + window.scrollY;
+                const offsetPosition = elementPosition - 87;
+
+                window.scrollTo({
+                  behavior: "smooth",
+                  top: offsetPosition,
+                });
+              }
+            }}
           >
             Lets talk
+            <img alt="arrow" src="/ArrowUpRight.svg" />
           </Button>
         </Stack>
       </Container>

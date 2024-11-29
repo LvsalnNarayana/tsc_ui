@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 /* eslint-disable operator-linebreak */
 import { useScroll, useTransform } from "framer-motion";
 import React, { useRef, useState, useEffect } from "react";
@@ -43,7 +44,7 @@ const HomeSmartSolutionSection = () => {
       <Stack
         ref={containerRef}
         sx={{
-          height: "200vh",
+          height: "300vh",
           overflowY: "clip",
           position: "relative",
         }}
@@ -220,7 +221,7 @@ const HomeSmartSolutionSection = () => {
               </Stack>
 
               <Stack
-                width="20%"
+                width="50%"
                 flexShrink={0}
                 gap={3}
                 justifyContent={{
@@ -242,8 +243,8 @@ const HomeSmartSolutionSection = () => {
                   }}
                   fontWeight="normal"
                 >
-                  {currentSlide === 1 && "Custom CRM Development"}
-                  {currentSlide === 2 && "When you work with us"}
+                  {currentSlide === 1 && "Social Media CRM"}
+                  {currentSlide === 2 && "Custom CRM Development"}
                 </Typography>
                 <Typography
                   fontSize={{
@@ -256,11 +257,33 @@ const HomeSmartSolutionSection = () => {
                   color="rgba(255, 255, 255, 0.80)"
                   letterSpacing="1px"
                   className="lato"
+                  sx={{
+                    listStyle:"disc"
+                  }}
                 >
                   {currentSlide === 1 &&
                     "Does your business require precise CRM for unique workflows? We offer custom and latest CRM solutions, intuitive, feature-rich, and powered with advanced analytics. Simplify your processes, get insights, and build better relationships."}
-                  {currentSlide === 2 &&
-                    "Get custom CRM Apps and cloud-based SaaS. Personalized Workflow Automation to improve customer experience. Build and deploy custom CRM modules as per your needs."}
+                  {currentSlide === 2 && (
+                    <>
+                      Does your business require precise CRM for unique
+                      workflows? We offer custom and latest CRM solutions,
+                      intuitive, feature-rich, and powered with advanced
+                      analytics. Simplify your processes, get insights, and
+                      build better relationships.
+                      <br />
+                      <b>When you work with us:</b>
+                      <ul style={{paddingLeft:"20px"}}>
+                        <li>Get custom CRM Apps and cloud-based SaaS.</li>
+                        <li>
+                          Personalized Workflow Automation to improve customer
+                          experience.
+                        </li>
+                        <li>
+                          Build and deploy custom CRM modules as per your needs.
+                        </li>
+                      </ul>
+                    </>
+                  )}
                 </Typography>
                 <Button
                   sx={{

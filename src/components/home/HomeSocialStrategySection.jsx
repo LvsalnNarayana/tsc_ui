@@ -3,7 +3,7 @@ import React from "react";
 import { Stack, Button, Typography } from "@mui/material";
 
 import StrategySectionBackgroundSVG from "../SVGComponents/StrategySectionBackgroundSVG";
-import reinventJson from "../../assets/Reinvent Your Business.json"
+import reinventJson from "../../assets/Reinvent Your Business.json";
 import Lottie from "lottie-react";
 
 const HomeSocialStrategySection = () => {

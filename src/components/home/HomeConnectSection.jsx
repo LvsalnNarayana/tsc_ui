@@ -31,6 +31,7 @@ const HomeConnectSection = () => {
       sx={{
         zIndex: 2,
       }}
+      id="connect"
     >
       <Stack
         p={{

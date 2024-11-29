@@ -338,6 +338,20 @@ const ServiceCard = ({ card, minHeight }) => {
             justifyContent: "center",
             border: " 1px solid #45BDD6",
           }}
+          onClick={() => {
+            const element = document.getElementById("connect");
+
+            if (element) {
+              const elementPosition =
+                element.getBoundingClientRect().top + window.scrollY;
+              const offsetPosition = elementPosition - 87;
+
+              window.scrollTo({
+                behavior: "smooth",
+                top: offsetPosition,
+              });
+            }
+          }}
         >
           Let’s talk
           <Stack

@@ -116,14 +116,17 @@ const ProductPersonalized = () => {
       </Stack>
       <Button
         sx={{
-          my: 5,
+          gap: 1,
           py: 1.7,
-          mx: "auto",
           fontSize: 18,
           lineHeight: 1,
           color: "#fff",
-          width: "fit-content",
+          width:"fit-content",
+          mx:"auto",
+          mb:10,
+          display: "flex",
           borderRadius: "99px",
+          alignItems: "center",
           boxShadow: "0px 1px 0px 0px rgba(255, 255, 255, 0.10) inset",
           background: "linear-gradient(180deg, #525252 -61.82%, #292929 100%)",
           px: {
@@ -133,8 +136,23 @@ const ProductPersonalized = () => {
             desktop: 6,
           },
         }}
+        onClick={() => {
+          const element = document.getElementById("connect");
+
+          if (element) {
+            const elementPosition =
+              element.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = elementPosition - 87;
+
+            window.scrollTo({
+              behavior: "smooth",
+              top: offsetPosition,
+            });
+          }
+        }}
       >
         Lets talk
+        <img alt="arrow" src="/ArrowUpRight.svg" />
       </Button>
     </>
   );

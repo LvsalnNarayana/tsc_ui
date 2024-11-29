@@ -1,10 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Box, Stack, Button, Container, Typography } from "@mui/material";
 
 import HeroBackground from "../Backgrounds/HeroBackground";
 
 const HomeHeroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <Stack
       width="100%"
@@ -153,11 +156,14 @@ const HomeHeroSection = () => {
               </Button>
               <Button
                 sx={{
+                  gap: 1,
                   py: 1.7,
                   fontSize: 18,
                   lineHeight: 1,
                   color: "#fff",
+                  display: "flex",
                   borderRadius: "99px",
+                  alignItems: "center",
                   boxShadow: "0px 1px 0px 0px rgba(255, 255, 255, 0.10) inset",
                   background:
                     "linear-gradient(180deg, #525252 -61.82%, #292929 100%)",
@@ -168,8 +174,23 @@ const HomeHeroSection = () => {
                     desktop: 6,
                   },
                 }}
+                onClick={() => {
+                  const element = document.getElementById("connect");
+
+                  if (element) {
+                    const elementPosition =
+                      element.getBoundingClientRect().top + window.scrollY;
+                    const offsetPosition = elementPosition - 87;
+
+                    window.scrollTo({
+                      behavior: "smooth",
+                      top: offsetPosition,
+                    });
+                  }
+                }}
               >
                 Get In Touch
+                <img alt="arrow" src="/ArrowUpRight.svg" />
               </Button>
             </Stack>
           </Stack>

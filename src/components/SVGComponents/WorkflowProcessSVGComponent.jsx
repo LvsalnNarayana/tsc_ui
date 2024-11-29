@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 
 const WorkflowProcessSVGComponent = () => {
   return (
-    <div>
+    <div style={{width:"100%",height:"100%"}}>
       <svg
-        width="1140"
-        height="1356"
+        width="100%"
+        height="100%"
         viewBox="0 0 1140 1356"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

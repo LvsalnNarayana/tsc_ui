@@ -7,11 +7,13 @@ const AboutEvolutionSection = () => {
     <Container
       maxWidth="desktop"
       sx={{
+        zIndex: 1,
+        position: "relative",
         mt: {
-          dektop: "-700px",
-          laptop: "-500px",
+          laptop: "-700px",
           tablet: "-300px",
           mobile: "-200px",
+          dektop: "-1000px",
         },
       }}
     >

@@ -52,10 +52,10 @@ const HomeSmartSolutionSection = () => {
         {/* Sticky Content */}
         <Stack
           py={{
-            laptop: 10,
-            desktop: 10,
             tablet: 0,
             mobile: 0,
+            laptop: 10,
+            desktop: 10,
           }}
           direction="column"
           justifyContent="center"
@@ -152,18 +152,12 @@ const HomeSmartSolutionSection = () => {
                   src={
                     currentSlide === 1 ? "/solutions_1.png" : "/solutions_2.png"
                   }
-                  width="100%"
-                  maxHeight="100%"
                   sx={{
-                    height: "100%",
+                    height: "500px", // Fixed height
+                    width: "100%", // Ensure it takes full width of the container
                     borderRadius: 2,
                     overflow: "hidden",
-                    objectFit: {
-                      laptop: "cover",
-                      desktop: "cover",
-                      tablet: "contain",
-                      mobile: "contain",
-                    },
+                    objectFit: "cover", // Ensures the image scales to fit
                   }}
                 />
               </Stack>
@@ -247,6 +241,7 @@ const HomeSmartSolutionSection = () => {
                   {currentSlide === 2 && "Custom CRM Development"}
                 </Typography>
                 <Typography
+                  className="lato"
                   fontSize={{
                     laptop: 18,
                     tablet: 14,
@@ -256,10 +251,6 @@ const HomeSmartSolutionSection = () => {
                   lineHeight={1.5}
                   color="rgba(255, 255, 255, 0.80)"
                   letterSpacing="1px"
-                  className="lato"
-                  sx={{
-                    listStyle:"disc"
-                  }}
                 >
                   {currentSlide === 1 &&
                     "Does your business require precise CRM for unique workflows? We offer custom and latest CRM solutions, intuitive, feature-rich, and powered with advanced analytics. Simplify your processes, get insights, and build better relationships."}
@@ -272,19 +263,27 @@ const HomeSmartSolutionSection = () => {
                       build better relationships.
                       <br />
                       <b>When you work with us:</b>
-                      <ul style={{paddingLeft:"20px"}}>
-                        <li>Get custom CRM Apps and cloud-based SaaS.</li>
-                        <li>
-                          Personalized Workflow Automation to improve customer
-                          experience.
-                        </li>
-                        <li>
-                          Build and deploy custom CRM modules as per your needs.
-                        </li>
-                      </ul>
                     </>
                   )}
                 </Typography>
+                <ul
+                  style={{
+                    lineHeight: 1.5,
+                    paddingLeft: "20px",
+                    letterSpacing: "1px",
+                    color: "rgba(255, 255, 255, 0.80)",
+                  }}
+                  className="lato"
+                >
+                  <li>Get custom CRM Apps and cloud-based SaaS.</li>
+                  <li>
+                    Personalized Workflow Automation to improve customer
+                    experience.
+                  </li>
+                  <li>
+                    Build and deploy custom CRM modules as per your needs.
+                  </li>
+                </ul>
                 <Button
                   sx={{
                     py: 1.7,

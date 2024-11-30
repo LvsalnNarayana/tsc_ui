@@ -8,21 +8,21 @@ import Lottie from "lottie-react";
 const ProductReinventSection = () => {
   return (
     <Stack
-      gap={2}
+      gap={4}
       direction="column"
       justifyContent="center"
       alignItems="center"
       height="500px"
-      sx={{ my: 8, position: "relative", width: "100%" }} // Ensure Stack takes full width
+      sx={{ my: 8, position: "relative" }}
     >
       <Lottie
         animationData={reinventSection}
         style={{
           top: 0,
           left: 0,
-          width: "110vw", // Full width of the viewport
-          height: "100%", // Match parent height
-          position: "absolute", // Stays absolutely positioned within the parent
+          width: "100%",
+          height: "100%",
+          position: "absolute",
         }}
       />
       <Typography

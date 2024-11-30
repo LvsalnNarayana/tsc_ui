@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import {
   Box,
@@ -9,11 +9,13 @@ import {
   ListItem,
   Container,
   IconButton,
+  Typography,
   ListItemText,
   useMediaQuery,
 } from "@mui/material";
 
 const Header = () => {
+  const navigate = useNavigate();
   const { pathname } = useLocation();
   const mobileView = useMediaQuery((theme) => {
     return theme.breakpoints.down("tablet");
@@ -213,16 +215,20 @@ const Header = () => {
                       key={link.path}
                       onClick={handleDrawerToggle}
                     >
-                      <Link
-                        to={link.path}
+                      <Typography
+                        onClick={() => {
+                          return navigate(link.path, { replace: true });
+                        }}
                         style={{
                           width: "100%",
                           color: "white",
+                          fontSize: 16,
+                          fontWeight: 400,
                           textDecoration: "none",
                         }}
                       >
                         <ListItemText primary={link.label} />
-                      </Link>
+                      </Typography>
                     </ListItem>
                   );
                 })}

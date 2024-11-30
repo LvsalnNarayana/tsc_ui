@@ -1,10 +1,9 @@
 import React from "react";
+import Lottie from "lottie-react";
 
 import { Stack, Button, Typography } from "@mui/material";
 
-import StrategySectionBackgroundSVG from "../SVGComponents/StrategySectionBackgroundSVG";
 import reinventJson from "../../assets/Reinvent Your Business.json";
-import Lottie from "lottie-react";
 
 const HomeSocialStrategySection = () => {
   return (
@@ -21,9 +20,9 @@ const HomeSocialStrategySection = () => {
         style={{
           top: 0,
           left: 0,
-          width: "110vw", // Full width of the viewport
-          height: "100%", // Match parent height
-          position: "absolute", // Stays absolutely positioned within the parent
+          width: "100%",
+          height: "100%",
+          position: "absolute",
         }}
       />
       <Typography

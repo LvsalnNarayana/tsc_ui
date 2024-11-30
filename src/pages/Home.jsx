@@ -3,6 +3,11 @@ import React from "react";
 
 import { Stack } from "@mui/material";
 
+import Eclipe1 from "../components/shared/Eclipe1";
+import Eclipse2 from "../components/shared/Eclipse2";
+import Eclipse3 from "../components/shared/Eclipse3";
+import Eclipse4 from "../components/shared/Eclipse4";
+import Eclipse5 from "../components/shared/Eclipse5";
 import HomeHeroSection from "../components/home/HomeHeroSection";
 import HomeDriveSection from "../components/home/HomeDriveSection";
 import HomeMarketSection from "../components/home/HomeMarketSection";
@@ -15,84 +20,58 @@ import HomeSocialStrategySection from "../components/home/HomeSocialStrategySect
 import HomeSustainabilitySection from "../components/home/HomeSustainabilitySection";
 import HomeWorkflowProcessSection from "../components/home/HomeWorkflowProcessSection";
 import HomeInnovativeServicesSection from "../components/home/HomeInnovativeServicesSection";
-import Eclipe1 from "../components/shared/Eclipe1";
-import Eclipse2 from "../components/shared/Eclipse2";
-import Eclipse3 from "../components/shared/Eclipse3";
-import Eclipse4 from "../components/shared/Eclipse4";
-import Eclipse5 from "../components/shared/Eclipse5";
 
 const Home = () => {
   return (
-    <>
-      <Stack width="100%" maxWidth="100vw" sx={{ position: "relative" }}>
-        <Eclipe1
-          style={{
-            position: "absolute",
-            top: "100vh",
-            right: 0,
-          }}
-        />
-        <Eclipse2
-          style={{
-            position: "absolute",
-            top: "100vh",
-            left: 0,
-          }}
-        />
-        <Eclipse3
-          style={{
-            position: "absolute",
-            top: "1400vh",
-            left: 0,
-          }}
-        />
-        <Eclipse4
-          style={{
-            position: "absolute",
-            top: "1150vh",
-            right: 0,
-          }}
-        />
-        <Eclipse5
-          style={{
-            position: "absolute",
-            top: "1650vh",
-            left: 0,
-          }}
-        />
-        <HomeHeroSection />
-        <HomeHowWeWorkSection />
-        <HomeSmartSolutionSection />
-        <HomeMarketSection />
-        <HomeInnovativeServicesSection />
-        <HomeSocialStrategySection />
-        <HomeDriveSection />
-        <HomeWorkflowProcessSection />
-        <HomeSustainabilitySection />
-        <HomeCultureSection />
-        <HomeEvolutionSection />
-        <HomeConnectSection />
-      </Stack>
-      {/* {mobileView && <Typography variant="h5">Home Mobile View</Typography>}
-      {tabletView && <Typography variant="h5">Home Tablet View</Typography>}
-      {laptopView && <Typography variant="h5">Home Laptop View</Typography>}
-      {desktopView && (
-        <Stack width="100%" sx={{ color: "#fff", backgroundColor: "#040B12" }}>
-          <HomeHeroSection />
-          <HomeHowWeWorkSection />
-          <HomeSmartSolutionSection />
-          <HomeMarketSection />
-          <HomeInnovativeServicesSection />
-          <HomeSocialStrategySection />
-          <HomeDriveSection />
-          <HomeWorkflowProcessSection />
-          <HomeSustainabilitySection />
-          <HomeCultureSection />
-          <HomeEvolutionSection />
-          <HomeConnectSection />
-        </Stack>
-      )} */}
-    </>
+    <Stack width="100%" maxWidth="100vw" sx={{ position: "relative" }}>
+      <Eclipe1
+        style={{
+          right: 0,
+          top: "100vh",
+          position: "absolute",
+        }}
+      />
+      <Eclipse2
+        style={{
+          left: 0,
+          top: "100vh",
+          position: "absolute",
+        }}
+      />
+      <Eclipse3
+        style={{
+          left: 0,
+          top: "1400vh",
+          position: "absolute",
+        }}
+      />
+      <Eclipse4
+        style={{
+          right: 0,
+          top: "1150vh",
+          position: "absolute",
+        }}
+      />
+      <Eclipse5
+        style={{
+          left: 0,
+          top: "1650vh",
+          position: "absolute",
+        }}
+      />
+      <HomeHeroSection />
+      <HomeHowWeWorkSection />
+      <HomeSmartSolutionSection />
+      <HomeMarketSection />
+      <HomeInnovativeServicesSection />
+      <HomeSocialStrategySection />
+      <HomeDriveSection />
+      <HomeWorkflowProcessSection />
+      <HomeSustainabilitySection />
+      <HomeCultureSection />
+      <HomeEvolutionSection />
+      <HomeConnectSection />
+    </Stack>
   );
 };
 

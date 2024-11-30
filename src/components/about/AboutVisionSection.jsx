@@ -7,10 +7,10 @@ const AboutVisionSection = () => {
     <Container maxWidth="desktop">
       <Stack
         py={{
-          laptop: 20,
-          tablet: 10,
-          mobile: 10,
-          desktop: 20,
+          laptop: 10,
+          tablet: 8,
+          mobile: 8,
+          desktop: 10,
         }}
         gap={{
           laptop: 10,

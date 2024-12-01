@@ -1,24 +1,41 @@
 import React from "react";
 
-import { Stack, Button, Container, Typography } from "@mui/material";
+import { Stack, Button, Container, Typography, useMediaQuery } from "@mui/material";
 
 import HeroBackground from "../Backgrounds/HeroBackground";
 
 const ProductsHeroSection = () => {
+  const mobileView = useMediaQuery((mobileTheme) => {
+    return mobileTheme.breakpoints.down("tablet");
+  });
+  const tabletView = useMediaQuery((tabletTheme) => {
+    return tabletTheme.breakpoints.between("tablet", "laptop");
+  });
+  const laptopView = useMediaQuery((laptopTheme) => {
+    return laptopTheme.breakpoints.between("laptop", "desktop");
+  });
+  const desktopView = useMediaQuery((desktopTheme) => {
+    return desktopTheme.breakpoints.up("desktop");
+  });
   return (
     <Stack
       width="100%"
       direction="row"
       justifyContent="center"
       alignItems="center"
-      minHeight="100vh"
+      minHeight={{
+        desktop:"100vh",
+        laptop:"100vh",
+        mobile:"500px",
+        tablet:"500px"
+      }}
       maxWidth="100vw"
       sx={{
         zIndex: 1,
         position: "relative",
         paddingTop: {
-          mobile: 15,
-          tablet: 15,
+          mobile:  "87px",
+          tablet:  "87px",
           laptop: "87px",
           desktop: "87px",
         },
@@ -36,7 +53,7 @@ const ProductsHeroSection = () => {
       />
       <img
         alt="product-hero"
-        src={"/product_hero.gif"}
+        src={(laptopView||desktopView)?"/product_hero.gif":"/product_hero_mob.gif"}
         style={{
           width: "100%",
           height: "100%",
@@ -58,7 +75,7 @@ const ProductsHeroSection = () => {
           alignItems="center"
           gap={4}
         >
-          <Button
+          {/* <Button
             sx={{
               py: 1.7,
               fontSize: 18,
@@ -75,12 +92,12 @@ const ProductsHeroSection = () => {
             }}
           >
             Grab the Opportunity
-          </Button>
+          </Button> */}
           <Typography
             variant="body1"
             fontSize={{
-              mobile: 55,
-              tablet: 55,
+              mobile: 32,
+              tablet: 32,
               laptop: 64,
               desktop: 64,
             }}
@@ -90,9 +107,10 @@ const ProductsHeroSection = () => {
             }}
             textAlign="center"
             fontWeight={400}
+            className="responsive-text"
           >
             We’ll help you get the most out of
-            <br /> technology,{" "}
+            <br /> technology,
             <span style={{ color: "#45BDD6" }}>act smart</span>, and grow fast.
           </Typography>
           <Button

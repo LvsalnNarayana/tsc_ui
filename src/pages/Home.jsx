@@ -23,7 +23,7 @@ import HomeInnovativeServicesSection from "../components/home/HomeInnovativeServ
 
 const Home = () => {
   return (
-    <Stack width="100%" maxWidth="100vw" sx={{ position: "relative" }}>
+    <Stack width="100%" maxWidth="100vw" sx={{ position: "relative",overflow:"clip" }}>
       <Eclipe1
         style={{
           right: 0,

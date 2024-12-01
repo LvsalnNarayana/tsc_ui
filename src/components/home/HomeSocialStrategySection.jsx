@@ -1,11 +1,23 @@
 import React from "react";
 import Lottie from "lottie-react";
 
-import { Stack, Button, Typography } from "@mui/material";
+import { Stack, Button, Typography, useMediaQuery } from "@mui/material";
 
 import reinventJson from "../../assets/Reinvent Your Business.json";
 
 const HomeSocialStrategySection = () => {
+  const mobileView = useMediaQuery((mobileTheme) => {
+    return mobileTheme.breakpoints.down("tablet");
+  });
+  const tabletView = useMediaQuery((tabletTheme) => {
+    return tabletTheme.breakpoints.between("tablet", "laptop");
+  });
+  const laptopView = useMediaQuery((laptopTheme) => {
+    return laptopTheme.breakpoints.between("laptop", "desktop");
+  });
+  const desktopView = useMediaQuery((desktopTheme) => {
+    return desktopTheme.breakpoints.up("desktop");
+  });
   return (
     <Stack
       gap={4}
@@ -15,16 +27,32 @@ const HomeSocialStrategySection = () => {
       height="500px"
       sx={{ position: "relative" }}
     >
-      <Lottie
-        animationData={reinventJson}
-        style={{
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          position: "absolute",
-        }}
-      />
+      {(desktopView || laptopView) && (
+        <Lottie
+          animationData={reinventJson}
+          style={{
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            position: "absolute",
+          }}
+        />
+      )}
+      {(mobileView || tabletView) && (
+        <img
+          alt="bg"
+          src="/bg_w.gif"
+          style={{
+            maxHeight:"100%",
+            top: "50%",
+            transform: "translateY(-50%)",
+            left: 0,
+            width: "100%",
+            position: "absolute",
+          }}
+        />
+      )}
       <Typography
         variant="body1"
         fontSize={{

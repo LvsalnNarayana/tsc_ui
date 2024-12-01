@@ -32,7 +32,12 @@ const AboutUs = () => {
       <Stack
         width="100%"
         maxWidth="100%"
-        sx={{ color: "#fff", position: "relative", backgroundColor: "#040B12" }}
+        sx={{
+          color: "#fff",
+          position: "relative",
+          backgroundColor: "#040B12",
+          overflow: "clip",
+        }}
       >
         <Eclipe1
           style={{

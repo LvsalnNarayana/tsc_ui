@@ -19,7 +19,10 @@ const ContactUs = () => {
 
   return (
     <>
-      <Stack width="100%" sx={{ color: "#fff", backgroundColor: "#040B12" }}>
+      <Stack
+        width="100%"
+        sx={{ color: "#fff", backgroundColor: "#040B12", overflow: "clip" }}
+      >
         <ContactHeroSection />
       </Stack>
       {/* {mobileView && (

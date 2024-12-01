@@ -13,7 +13,12 @@ const ProductPersonalized = () => {
           tablet: "column",
         }}
         spacing={10}
-        pl={10}
+        pl={{
+          laptop: 10,
+          desktop: 10,
+          mobile: 2,
+          tablet: 2,
+        }}
       >
         <Stack direction="column" spacing={2}>
           <Typography

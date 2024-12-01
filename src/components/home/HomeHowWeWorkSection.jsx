@@ -1,11 +1,23 @@
 /* eslint-disable max-lines */
 import React from "react";
 
-import { Stack, Container, Typography } from "@mui/material";
+import { Stack, Container, Typography, useMediaQuery } from "@mui/material";
 
 import HowWeWorkSVG from "../SVGComponents/HowWeWorkSVG";
 
 const HomeHowWeWorkSection = () => {
+  const mobileView = useMediaQuery((mobileTheme) => {
+    return mobileTheme.breakpoints.down("tablet");
+  });
+  const tabletView = useMediaQuery((tabletTheme) => {
+    return tabletTheme.breakpoints.between("tablet", "laptop");
+  });
+  const laptopView = useMediaQuery((laptopTheme) => {
+    return laptopTheme.breakpoints.between("laptop", "desktop");
+  });
+  const desktopView = useMediaQuery((desktopTheme) => {
+    return desktopTheme.breakpoints.up("desktop");
+  });
   return (
     <Container maxWidth="desktop">
       <Stack
@@ -46,7 +58,8 @@ const HomeHowWeWorkSection = () => {
           <br /> business demands, creating tangible value for
           <br /> your organization and customers.
         </Typography>
-        <HowWeWorkSVG />
+        {(desktopView||laptopView) &&<HowWeWorkSVG />}
+        {(mobileView||tabletView) &&<img alt="hww" src="/hww_mob.svg" />}
       </Stack>
     </Container>
   );

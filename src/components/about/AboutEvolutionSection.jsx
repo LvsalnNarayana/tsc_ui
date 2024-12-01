@@ -10,9 +10,9 @@ const AboutEvolutionSection = () => {
         zIndex: 1,
         position: "relative",
         mt: {
-          laptop: "-700px",
-          tablet: "-300px",
-          mobile: "-200px",
+          laptop: "-600px",
+          tablet: "0px",
+          mobile: "0px",
           dektop: "-1000px",
         },
       }}

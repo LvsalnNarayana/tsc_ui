@@ -62,7 +62,7 @@ const HomeSmartSolutionSection = () => {
           alignItems="center"
           minHeight="100vh"
           sx={{
-            top: 0,
+            top: "87px",
             zIndex: 10,
             position: "sticky",
             // backgroundColor: "rgba(0, 0, 0, 0.8)",
@@ -153,7 +153,12 @@ const HomeSmartSolutionSection = () => {
                     currentSlide === 1 ? "/solutions_1.png" : "/solutions_2.png"
                   }
                   sx={{
-                    height: "500px", // Fixed height
+                    height: {
+                      laptop: "500px",
+                      tablet: "300px",
+                      mobile: "300px",
+                      desktop: "500px",
+                    }, // Fixed height
                     width: "100%", // Ensure it takes full width of the container
                     borderRadius: 2,
                     overflow: "hidden",

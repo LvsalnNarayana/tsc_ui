@@ -1,11 +1,24 @@
 import React from "react";
-
-import { Stack, Typography } from "@mui/material";
-
-import StrategySectionBackgroundSVG from "../SVGComponents/StrategySectionBackgroundSVG";
-import reinventSection from "../../assets/Reinvent Your Business.json";
 import Lottie from "lottie-react";
+
+import { Stack, Button, Typography, useMediaQuery } from "@mui/material";
+
+import reinventJson from "../../assets/Reinvent Your Business.json";
+
 const ProductReinventSection = () => {
+  const mobileView = useMediaQuery((mobileTheme) => {
+    return mobileTheme.breakpoints.down("tablet");
+  });
+  const tabletView = useMediaQuery((tabletTheme) => {
+    return tabletTheme.breakpoints.between("tablet", "laptop");
+  });
+  const laptopView = useMediaQuery((laptopTheme) => {
+    return laptopTheme.breakpoints.between("laptop", "desktop");
+  });
+  const desktopView = useMediaQuery((desktopTheme) => {
+    return desktopTheme.breakpoints.up("desktop");
+  });
+
   return (
     <Stack
       gap={4}
@@ -13,18 +26,34 @@ const ProductReinventSection = () => {
       justifyContent="center"
       alignItems="center"
       height="500px"
-      sx={{ my: 8, position: "relative" }}
+      sx={{ position: "relative" }}
     >
-      <Lottie
-        animationData={reinventSection}
-        style={{
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          position: "absolute",
-        }}
-      />
+      {(desktopView || laptopView) && (
+        <Lottie
+          animationData={reinventJson}
+          style={{
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            position: "absolute",
+          }}
+        />
+      )}
+      {(mobileView || tabletView) && (
+        <img
+          alt="bg"
+          src="/bg_w.gif"
+          style={{
+            left: 0,
+            top: "50%",
+            width: "100%",
+            maxHeight: "100%",
+            position: "absolute",
+            transform: "translateY(-50%)",
+          }}
+        />
+      )}
       <Typography
         variant="body1"
         fontSize={{

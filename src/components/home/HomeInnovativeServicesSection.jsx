@@ -238,7 +238,11 @@ const HomeInnovativeServicesSection = () => {
                   />
                 </Stack>
                 {/* <Box component="img" src={service?.icon} width={90} /> */}
-                <Lottie width={90} animationData={service?.icon} />
+                <Lottie
+                  style={{ flexShrink: 0 }}
+                  width={90}
+                  animationData={service?.icon}
+                />
                 <Box
                   className="hover-element"
                   sx={{

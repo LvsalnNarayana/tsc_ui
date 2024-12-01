@@ -99,6 +99,7 @@ const HomeDriveSection = () => {
                 src="/drive.png"
                 height={570}
                 width={447}
+                maxWidth={"100%"}
                 sx={{ mx: "auto", borderRadius: "20px" }}
               />
             )}

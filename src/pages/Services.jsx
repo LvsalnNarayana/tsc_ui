@@ -25,10 +25,14 @@ const Services = () => {
 
   return (
     <>
-    
       <Stack
         width="100%"
-        sx={{ color: "#fff", position: "relative", backgroundColor: "#040B12" }}
+        sx={{
+          color: "#fff",
+          position: "relative",
+          backgroundColor: "#040B12",
+          overflow: "clip",
+        }}
       >
         <Eclipse3
           style={{

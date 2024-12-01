@@ -33,8 +33,11 @@ const Products = () => {
 
   return (
     <>
-    
-      <Stack width="100%" maxWidth="100vw" style={{ position: "relative" }}>
+      <Stack
+        width="100%"
+        maxWidth="100vw"
+        style={{ position: "relative", overflow: "clip" }}
+      >
         <Eclipse3
           style={{
             left: 0,

@@ -1,8 +1,11 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 import { Stack, Divider, Container, Typography } from "@mui/material";
 
 const Footer = () => {
+  const { pathname } = useLocation();
+
   return (
     <Container maxWidth="desktop">
       <Stack
@@ -116,21 +119,26 @@ const Footer = () => {
         }}
       >
         <Stack direction="row" alignItems="center" gap={4}>
-          <Typography color="#fff" fontSize={16} lineHeight={1.5}>
-            Process
-          </Typography>
-          <Typography color="#fff" fontSize={16} lineHeight={1.5}>
-            Benefits
-          </Typography>
-          <Typography color="#fff" fontSize={16} lineHeight={1.5}>
-            Services
-          </Typography>
-          <Typography color="#fff" fontSize={16} lineHeight={1.5}>
-            Portfolio
-          </Typography>
-          <Typography color="#fff" fontSize={16} lineHeight={1.5}>
-            FAQ
-          </Typography>
+          {["/about-us", "/services", "/products"]?.includes(pathname) && (
+            <Typography color="#fff" fontSize={16} lineHeight={1.5}>
+              Home
+            </Typography>
+          )}
+          {["/", "/services", "/products"]?.includes(pathname) && (
+            <Typography color="#fff" fontSize={16} lineHeight={1.5}>
+              About Us
+            </Typography>
+          )}
+          {["/about-us", "/", "/products"]?.includes(pathname) && (
+            <Typography color="#fff" fontSize={16} lineHeight={1.5}>
+              Services
+            </Typography>
+          )}
+          {["/about-us", "/services", "/"]?.includes(pathname) && (
+            <Typography color="#fff" fontSize={16} lineHeight={1.5}>
+              Products
+            </Typography>
+          )}
         </Stack>
         <Typography color="#fff" fontSize={16} lineHeight={1.5}>
           © 2023 shantogfx - All Right Reserved

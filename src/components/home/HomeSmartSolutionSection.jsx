@@ -24,7 +24,7 @@ const HomeSmartSolutionSection = () => {
   const scrollPercentage = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
   useEffect(() => {
-    const unsubscribe = scrollPercentage.onChange((latest) => {
+    const unsubscribe = scrollPercentage?.on("change", (latest) => {
       // console.log("Scroll Percentage:", latest);
 
       if (latest > 50) {
@@ -43,6 +43,7 @@ const HomeSmartSolutionSection = () => {
     <Container>
       <Stack
         ref={containerRef}
+        position="relative"
         sx={{
           height: "300vh",
           overflowY: "clip",
@@ -62,10 +63,14 @@ const HomeSmartSolutionSection = () => {
           alignItems="center"
           minHeight="100vh"
           sx={{
-            top: "87px",
             zIndex: 10,
             position: "sticky",
-            // backgroundColor: "rgba(0, 0, 0, 0.8)",
+            top: {
+              laptop: "0px",
+              desktop: "0px",
+              tablet: "80px",
+              mobile: "80px",
+            },
           }}
         >
           <Typography
@@ -119,8 +124,8 @@ const HomeSmartSolutionSection = () => {
               minHeight: "420px",
             }}
             width={{
-              laptop: "60%",
-              desktop: "60%",
+              laptop: "70%",
+              desktop: "70%",
               tablet: "100%",
               mobile: "100%",
             }}
@@ -153,16 +158,16 @@ const HomeSmartSolutionSection = () => {
                     currentSlide === 1 ? "/solutions_1.png" : "/solutions_2.png"
                   }
                   sx={{
-                    height: {
-                      laptop: "500px",
-                      tablet: "300px",
-                      mobile: "300px",
-                      desktop: "500px",
-                    }, // Fixed height
-                    width: "100%", // Ensure it takes full width of the container
+                    width: "100%",
                     borderRadius: 2,
                     overflow: "hidden",
-                    objectFit: "cover", // Ensures the image scales to fit
+                    objectFit: "cover",
+                    height: {
+                      laptop: "400px",
+                      tablet: "300px",
+                      mobile: "300px",
+                      desktop: "400px",
+                    },
                   }}
                 />
               </Stack>
@@ -271,24 +276,26 @@ const HomeSmartSolutionSection = () => {
                     </>
                   )}
                 </Typography>
-                <ul
-                  style={{
-                    lineHeight: 1.5,
-                    paddingLeft: "20px",
-                    letterSpacing: "1px",
-                    color: "rgba(255, 255, 255, 0.80)",
-                  }}
-                  className="lato"
-                >
-                  <li>Get custom CRM Apps and cloud-based SaaS.</li>
-                  <li>
-                    Personalized Workflow Automation to improve customer
-                    experience.
-                  </li>
-                  <li>
-                    Build and deploy custom CRM modules as per your needs.
-                  </li>
-                </ul>
+                {currentSlide === 2 && (
+                  <ul
+                    style={{
+                      lineHeight: 1.5,
+                      paddingLeft: "20px",
+                      letterSpacing: "1px",
+                      color: "rgba(255, 255, 255, 0.80)",
+                    }}
+                    className="lato"
+                  >
+                    <li>Get custom CRM Apps and cloud-based SaaS.</li>
+                    <li>
+                      Personalized Workflow Automation to improve customer
+                      experience.
+                    </li>
+                    <li>
+                      Build and deploy custom CRM modules as per your needs.
+                    </li>
+                  </ul>
+                )}
                 <Button
                   sx={{
                     py: 1.7,

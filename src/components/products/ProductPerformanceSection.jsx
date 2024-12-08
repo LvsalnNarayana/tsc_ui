@@ -12,22 +12,20 @@ const ProductPerformanceSection = () => {
         tablet: "fit-content",
       }}
       py={{
-        laptop: 0,
-        mobile: 10,
-        tablet: 10,
-        desktop: 0,
+        laptop: 5,
+        mobile: 7,
+        tablet: 7,
+        desktop: 5,
       }}
       justifyContent="center"
       alignItems="center"
     >
       <Container maxWidth="desktop">
         <Stack
-          p={3}
           sx={{
             mx: "auto",
-            width: "80%",
+            width: "70%",
             borderRadius: 5,
-            border: "2px solid #45BDD6",
           }}
         >
           <Stack
@@ -37,9 +35,16 @@ const ProductPerformanceSection = () => {
             justifyContent="center"
             alignItems="center"
             width="100%"
+            flexShrink={0}
             height={{
               laptop: "60vh",
               desktop: "60vh",
+              mobile: "fit-content",
+              tablet: "fit-content",
+            }}
+            minHeight={{
+              laptop: "500px",
+              desktop: "500px",
               mobile: "fit-content",
               tablet: "fit-content",
             }}

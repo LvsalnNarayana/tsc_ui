@@ -27,8 +27,15 @@ const ServiceCard = ({ card, minHeight }) => {
         borderRadius: 10,
         overflow: "hidden",
         position: "relative",
+        backgroundColor: "#040B12",
         border: "1px solid #292929",
         backdropFilter: "blur(10px)",
+        "&:hover .icon-hover-fill": {
+          fill: "#41C4DA",
+        },
+        "&:hover .icon-hover-stroke": {
+          stroke: "#41C4DA",
+        },
         "&:hover > .hover-box": {
           opacity: 1,
           top: "-50%",
@@ -225,8 +232,7 @@ const ServiceCard = ({ card, minHeight }) => {
               </defs>
             </svg>
             <Box
-              component="img"
-              src={card?.icon}
+              component="div"
               width={34}
               height={34}
               sx={{
@@ -235,7 +241,9 @@ const ServiceCard = ({ card, minHeight }) => {
                 position: "absolute",
                 transform: "translate(-50%, -50%)",
               }}
-            />
+            >
+              {card?.icon()}
+            </Box>
           </Stack>
           <Box
             sx={{

@@ -1,6 +1,12 @@
 import React from "react";
 
-import { Stack, Button, Container, Typography, useMediaQuery } from "@mui/material";
+import {
+  Stack,
+  Button,
+  Container,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 
 import HeroBackground from "../Backgrounds/HeroBackground";
 
@@ -17,6 +23,7 @@ const ProductsHeroSection = () => {
   const desktopView = useMediaQuery((desktopTheme) => {
     return desktopTheme.breakpoints.up("desktop");
   });
+
   return (
     <Stack
       width="100%"
@@ -24,18 +31,18 @@ const ProductsHeroSection = () => {
       justifyContent="center"
       alignItems="center"
       minHeight={{
-        desktop:"100vh",
-        laptop:"100vh",
-        mobile:"500px",
-        tablet:"500px"
+        laptop: "100vh",
+        mobile: "500px",
+        tablet: "500px",
+        desktop: "100vh",
       }}
       maxWidth="100vw"
       sx={{
         zIndex: 1,
         position: "relative",
         paddingTop: {
-          mobile:  "87px",
-          tablet:  "87px",
+          mobile: "87px",
+          tablet: "87px",
           laptop: "87px",
           desktop: "87px",
         },
@@ -53,13 +60,19 @@ const ProductsHeroSection = () => {
       />
       <img
         alt="product-hero"
-        src={(laptopView||desktopView)?"/product_hero.gif":"/product_hero_mob.gif"}
+        src={
+          laptopView || desktopView
+            ? "/product_hero.gif"
+            : "/product_hero_mob.gif"
+        }
         style={{
+          top: 0,
+          left: 0,
+          zIndex: -1,
           width: "100%",
           height: "100%",
           // objectFit: "cover",
           position: "absolute",
-          zIndex: -1,
         }}
       />
       <Container maxWidth="desktop">

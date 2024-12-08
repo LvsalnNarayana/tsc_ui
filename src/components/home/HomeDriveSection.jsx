@@ -73,26 +73,6 @@ const HomeDriveSection = () => {
               <br /> your business goals. At TSC, businesses trust us to deliver
               on our promises.
             </Typography>
-            {(desktopView || laptopView) && (
-              <Button
-                className="lato"
-                sx={{
-                  px: "24px",
-                  py: "12px",
-                  fontSize: 18,
-                  color: "#fff",
-                  fontWeight: 500,
-                  lineHeight: 1.5,
-                  width: "fit-content",
-                  borderRadius: "99px",
-                  border: " 1px solid rgba(255, 255, 255, 0.10)",
-                  background:
-                    "conic-gradient(from 181deg at 50% 50%, rgba(0, 0, 0, 0.00) 172.66420125961304deg, rgba(73, 53, 130, 0.30) 281.25deg, rgba(71, 47, 140, 0.12) 360deg), rgba(255, 255, 255, 0.05)",
-                }}
-              >
-                Get More from Your Business:
-              </Button>
-            )}
             {(mobileView || tabletView) && (
               <Box
                 component="img"

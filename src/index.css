@@ -59,3 +59,13 @@
     display: none; /* Hides <br> tags on smaller screens */
   }
 }
+
+.icon-hover-fill{
+  fill: white;
+}
+.icon-hover-stroke{
+  stroke: white;
+}
+.icon-hover-filter{
+  filter: brightness(0) saturate(100%) invert(1),
+}

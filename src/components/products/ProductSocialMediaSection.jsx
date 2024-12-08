@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 import React from "react";
 
 import { Stack, Button, Container, Typography } from "@mui/material";
@@ -6,7 +7,12 @@ const ProductSocialMediaSection = () => {
   return (
     <Container maxWidth="desktop">
       <Stack
-        py={8}
+        py={{
+          laptop: 5,
+          tablet: 5,
+          mobile: 5,
+          desktop: 5,
+        }}
         gap={{
           laptop: 7,
           tablet: 2,
@@ -114,9 +120,9 @@ const ProductSocialMediaSection = () => {
                 py={5}
                 gap={{
                   laptop: 3,
-                  desktop: 3,
                   tablet: 8,
                   mobile: 8,
+                  desktop: 3,
                 }}
                 direction={{
                   laptop: "row",
@@ -187,9 +193,9 @@ const ProductSocialMediaSection = () => {
                     width="100%"
                     height="100%"
                     autoPlay
-                    loop
                     muted
                     playsInline
+                    loop
                     style={{
                       objectFit: "cover",
                       borderRadius: "10px",
@@ -202,11 +208,14 @@ const ProductSocialMediaSection = () => {
         </Stack>
         <Button
           sx={{
+            gap: 1,
             py: 1.7,
             fontSize: 18,
             lineHeight: 1,
             color: "#fff",
+            display: "flex",
             borderRadius: "99px",
+            alignItems: "center",
             boxShadow: "0px 1px 0px 0px rgba(255, 255, 255, 0.10) inset",
             background:
               "linear-gradient(180deg, #525252 -61.82%, #292929 100%)",
@@ -216,9 +225,6 @@ const ProductSocialMediaSection = () => {
               laptop: 6,
               desktop: 6,
             },
-            display: "flex",
-            alignItems: "center",
-            gap: 1,
           }}
           onClick={() => {
             const element = document.getElementById("connect");
@@ -236,8 +242,7 @@ const ProductSocialMediaSection = () => {
           }}
         >
           Lets talk
-          
-        <img alt="arrow" src="/ArrowUpRight.svg" />
+          <img alt="arrow" src="/ArrowUpRight.svg" />
         </Button>
       </Stack>
     </Container>

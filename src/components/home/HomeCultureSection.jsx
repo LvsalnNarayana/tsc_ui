@@ -9,8 +9,8 @@ const HomeCultureSection = () => {
         py={{
           tablet: 2,
           mobile: 2,
-          laptop: 20,
-          desktop: 20,
+          laptop: 4,
+          desktop: 4,
         }}
         gap={5}
         direction="column"

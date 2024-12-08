@@ -65,13 +65,15 @@ const ProductModulesSection = () => {
           textAlign="center"
           color="rgba(255, 255, 255, 0.24)"
         >
-          :Modules We Develop for Your Sales:
+          Modules We Develop for Your Sales
         </Typography>
         {[
           { id: 1, name: "Marketing Module" },
           { id: 2, name: "Sales Module" },
-          { id: 3, name: "Chat Integration Module" },
-          { id: 4, name: "Leads Management Module" },
+          { id: 3, name: "Personal Service Module" },
+          { id: 4, name: "Workflow Module" },
+          { id: 5, name: "Chat Integration Module" },
+          { id: 6, name: "Leads Management Module" },
         ]?.map((module, index) => {
           return (
             <Stack
@@ -100,8 +102,8 @@ const ProductModulesSection = () => {
                 pl={{
                   tablet: 2,
                   mobile: 2,
-                  laptop: index % 2 !== 0 ? "50%" : "0px",
-                  desktop: index % 2 !== 0 ? "50%" : "0px",
+                  laptop: index < 3 ? "0px" : "50%",
+                  desktop: index < 3 ? "0px" : "50%",
                 }}
                 fontSize={{
                   laptop: 48,

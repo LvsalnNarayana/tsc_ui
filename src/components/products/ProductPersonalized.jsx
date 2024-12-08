@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 import React from "react";
 
 import { Box, Stack, Button, Typography } from "@mui/material";
@@ -14,10 +15,16 @@ const ProductPersonalized = () => {
         }}
         spacing={10}
         pl={{
-          laptop: 10,
-          desktop: 10,
           mobile: 2,
           tablet: 2,
+          laptop: 10,
+          desktop: 10,
+        }}
+        py={{
+          mobile: 5,
+          tablet: 5,
+          laptop: 10,
+          desktop: 10,
         }}
       >
         <Stack direction="column" spacing={2}>
@@ -50,10 +57,10 @@ const ProductPersonalized = () => {
               <Typography
                 variant="body1"
                 fontSize={{
-                  laptop: 32,
+                  laptop: 24,
                   mobile: 16,
                   tablet: 16,
-                  desktop: 32,
+                  desktop: 24,
                 }}
                 fontWeight={500}
                 lineHeight={1}
@@ -67,10 +74,10 @@ const ProductPersonalized = () => {
               <Typography
                 variant="body1"
                 fontSize={{
-                  laptop: 32,
+                  laptop: 24,
                   mobile: 16,
                   tablet: 16,
-                  desktop: 32,
+                  desktop: 24,
                 }}
                 fontWeight={500}
                 lineHeight={1}
@@ -84,10 +91,10 @@ const ProductPersonalized = () => {
               <Typography
                 variant="body1"
                 fontSize={{
-                  laptop: 32,
+                  laptop: 24,
                   mobile: 16,
                   tablet: 16,
-                  desktop: 32,
+                  desktop: 24,
                 }}
                 fontWeight={500}
                 lineHeight={1}
@@ -101,10 +108,10 @@ const ProductPersonalized = () => {
               <Typography
                 variant="body1"
                 fontSize={{
-                  laptop: 32,
+                  laptop: 24,
                   mobile: 16,
                   tablet: 16,
-                  desktop: 32,
+                  desktop: 24,
                 }}
                 fontWeight={500}
                 lineHeight={1}
@@ -115,21 +122,27 @@ const ProductPersonalized = () => {
             </Stack>
           </Stack>
         </Stack>
-        <Stack direction="column" width="100%" spacing={2}>
-          <Box component="img" src="/mock.png" width="100%" />
+        <Stack
+          direction="column"
+          alignItems="flex-end"
+          justifyContent="center"
+          width="100%"
+          spacing={2}
+        >
+          <Box component="img" src="/mock.png" width="80%" />
         </Stack>
       </Stack>
       <Button
         sx={{
           gap: 1,
+          mb: 10,
           py: 1.7,
+          mx: "auto",
           fontSize: 18,
           lineHeight: 1,
           color: "#fff",
-          width:"fit-content",
-          mx:"auto",
-          mb:10,
           display: "flex",
+          width: "fit-content",
           borderRadius: "99px",
           alignItems: "center",
           boxShadow: "0px 1px 0px 0px rgba(255, 255, 255, 0.10) inset",

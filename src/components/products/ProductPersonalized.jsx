@@ -129,7 +129,16 @@ const ProductPersonalized = () => {
           width="100%"
           spacing={2}
         >
-          <Box component="img" src="/mock.png" width="80%" />
+          <Box
+            component="img"
+            src="/mock.png"
+            width={{
+              laptop: "80%",
+              mobile: "70%",
+              tablet: "70%",
+              desktop: "80%",
+            }}
+          />
         </Stack>
       </Stack>
       <Button

@@ -68,8 +68,8 @@ const HomeSmartSolutionSection = () => {
             top: {
               laptop: "0px",
               desktop: "0px",
-              tablet: "80px",
-              mobile: "80px",
+              tablet: "20px",
+              mobile: "20px",
             },
           }}
         >

@@ -125,9 +125,9 @@ const HomeSmartSolutionSection = () => {
             }}
             width={{
               laptop: "70%",
+              tablet: "90%",
+              mobile: "90%",
               desktop: "70%",
-              tablet: "100%",
-              mobile: "100%",
             }}
           >
             <Stack
@@ -179,12 +179,6 @@ const HomeSmartSolutionSection = () => {
                 justifyContent="flex-start"
                 alignItems="center"
                 height="100%"
-                width={{
-                  tablet: "80%",
-                  mobile: "80%",
-                  laptop: "100%",
-                  desktop: "100%",
-                }}
                 sx={{ zIndex: 2, position: "relative" }}
               >
                 <Typography

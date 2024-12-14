@@ -120,8 +120,8 @@ const ProductModulesSection = () => {
                   }}
                   fontSize={{
                     laptop: 48,
-                    tablet: 32,
-                    mobile: 32,
+                    tablet: 24,
+                    mobile: 24,
                     desktop: 48,
                   }}
                   lineHeight={1.5}

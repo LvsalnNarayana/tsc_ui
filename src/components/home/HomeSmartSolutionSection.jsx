@@ -59,8 +59,8 @@ const HomeSmartSolutionSection = () => {
             desktop: 10,
           }}
           direction="column"
-          justifyContent="center"
-          alignItems="flex-start"
+          justifyContent="flex-start"
+          alignItems="center"
           minHeight="100vh"
           sx={{
             zIndex: 10,
@@ -119,7 +119,7 @@ const HomeSmartSolutionSection = () => {
           </Typography>
 
           <Stack
-            style={{
+            sx={{
               zIndex: 10,
               minHeight: "420px",
             }}

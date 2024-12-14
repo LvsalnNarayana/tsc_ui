@@ -70,6 +70,20 @@ const ServiceHeroSection = () => {
           boxShadow: "0px 1px 0px 0px rgba(255, 255, 255, 0.10) inset",
           background: "linear-gradient(180deg, #525252 -61.82%, #292929 100%)",
         }}
+        onClick={() => {
+          const element = document.getElementById("connect");
+
+          if (element) {
+            const elementPosition =
+              element.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = elementPosition - 87;
+
+            window.scrollTo({
+              behavior: "smooth",
+              top: offsetPosition,
+            });
+          }
+        }}
       >
         Let&apos;s Talk
       </Button>

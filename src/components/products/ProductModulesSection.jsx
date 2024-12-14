@@ -89,7 +89,12 @@ const ProductModulesSection = () => {
                 p={2}
                 gap={2}
                 mb={4}
-                width="48%"
+                width={{
+                  tablet: "100%",
+                  mobile: "100%",
+                  laptop: "calc(50% - 8px)",
+                  desktop: "calc(50% - 8px)",
+                }}
                 direction="row"
                 alignItems="center"
                 justifyContent="flex-start"

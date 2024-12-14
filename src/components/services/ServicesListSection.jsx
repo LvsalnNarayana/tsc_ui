@@ -87,8 +87,8 @@ const ServicesListSection = () => {
                 return (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="17"
-                    height="30"
+                    width="34"
+                    height="34"
                     viewBox="0 0 17 30"
                     fill="none"
                   >
@@ -142,12 +142,12 @@ const ServicesListSection = () => {
               your business data. Use the cloud as your launchpad for the
               future.`,
               icon: () => {
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                return <svg
                   width="34"
                   height="34"
                   viewBox="0 0 34 34"
                   fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
                     d="M9.20898 26.9168C5.68817 26.9168 2.83398 24.0626 2.83398 20.5418C2.83398 17.2218 5.37195 14.4945 8.61362 14.1943C9.27672 10.1607 12.7793 7.0835 17.0007 7.0835C21.222 7.0835 24.7246 10.1607 25.3877 14.1943C28.6293 14.4945 31.1673 17.2218 31.1673 20.5418C31.1673 24.0626 28.3131 26.9168 24.7923 26.9168C18.5734 26.9168 14.6537 26.9168 9.20898 26.9168Z"

@@ -67,79 +67,88 @@ const ProductModulesSection = () => {
         >
           Modules We Develop for Your Sales
         </Typography>
-        {[
-          { id: 1, name: "Marketing Module" },
-          { id: 2, name: "Sales Module" },
-          { id: 3, name: "Personal Service Module" },
-          { id: 4, name: "Workflow Module" },
-          { id: 5, name: "Chat Integration Module" },
-          { id: 6, name: "Leads Management Module" },
-        ]?.map((module, index) => {
-          return (
-            <Stack
-              key={module?.id}
-              p={2}
-              gap={2}
-              width="100%"
-              direction="row"
-              alignItems="center"
-              justifyContent="flex-start"
-              sx={{
-                borderRadius: 3,
-                cursor: "pointer",
-                position: "relative",
-                border: "1px solid transparent",
-                "&:hover": {
-                  border: "1px solid #45BDD6",
-                },
-                "&:hover .right-arrow-animation": {
-                  // Target the child element with the class "hover-element"
-                  transform: "translateX(20px)",
-                },
-              }}
-            >
-              <Typography
-                pl={{
-                  tablet: 2,
-                  mobile: 2,
-                  laptop: index < 3 ? "0px" : "50%",
-                  desktop: index < 3 ? "0px" : "50%",
-                }}
-                fontSize={{
-                  laptop: 48,
-                  tablet: 32,
-                  mobile: 32,
-                  desktop: 48,
-                }}
-                lineHeight={1.5}
-                fontWeight={400}
-                variant="body1"
-              >
-                {module?.name}
-              </Typography>
-              <Box
-                className="right-arrow-animation"
-                component="img"
-                src="/blue_right_arrow.png"
-                width={{
-                  laptop: 60,
-                  mobile: 40,
-                  tablet: 40,
-                  desktop: 60,
-                }}
-                height={{
-                  laptop: 60,
-                  mobile: 40,
-                  tablet: 40,
-                  desktop: 60,
-                }}
+        <Stack
+          gap={2}
+          width="100%"
+          direction="row"
+          flexWrap="wrap"
+          alignItems="center"
+          justifyContent="flex-start"
+        >
+          {[
+            { id: 1, name: "Marketing Module" },
+            { id: 2, name: "Sales Module" },
+            { id: 3, name: "Personal Service Module" },
+            { id: 4, name: "Workflow Module" },
+            { id: 5, name: "Chat Integration Module" },
+            { id: 6, name: "Leads Management Module" },
+          ]?.map((module) => {
+            return (
+              <Stack
+                key={module?.id}
+                p={2}
+                gap={2}
+                mb={4}
+                width="48%"
+                direction="row"
+                alignItems="center"
+                justifyContent="flex-start"
                 sx={{
-                  transition: "transform 0.3s ease-in-out",
+                  borderRadius: 3,
+                  cursor: "pointer",
+                  position: "relative",
+                  border: "1px solid transparent",
+                  "&:hover": {
+                    border: "1px solid #45BDD6",
+                  },
+                  "&:hover .right-arrow-animation": {
+                    transform: "translateX(20px)",
+                  },
                 }}
-              />
-            </Stack>
-          );
-        })}
+              >
+                <Typography
+                  pl={{
+                    tablet: 2,
+                    mobile: 2,
+                    laptop: 2,
+                    desktop: 2,
+                  }}
+                  fontSize={{
+                    laptop: 48,
+                    tablet: 32,
+                    mobile: 32,
+                    desktop: 48,
+                  }}
+                  lineHeight={1.5}
+                  fontWeight={400}
+                  variant="body1"
+                >
+                  {module?.name}
+                </Typography>
+                <Box
+                  className="right-arrow-animation"
+                  component="img"
+                  src="/blue_right_arrow.png"
+                  width={{
+                    laptop: 60,
+                    mobile: 40,
+                    tablet: 40,
+                    desktop: 60,
+                  }}
+                  height={{
+                    laptop: 60,
+                    mobile: 40,
+                    tablet: 40,
+                    desktop: 60,
+                  }}
+                  sx={{
+                    transition: "transform 0.3s ease-in-out",
+                  }}
+                />
+              </Stack>
+            );
+          })}
+        </Stack>
       </Stack>
     </Container>
   );

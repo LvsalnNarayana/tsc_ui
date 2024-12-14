@@ -84,32 +84,32 @@ const ProductSocialMediaSection = () => {
           {[
             {
               id: 1,
-              icon: "/control social media_1.mp4",
               title: "Measure and Prove Your Social Media ROI",
+              icon: "/Measure and Prove Your Social Media ROI.mp4",
               description: `You know social media is more than brand awareness. Now you can prove it by finding out what posts and conversations drive sales, leads, and traffic. Pull data from Google Analytics. Tie your social media to real revenue goals. Know where to spend your budget.`,
             },
             {
               id: 2,
-              icon: "/ethics.mp4",
+              icon: "/control social media_1.mp4",
               title: "Control Your Social Media Content",
               description: `Plan and schedule your social media content across all platforms with a simple post scheduler and shared calendars. Manage your content. Customize your post content for each platform. Collaborate with internal and external teams.`,
             },
             {
               id: 3,
-              icon: "/listen.mp4",
               title: "Listen to the Conversations that Matter",
+              icon: "/Listen to the Conversations that Matter.mp4",
               description: `Monitor and track mentions of your brand, industry, and competitors. Capture conversations from social networks, news sites, and blogs. Measure and protect your brand reputation. Get inspiration for content. Find out what your customers want and increase brand loyalty.`,
             },
             {
               id: 4,
-              icon: "/charts.mp4",
               title: "Create Reports Without the Pain",
+              icon: "/Create Reports Without the Pain.mp4",
               description: `Make better decisions with social media reports that don’t take all day to create. Compare key social metrics across all channels from one dashboard. See your top posts for each platform. Build and automate custom, presentation-ready social media reports.`,
             },
             {
               id: 5,
-              icon: "/Measure_1.mp4",
               title: "Integrates with Your Existing Tools and Platforms",
+              icon: "/Integrates with Your Existing Tools and Platforms.mp4",
               description: `No more switching between social networks and other tools. Use our Social Media CRM to manage all your team’s social media marketing in one place.`,
             },
           ].map((livesItem) => {

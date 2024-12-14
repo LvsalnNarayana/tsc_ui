@@ -93,7 +93,7 @@ const HomeSmartSolutionSection = () => {
             Smart Solution
           </Typography>
           <Typography
-            mb={8}
+            mb={6}
             fontSize={18}
             width={{
               laptop: "60%",
@@ -155,18 +155,20 @@ const HomeSmartSolutionSection = () => {
                 <Box
                   component="img"
                   src={
-                    currentSlide === 1 ? "/solutions_1.png" : "/solutions_2.png"
+                    currentSlide === 1
+                      ? "/social_media_crm.png"
+                      : "/custom_crm.png"
                   }
                   sx={{
                     width: "100%",
                     borderRadius: 2,
                     overflow: "hidden",
                     objectFit: "cover",
-                    height: {
-                      laptop: "400px",
+                    maxHeight: {
+                      laptop: "60vh",
                       tablet: "300px",
                       mobile: "300px",
-                      desktop: "400px",
+                      desktop: "60vh",
                     },
                   }}
                 />
@@ -263,7 +265,7 @@ const HomeSmartSolutionSection = () => {
                   letterSpacing="1px"
                 >
                   {currentSlide === 1 &&
-                    "Does your business require precise CRM for unique workflows? We offer custom and latest CRM solutions, intuitive, feature-rich, and powered with advanced analytics. Simplify your processes, get insights, and build better relationships."}
+                    "Engage and retain customers with our advanced Social Media CRM solutions. Harness the power of social platforms to build meaningful relationships and drive business growth."}
                   {currentSlide === 2 && (
                     <>
                       Does your business require precise CRM for unique
@@ -347,10 +349,17 @@ const HomeSmartSolutionSection = () => {
               opacity: 1,
               width: "100%",
               height: "60vh",
+              maxHeight: "400px",
               objectFit: "cover",
               position: "absolute",
+              maskSize: "100% 100%",
+              maskRepeat: "no-repeat",
+              WebkitMaskSize: "100% 100%",
+              WebkitMaskRepeat: "no-repeat",
               maskImage:
-                "linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.5))",
+                "linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.3))",
+              WebkitMaskImage:
+                "linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.3))",
             }}
           />
         </Stack>

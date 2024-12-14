@@ -55,8 +55,9 @@ const Footer = () => {
             </Stack>
           </Stack>
           <Typography color="#fff" fontSize={16} lineHeight={1.5}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut
+            St. Omar Ibn Alkhattab 34261,
+            <br />
+            Dammam, Saudi Arabia
           </Typography>
         </Stack>
         <Stack
@@ -76,7 +77,7 @@ const Footer = () => {
               fontWeight={400}
               color="#fff"
             >
-              info@TSC.com
+              Moath@tsc.com.sa
             </Typography>
           </Stack>
           <Stack direction="row" alignItems="center" gap={2}>
@@ -87,14 +88,13 @@ const Footer = () => {
               fontWeight={400}
               color="#fff"
             >
-              (001) 1231 3435
+              +966570111471
             </Typography>
           </Stack>
           <Stack direction="row" alignItems="center" gap={4}>
             <img src="/facebook_footer.svg" alt="logo" width={30} />
             <img src="/instagram_footer.svg" alt="logo" width={30} />
             <img src="/linkedin_footer.svg" alt="logo" width={30} />
-            <img src="/dribble+footer.svg" alt="logo" width={30} />
           </Stack>
         </Stack>
       </Stack>

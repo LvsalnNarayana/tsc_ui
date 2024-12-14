@@ -29,14 +29,26 @@ const ProductReinventSection = () => {
       sx={{ position: "relative" }}
     >
       {(desktopView || laptopView) && (
-        <Lottie
-          animationData={reinventJson}
+        // <Lottie
+        //   animationData={reinventJson}
+        //   style={{
+        //     top: 0,
+        //     left: 0,
+        //     width: "100%",
+        //     height: "100%",
+        //     position: "absolute",
+        //   }}
+        // />
+        <img
+          alt="bg"
+          src="/reinvent_gif.gif"
           style={{
-            top: 0,
             left: 0,
+            top: "50%",
             width: "100%",
-            height: "100%",
+            maxHeight: "100%",
             position: "absolute",
+            transform: "translateY(-50%)",
           }}
         />
       )}

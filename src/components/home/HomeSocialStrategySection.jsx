@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 import React from "react";
 import Lottie from "lottie-react";
 
@@ -18,6 +19,7 @@ const HomeSocialStrategySection = () => {
   const desktopView = useMediaQuery((desktopTheme) => {
     return desktopTheme.breakpoints.up("desktop");
   });
+
   return (
     <Stack
       gap={4}
@@ -28,14 +30,26 @@ const HomeSocialStrategySection = () => {
       sx={{ position: "relative" }}
     >
       {(desktopView || laptopView) && (
-        <Lottie
-          animationData={reinventJson}
+        // <Lottie
+        //   animationData={reinventJson}
+        //   style={{
+        //     top: 0,
+        //     left: 0,
+        //     width: "100%",
+        //     height: "100%",
+        //     position: "absolute",
+        //   }}
+        // />
+        <img
+          alt="bg"
+          src="/reinvent_gif.gif"
           style={{
-            top: 0,
             left: 0,
+            top: "50%",
             width: "100%",
-            height: "100%",
+            maxHeight: "100%",
             position: "absolute",
+            transform: "translateY(-50%)",
           }}
         />
       )}
@@ -44,12 +58,12 @@ const HomeSocialStrategySection = () => {
           alt="bg"
           src="/bg_w.gif"
           style={{
-            maxHeight:"100%",
-            top: "50%",
-            transform: "translateY(-50%)",
             left: 0,
+            top: "50%",
             width: "100%",
+            maxHeight: "100%",
             position: "absolute",
+            transform: "translateY(-50%)",
           }}
         />
       )}

@@ -60,7 +60,7 @@ const HomeSmartSolutionSection = () => {
           }}
           direction="column"
           justifyContent="center"
-          alignItems="center"
+          alignItems="flex-start"
           minHeight="100vh"
           sx={{
             zIndex: 10,
@@ -179,6 +179,12 @@ const HomeSmartSolutionSection = () => {
                 justifyContent="flex-start"
                 alignItems="center"
                 height="100%"
+                width={{
+                  tablet: "80%",
+                  mobile: "80%",
+                  laptop: "100%",
+                  desktop: "100%",
+                }}
                 sx={{ zIndex: 2, position: "relative" }}
               >
                 <Typography

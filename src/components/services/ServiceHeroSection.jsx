@@ -1,10 +1,31 @@
+/* eslint-disable operator-linebreak */
 import React from "react";
 
-import { Stack, Button, Typography } from "@mui/material";
+import { Box, Stack, Button, Typography } from "@mui/material";
 
+import { useLanguage } from "../../LanguageContext";
 import AboutHeroPattern from "../SVGComponents/AboutHeroPattern";
 
 const ServiceHeroSection = () => {
+  const { language } = useLanguage();
+
+  const text = {
+    ar: {
+      button: "تواصل معنا",
+      title: "استكشف آفاقاً جديدة ",
+      subtitle:
+        "استفد من فرص النمو المستدام ومكِّن علامتك التجارية من خلال خدماتنا المبتكرة.",
+    },
+    en: {
+      button: "Let's Talk",
+      title: "Explore New Horizons",
+      subtitle:
+        "Unlock sustainable growth opportunities and empower your brand with agility through our innovative services.",
+    },
+  };
+
+  const t = text[language];
+
   return (
     <Stack
       gap={4}
@@ -31,18 +52,24 @@ const ServiceHeroSection = () => {
         color="transparent"
         sx={{
           zIndex: 2,
+          WebkitBackgroundClip: "text",
+          textFillColor: "transparent",
+          WebkitTextFillColor: "transparent",
           background:
             "linear-gradient(180deg, rgb(255,255,255) 0%, rgb(4,11,18) 100%)",
           // eslint-disable-next-line perfectionist/sort-objects
           backgroundClip: "text",
-          WebkitBackgroundClip: "text",
-          textFillColor: "transparent",
-          WebkitTextFillColor: "transparent",
         }}
       >
-        Explore New Horizons
+        {t.title}
       </Typography>
       <Typography
+        width={{
+          laptop: "60%",
+          tablet: "90%",
+          mobile: "90%",
+          desktop: "60%",
+        }}
         fontSize={{
           laptop: 32,
           tablet: 20,
@@ -55,9 +82,7 @@ const ServiceHeroSection = () => {
         textAlign="center"
         className="responsive-text"
       >
-        Unlock sustainable growth opportunities and empower your brand with
-        <br />
-        agility through our innovative services.
+        {t.subtitle}
       </Typography>
       <Button
         sx={{
@@ -85,7 +110,16 @@ const ServiceHeroSection = () => {
           }
         }}
       >
-        Let&apos;s Talk
+        {t.button}
+        <Box
+          component="img"
+          src="/ArrowUpRight.svg"
+          sx={{
+            ml: 1,
+            width: 24,
+            height: 24,
+          }}
+        />
       </Button>
     </Stack>
   );

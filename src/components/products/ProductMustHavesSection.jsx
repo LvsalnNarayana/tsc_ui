@@ -1,8 +1,13 @@
+/* eslint-disable max-lines */
 import React from "react";
 
 import { Box, Stack, Container, Typography } from "@mui/material";
 
+import { useLanguage } from "../../LanguageContext";
+
 const ProductMustHavesSection = () => {
+  const { language } = useLanguage();
+
   return (
     <Stack
       width="100%"
@@ -39,7 +44,8 @@ const ProductMustHavesSection = () => {
               WebkitTextFillColor: "transparent",
             }}
           >
-            Today’s Must-Haves
+            {language === "en" && "Today’s Must-Haves"}
+            {language === "ar" && "يجب أن يكون لديك اليوم"}
           </Typography>
           <Stack
             sx={{
@@ -55,9 +61,12 @@ const ProductMustHavesSection = () => {
             {[
               {
                 id: 1,
-                title: "Adapt Fast and Stay Agile",
-                description:
+                titleArabic: "التكيّف السريع والمرونة",
+                titleEnglish: "Adapt Fast and Stay Agile",
+                descriptionEnglish:
                   "Remain client-centric by adapting quickly to meet market needs.",
+                descriptionArabic:
+                  "حافظ وركز على العميل عبر التكيف السريع الذي يمكّنك من تلبية متطلبات السوق المتغيرة والمتطورة.",
                 icon: () => {
                   return (
                     <svg
@@ -77,9 +86,12 @@ const ProductMustHavesSection = () => {
               },
               {
                 id: 2,
-                title: "Strategic Planning",
-                description:
+                titleEnglish: "Strategic Planning",
+                titleArabic: "التخطيط الاستراتيجي",
+                descriptionEnglish:
                   "Strategy and analysis are key. Defining the right direction and goals enables swift execution and competitive advantage.",
+                descriptionArabic:
+                  "تعتبر الاستراتيجية والتحليل عنصرين أساسيين. فهما يساعدان في تحديد الاتجاه الصحيح والأهداف المناسبة، مما يسهل التنفيذ السريع ويعزز الميزة التنافسية.",
                 icon: () => {
                   return (
                     <svg
@@ -103,9 +115,12 @@ const ProductMustHavesSection = () => {
               },
               {
                 id: 3,
-                title: "Analytics Capabilities",
-                description:
+                titleArabic: "القدرات التحليلية",
+                titleEnglish: "Analytics Capabilities",
+                descriptionEnglish:
                   "Utilize analytical skills and tools to discover market opportunities and maximize ROI.",
+                descriptionArabic:
+                  "استفد من المهارات والأدوات التحليلية لتحديد الفرص في السوق وزيادة العائد على الاستثمار.",
                 icon: () => {
                   return (
                     <svg
@@ -128,8 +143,11 @@ const ProductMustHavesSection = () => {
               },
               {
                 id: 4,
-                title: "Human-Centered Approaches",
-                description:
+                titleArabic: "القدرات التحليلية",
+                titleEnglish: "Human-Centered Approaches",
+                descriptionArabic:
+                  "استفد من المهارات والأدوات التحليلية لتحديد الفرص في السوق وزيادة العائد على الاستثمار.",
+                descriptionEnglish:
                   "Prioritize customer service and experience to convert loyal customers more easily and quickly.",
                 icon: () => {
                   return (
@@ -146,121 +164,144 @@ const ProductMustHavesSection = () => {
                   );
                 },
               },
-            ].map(({ id, icon, title, description }) => {
-              return (
-                <Stack
-                  key={id}
-                  p={3}
-                  width={{
-                    mobile: "100%",
-                    tablet: "100%",
-                    laptop: id === 1 || id === 4 ? "60%" : "40%",
-                    desktop: id === 1 || id === 4 ? "60%" : "40%",
-                  }}
-                >
+            ].map(
+              ({
+                id,
+                icon,
+                titleArabic,
+                titleEnglish,
+                descriptionArabic,
+                descriptionEnglish,
+              }) => {
+                return (
                   <Stack
                     key={id}
-                    p={5}
-                    gap={2}
+                    p={3}
                     width={{
                       mobile: "100%",
                       tablet: "100%",
-                      laptop: "100%",
-                      desktop: "100%",
-                    }}
-                    height="100%"
-                    sx={{
-                      borderRadius: 5,
-                      cursor: "pointer",
-                      overflow: "hidden",
-                      position: "relative",
-                      backgroundColor: "rgba(215, 241, 245, 0.05)",
-                      "&:hover .icon-hover-fill": {
-                        fill: "#41C4DA",
-                      },
-                      "&:hover .icon-hover-stroke": {
-                        stroke: "#41C4DA",
-                      },
-                      "&:hover .blur-box": {
-                        opacity: 1,
-                        transform: "scale(1)",
-                      },
-                      "&:hover .icon-hover-filter": {
-                        filter:
-                          "brightness(0) saturate(100%) invert(66%) sepia(22%) hue-rotate(154deg) saturate(655%) brightness(97%)",
-                      },
+                      laptop: id === 1 || id === 4 ? "60%" : "40%",
+                      desktop: id === 1 || id === 4 ? "60%" : "40%",
                     }}
                   >
-                    {/* Blur box that appears on hover */}
-                    <Box
-                      className="blur-box"
-                      component="div"
-                      sx={{
-                        right: 0,
-                        bottom: 0,
-                        width: 300,
-                        opacity: 0,
-                        height: 300,
-                        position: "absolute",
-                        transform: "scale(0.8)",
-                        filter: "blur(192.75px)",
-                        background: "rgba(65, 196, 218, 0.70)",
-                        transition: "opacity 0.3s ease, transform 0.3s ease",
-                      }}
-                    />
-                    {/* Section Content */}
                     <Stack
-                      direction="column"
-                      alignItems="flex-start"
-                      width="100%"
+                      key={id}
+                      p={5}
                       gap={2}
+                      width={{
+                        mobile: "100%",
+                        tablet: "100%",
+                        laptop: "100%",
+                        desktop: "100%",
+                      }}
+                      height="100%"
+                      sx={{
+                        borderRadius: 5,
+                        cursor: "pointer",
+                        overflow: "hidden",
+                        position: "relative",
+                        backgroundColor: "rgba(215, 241, 245, 0.05)",
+                        "&:hover .icon-hover-fill": {
+                          fill: "#41C4DA",
+                        },
+                        "&:hover .icon-hover-stroke": {
+                          stroke: "#41C4DA",
+                        },
+                        "&:hover .blur-box": {
+                          opacity: 1,
+                          transform: "scale(1)",
+                        },
+                        "&:hover .icon-hover-filter": {
+                          filter:
+                            "brightness(0) saturate(100%) invert(66%) sepia(22%) hue-rotate(154deg) saturate(655%) brightness(97%)",
+                        },
+                      }}
                     >
-                      <Stack
-                        p={1}
+                      {/* Blur box that appears on hover */}
+                      <Box
+                        className="blur-box"
+                        component="div"
                         sx={{
-                          width: 60,
-                          height: 60,
-                          borderRadius: 3,
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          backgroundColor: "#192832",
+                          right: 0,
+                          bottom: 0,
+                          width: 300,
+                          opacity: 0,
+                          height: 300,
+                          position: "absolute",
+                          transform: "scale(0.8)",
+                          filter: "blur(192.75px)",
+                          background: "rgba(65, 196, 218, 0.70)",
+                          transition: "opacity 0.3s ease, transform 0.3s ease",
                         }}
-                      >
-                        {icon()}
-                      </Stack>
-
+                      />
+                      {/* Section Content */}
                       <Stack
-                        width={{
-                          laptop: "80%",
-                          tablet: "100%",
-                          mobile: "100%",
-                          desktop: "80%",
-                        }}
+                        direction="column"
+                        alignItems="flex-start"
+                        width="100%"
                         gap={2}
+                        sx={{
+                          direction: language === "ar" ? "rtl" : "ltr",
+                          textAlign: language === "ar" ? "right" : "left",
+                        }}
                       >
-                        <Typography
-                          className="lato"
-                          fontSize={44}
-                          color="#fff"
-                          lineHeight={1.2}
-                          fontWeight={500}
+                        <Stack
+                          p={1}
+                          sx={{
+                            width: 60,
+                            height: 60,
+                            borderRadius: 3,
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            backgroundColor: "#192832",
+                          }}
                         >
-                          {title}
-                        </Typography>
-                        <Typography
-                          fontSize={24}
-                          color="#B5B5B8"
-                          lineHeight={1.4}
+                          {icon()}
+                        </Stack>
+
+                        <Stack
+                          width={{
+                            laptop: "80%",
+                            tablet: "100%",
+                            mobile: "100%",
+                            desktop: "80%",
+                          }}
+                          gap={2}
                         >
-                          {description}
-                        </Typography>
+                          <Typography
+                            className="lato"
+                            fontSize={44}
+                            color="#fff"
+                            lineHeight={1.2}
+                            fontWeight={500}
+                            sx={{
+                              direction: language === "ar" ? "rtl" : "ltr",
+                              textAlign: language === "ar" ? "right" : "left",
+                            }}
+                          >
+                            {language === "en" && <>{titleEnglish}</>}
+                            {language === "ar" && <>{titleArabic}</>}
+                          </Typography>
+                          <Typography
+                            fontSize={24}
+                            color="#B5B5B8"
+                            lineHeight={1.4}
+                            sx={{
+                              direction: language === "ar" ? "rtl" : "ltr",
+                              textAlign: language === "ar" ? "right" : "left",
+                            }}
+                          >
+                            {language === "en" && <>{descriptionEnglish}</>}
+                            {language === "ar" && <>{descriptionArabic}</>}
+                          </Typography>
+                        </Stack>
                       </Stack>
                     </Stack>
                   </Stack>
-                </Stack>
-              );
-            })}
+                );
+              }
+            )}
           </Stack>
         </Stack>
       </Container>

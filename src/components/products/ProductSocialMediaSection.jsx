@@ -3,7 +3,11 @@ import React from "react";
 
 import { Stack, Button, Container, Typography } from "@mui/material";
 
+import { useLanguage } from "../../LanguageContext";
+
 const ProductSocialMediaSection = () => {
+  const { language } = useLanguage();
+
   return (
     <Container maxWidth="desktop">
       <Stack
@@ -38,7 +42,8 @@ const ProductSocialMediaSection = () => {
             WebkitTextFillColor: "transparent",
           }}
         >
-          Drive Real Impact on Social Media
+          {language === "en" && "Drive Real Impact on Social Media"}
+          {language === "ar" && "إحداث تأثير فعّال على منصات التواصل"}
         </Typography>
         <Typography
           fontSize={{
@@ -52,10 +57,15 @@ const ProductSocialMediaSection = () => {
           color="#ffffff80"
           className="lato responsive-text"
         >
-          From Engagement to ROI. Save time, get organized and manage your
-          social
-          <br /> media with our Social Media CRM. Measure and drive real
-          business impact from your social campaigns in one place.
+          {language === "en" && (
+            <>
+              From Engagement to ROI. Save time, get organized and manage your
+              social
+              <br /> media with our Social Media CRM. Measure and drive real
+              business impact from your social campaigns in one place.
+            </>
+          )}
+          {language === "ar" && <></>}
         </Typography>
 
         <Stack
@@ -84,33 +94,49 @@ const ProductSocialMediaSection = () => {
           {[
             {
               id: 1,
-              title: "Measure and Prove Your Social Media ROI",
               icon: "/Measure and Prove Your Social Media ROI.mp4",
-              description: `You know social media is more than brand awareness. Now you can prove it by finding out what posts and conversations drive sales, leads, and traffic. Pull data from Google Analytics. Tie your social media to real revenue goals. Know where to spend your budget.`,
+              titleEnglish: "Measure and Prove Your Social Media ROI",
+              titleArabic:
+                "قياس وإثبات عائد الاستثمار على وسائل التواصل الاجتماعي",
+              descriptionEnglish: `You know social media is more than brand awareness. Now you can prove it by finding out what posts and conversations drive sales, leads, and traffic. Pull data from Google Analytics. Tie your social media to real revenue goals. Know where to spend your budget.`,
+              descriptionArabic:
+                "وسائل التواصل الاجتماعي ليست فقط لتعزيز الوعي بالعلامة التجارية، بل يمكن إثبات فعاليتها من خلال تحليل المنشورات والمحادثات التي تساهم في زيادة المبيعات والعملاء المحتملين وحركة المرور. استخدم بيانات Google Analytics لتحديد الأداء. اربط حسابات وسائل التواصل الاجتماعي بأهداف الإيرادات الحقيقية، وتعرف على كيفية توزيع ميزانيتك.",
             },
             {
               id: 2,
               icon: "/control social media_1.mp4",
               title: "Control Your Social Media Content",
+              titleArabic: "أدر محتوى حساباتك على وسائل التواصل الاجتماعي",
               description: `Plan and schedule your social media content across all platforms with a simple post scheduler and shared calendars. Manage your content. Customize your post content for each platform. Collaborate with internal and external teams.`,
+              descriptionArabic:
+                "رتب المحتوى على وسائل التواصل الاجتماعي باستخدام المنصة التي تجعل من السهل جدولة المنشورات وإنشاء تقاويم مشتركة. إدارة المحتوى الخاص بك مهم، لذا تأكد من تخصيص كل منشور للمنصة المناسبة له. تعاون بشكل جيد مع الفرق الداخلية والخارجية.",
             },
             {
               id: 3,
-              title: "Listen to the Conversations that Matter",
+              titleArabic: "استمع إلى المحادثات الحيوية ",
               icon: "/Listen to the Conversations that Matter.mp4",
-              description: `Monitor and track mentions of your brand, industry, and competitors. Capture conversations from social networks, news sites, and blogs. Measure and protect your brand reputation. Get inspiration for content. Find out what your customers want and increase brand loyalty.`,
+              titleEnglish: "Listen to the Conversations that Matter",
+              descriptionArabic:
+                "تابع المنشورات الخاصة بعلامتك التجارية ومجالك ومنافسيك. استمع إلى المحادثات على وسائل التواصل الاجتماعي والمواقع الإخبارية والمدونات. قيّم سمعة علامتك التجارية وحافظ عليها. احصل على أفكار لمحتواك. تعرف على احتياجات عملائك وزد من ولائهم لعلامتك التجارية.",
+              descriptionEnglish: `Monitor and track mentions of your brand, industry, and competitors. Capture conversations from social networks, news sites, and blogs. Measure and protect your brand reputation. Get inspiration for content. Find out what your customers want and increase brand loyalty.`,
             },
             {
               id: 4,
-              title: "Create Reports Without the Pain",
+              titleArabic: "إنشاء تقارير بدون عناء",
               icon: "/Create Reports Without the Pain.mp4",
-              description: `Make better decisions with social media reports that don’t take all day to create. Compare key social metrics across all channels from one dashboard. See your top posts for each platform. Build and automate custom, presentation-ready social media reports.`,
+              titleEnglish: "Create Reports Without the Pain",
+              descriptionEnglish: `Make better decisions with social media reports that don’t take all day to create. Compare key social metrics across all channels from one dashboard. See your top posts for each platform. Build and automate custom, presentation-ready social media reports.`,
+              descriptionArabic:
+                "اتخذ قرارات أفضل باستخدام تقارير وسائل التواصل الاجتماعي التي يمكن إعدادها بسرعة. يمكنك مقارنة المؤشرات المهمة عبر جميع القنوات من مكان واحد. تعرف على أهم المنشورات لديك على كل منصة. قم بإنشاء وتقليل العمل في إعداد تقارير وسائل التواصل الاجتماعي الخاصة بك لتكون جاهزة لتقديمها بشكل متميز.",
             },
             {
               id: 5,
-              title: "Integrates with Your Existing Tools and Platforms",
+              titleArabic: "التكامل مع أدوات منصاتك الحالية",
               icon: "/Integrates with Your Existing Tools and Platforms.mp4",
-              description: `No more switching between social networks and other tools. Use our Social Media CRM to manage all your team’s social media marketing in one place.`,
+              titleEnglish: "Integrates with Your Existing Tools and Platforms",
+              descriptionEnglish: `No more switching between social networks and other tools. Use our Social Media CRM to manage all your team’s social media marketing in one place.`,
+              descriptionArabic:
+                "لا حاجة بعد اليوم لتبديل بين الشبكات الاجتماعية والأدوات المتنوعة. استفد من إدارة علاقات العملاء على وسائل التواصل الاجتماعي لتنظيم جميع استراتيجيات التسويق لفريقك في منصة واحدة متكاملة.",
             },
           ].map((livesItem) => {
             return (
@@ -125,10 +151,10 @@ const ProductSocialMediaSection = () => {
                   desktop: 3,
                 }}
                 direction={{
-                  laptop: "row",
-                  desktop: "row",
                   mobile: "column",
                   tablet: "column",
+                  laptop: language === "ar" ? "row-reverse" : "row",
+                  desktop: language === "ar" ? "row-reverse" : "row",
                 }}
                 justifyContent="space-between"
                 alignItems="center"
@@ -145,7 +171,7 @@ const ProductSocialMediaSection = () => {
               >
                 <Stack
                   gap={2}
-                  alignItems="flex-start"
+                  alignItems={language === "ar" ? "flex-end" : "flex-start"}
                   justifyContent="flex-start"
                   width={{
                     laptop: "50%",
@@ -162,8 +188,12 @@ const ProductSocialMediaSection = () => {
                     fontSize={36}
                     lineHeight={1.4}
                     fontWeight={400}
+                    sx={{
+                      textAlign: language === "ar" ? "right" : "left",
+                    }}
                   >
-                    {livesItem?.title}
+                    {language === "en" && <>{livesItem?.titleEnglish}</>}
+                    {language === "ar" && <>{livesItem?.titleArabic}</>}
                   </Typography>
                   <Typography
                     variant="body1"
@@ -173,8 +203,12 @@ const ProductSocialMediaSection = () => {
                     fontWeight={400}
                     className="lato"
                     letterSpacing={1}
+                    sx={{
+                      textAlign: language === "ar" ? "right" : "left",
+                    }}
                   >
-                    {livesItem?.description}
+                    {language === "en" && <>{livesItem?.descriptionEnglish}</>}
+                    {language === "ar" && <>{livesItem?.descriptionArabic}</>}
                   </Typography>
                 </Stack>
 
@@ -241,7 +275,8 @@ const ProductSocialMediaSection = () => {
             }
           }}
         >
-          Lets talk
+          {language === "en" && "Lets talk"}
+          {language === "ar" && "تواصل معنا"}
           <img alt="arrow" src="/ArrowUpRight.svg" />
         </Button>
       </Stack>

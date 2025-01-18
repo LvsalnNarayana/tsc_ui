@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 /* eslint-disable operator-linebreak */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable max-lines */
@@ -5,7 +6,11 @@ import React from "react";
 
 import { Box, Stack, Button, Typography } from "@mui/material";
 
+import { useLanguage } from "../../LanguageContext";
+
 const ServiceCard = ({ card, minHeight }) => {
+  const { language } = useLanguage();
+
   return (
     <Stack
       width="90%"
@@ -293,43 +298,78 @@ const ServiceCard = ({ card, minHeight }) => {
           fontWeight={700}
           lineHeight={1.5}
           textAlign="center"
+          sx={{
+            mx: "auto",
+            direction: language === "ar" ? "rtl" : "ltr",
+            textAlign: language === "ar" ? "right" : "left",
+          }}
         >
-          {card?.title}
+          {language === "en" && <>{card?.titleEnglish}</>}
+          {language === "ar" && <>{card?.titleArabic}</>}
         </Typography>
-        {card?.description && (
+        {(card?.descriptionEnglish || card?.descriptionArabic) && (
           <Stack sx={{ minHeight: minHeight || "270px" }} gap={2}>
             <Typography
               width={{
-                laptop: "80%",
+                laptop: "100%",
                 mobile: "100%",
                 tablet: "100%",
-                desktop: "80%",
+                desktop: "100%",
               }}
               fontSize={16}
               fontWeight={400}
               lineHeight={1.5}
               color="#8C8C8C"
-              sx={{ mx: "auto" }}
+              sx={{
+                mx: "auto",
+                direction: language === "ar" ? "rtl" : "ltr",
+                textAlign: language === "ar" ? "right" : "left",
+              }}
               className="lato"
               letterSpacing={1}
             >
-              {card?.description}
+              {language === "en" && <>{card?.descriptionEnglish}</>}
+              {language === "ar" && <>{card?.descriptionArabic}</>}
             </Typography>
-            {card?.services?.length > 0 && (
+            {(card?.servicesEnglish?.length > 0 ||
+              card?.servicesArabic?.length > 0) && (
               <ul
-                style={{ listStyle: "disc", paddingLeft: "20px" }}
+                style={{
+                  listStyle: "disc",
+                  paddingLeft: "20px",
+                  direction: language === "ar" ? "rtl" : "ltr",
+                  textAlign: language === "ar" ? "right" : "left",
+                }}
                 className="lato"
               >
-                {card?.services?.map((service, index) => {
-                  return (
-                    <li
-                      key={index}
-                      style={{ color: "#8C8C8C", marginBottom: "10px" }}
-                    >
-                      {service}
-                    </li>
-                  );
-                })}
+                {language === "en" && (
+                  <>
+                    {card?.servicesEnglish?.map((service, index) => {
+                      return (
+                        <li
+                          key={index}
+                          style={{ color: "#8C8C8C", marginBottom: "10px" }}
+                        >
+                          {service}
+                        </li>
+                      );
+                    })}
+                  </>
+                )}
+                {language === "ar" && (
+                  <>
+                    {card?.servicesArabic?.map((service, index) => {
+                      return (
+                        <li
+                          key={index}
+                          style={{ color: "#8C8C8C", marginBottom: "10px" }}
+                        >
+                          {service}
+                        </li>
+                      );
+                    })}
+                  </>
+                )}
               </ul>
             )}
           </Stack>
@@ -346,6 +386,7 @@ const ServiceCard = ({ card, minHeight }) => {
             borderRadius: "100px",
             justifyContent: "center",
             border: " 1px solid #45BDD6",
+            textAlign: language === "ar" ? "right" : "left",
           }}
           onClick={() => {
             const element = document.getElementById("connect");
@@ -362,7 +403,8 @@ const ServiceCard = ({ card, minHeight }) => {
             }
           }}
         >
-          Let’s talk
+          {language === "en" && <>Let’s talk</>}
+          {language === "ar" && <>تواصل معنا</>}
           <Stack
             sx={{
               py: "6px",

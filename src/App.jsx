@@ -12,6 +12,8 @@ import Products from "./pages/Products";
 import Services from "./pages/Services";
 import ContactUs from "./pages/ContactUs";
 
+import { LanguageProvider } from "./LanguageContext";
+
 const App = () => {
   const { pathname } = useLocation();
 
@@ -20,27 +22,29 @@ const App = () => {
   }, [pathname]);
 
   return (
-    <Suspense>
-      <Stack
-        width="100%"
-        sx={{
-          color: "#fff",
-          // overflow: "clip",
-          // position: "relative",
-          backgroundColor: "#040B12",
-        }}
-      >
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact-us" element={<ContactUs />} />
-        </Routes>
-        <Footer />
-      </Stack>
-    </Suspense>
+    <LanguageProvider>
+      <Suspense>
+        <Stack
+          width="100%"
+          sx={{
+            color: "#fff",
+            // overflow: "clip",
+            // position: "relative",
+            backgroundColor: "#040B12",
+          }}
+        >
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/contact-us" element={<ContactUs />} />
+          </Routes>
+          <Footer />
+        </Stack>
+      </Suspense>
+    </LanguageProvider>
   );
 };
 

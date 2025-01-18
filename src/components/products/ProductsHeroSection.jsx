@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 import React from "react";
 
 import {
@@ -8,15 +9,12 @@ import {
   useMediaQuery,
 } from "@mui/material";
 
+import { useLanguage } from "../../LanguageContext";
 import HeroBackground from "../Backgrounds/HeroBackground";
 
 const ProductsHeroSection = () => {
-  const mobileView = useMediaQuery((mobileTheme) => {
-    return mobileTheme.breakpoints.down("tablet");
-  });
-  const tabletView = useMediaQuery((tabletTheme) => {
-    return tabletTheme.breakpoints.between("tablet", "laptop");
-  });
+  const { language } = useLanguage();
+
   const laptopView = useMediaQuery((laptopTheme) => {
     return laptopTheme.breakpoints.between("laptop", "desktop");
   });
@@ -88,24 +86,6 @@ const ProductsHeroSection = () => {
           alignItems="center"
           gap={4}
         >
-          {/* <Button
-            sx={{
-              py: 1.7,
-              fontSize: 18,
-              lineHeight: 1,
-              color: "#fff",
-              borderRadius: "99px",
-              background: "#121E24",
-              px: {
-                mobile: 3,
-                tablet: 3,
-                laptop: 6,
-                desktop: 6,
-              },
-            }}
-          >
-            Grab the Opportunity
-          </Button> */}
           <Typography
             variant="body1"
             fontSize={{
@@ -117,14 +97,26 @@ const ProductsHeroSection = () => {
             sx={{
               color: "#fff",
               display: "inline-block",
+              direction: language === "ar" ? "rtl" : "ltr",
             }}
             textAlign="center"
             fontWeight={400}
             className="responsive-text"
           >
-            We’ll help you get the most out of
-            <br /> technology,
-            <span style={{ color: "#45BDD6" }}>act smart</span>, and grow fast.
+            {language === "en" && (
+              <>
+                We’ll help you get the most out of
+                <br /> technology,
+                <span style={{ color: "#45BDD6" }}>act smart</span>, and grow
+                fast.
+              </>
+            )}
+            {language === "ar" && (
+              <>
+                سنساعدك في استخدام التقنية بشكل أفضل، واتخاذ قرارات ذكية، والنمو
+                بشكل سريع.
+              </>
+            )}
           </Typography>
           <Button
             sx={{
@@ -161,7 +153,8 @@ const ProductsHeroSection = () => {
               }
             }}
           >
-            Lets talk
+            {language === "en" && <>Lets talk</>}
+            {language === "ar" && <> تواصل معنا</>}
             <img alt="arrow" src="/ArrowUpRight.svg" />
           </Button>
         </Stack>

@@ -2,7 +2,11 @@ import React from "react";
 
 import { Stack, Button, Typography } from "@mui/material";
 
+import { useLanguage } from "../../LanguageContext";
+
 const ProductHelpSection = () => {
+  const { language } = useLanguage();
+
   return (
     <Stack
       py={20}
@@ -48,15 +52,25 @@ const ProductHelpSection = () => {
         className="responsive-text"
         sx={{ zIndex: 2 }}
       >
-        We Can Help You Reinvent Your Business!
+        {language === "en" && " We Can Help You Reinvent Your Business!"}
+        {language === "ar" && (
+          <>
+            نحن هنا لنكون عوناً لك في تجديد رؤيتك <br />
+            وزيادة إبداعك في عالم الأعمال!
+          </>
+        )}
       </Typography>
       <Button
         sx={{
+          gap: 1,
           py: 1.7,
+          zIndex: 2,
           fontSize: 18,
           lineHeight: 1,
           color: "#fff",
+          display: "flex",
           borderRadius: "99px",
+          alignItems: "center",
           boxShadow: "0px 1px 0px 0px rgba(255, 255, 255, 0.10) inset",
           background: "linear-gradient(180deg, #525252 -61.82%, #292929 100%)",
           px: {
@@ -65,14 +79,9 @@ const ProductHelpSection = () => {
             laptop: 6,
             desktop: 6,
           },
-          display: "flex",
-          alignItems: "center",
-          gap: 1,
-          zIndex: 2,
         }}
       >
         Lets talk
-        
         <img alt="arrow" src="/ArrowUpRight.svg" />
       </Button>
     </Stack>

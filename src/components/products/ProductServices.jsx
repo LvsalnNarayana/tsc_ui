@@ -3,8 +3,11 @@ import React from "react";
 import { Stack, Container, Typography } from "@mui/material";
 
 import ServiceCard from "../services/ServiceCard";
+import { useLanguage } from "../../LanguageContext";
 
 const ProductServices = () => {
+  const { language } = useLanguage();
+
   return (
     <Stack
       width="100%"
@@ -32,9 +35,11 @@ const ProductServices = () => {
               backgroundClip: "text",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
+              direction: language === "ar" ? "rtl" : "ltr",
             }}
           >
-            CRM Services
+            {language === "en" && "CRM Services"}
+            {language === "ar" && "خدمات نظام إدارة علاقات العملاء (CRM)"}
           </Typography>
           <Typography
             fontSize={{
@@ -48,10 +53,20 @@ const ProductServices = () => {
             color="#ffffff80"
             className="lato responsive-text"
           >
-            Manage your business better with our CRM services and best
-            practices. Collect
-            <br /> data, automate tasks and get insights to make better
-            decisions.
+            {language === "en" && (
+              <>
+                Manage your business better with our CRM services and best
+                practices. Collect
+                <br /> data, automate tasks and get insights to make better
+                decisions.
+              </>
+            )}
+            {language === "ar" && (
+              <>
+                يمكنك إدارة وجمع المعلومات، وتبسيط المهام، والحصول على رؤى
+                تساعدك في اتخاذ قرارات أفضل.
+              </>
+            )}
           </Typography>
           <Stack
             sx={{
@@ -71,8 +86,11 @@ const ProductServices = () => {
             {[
               {
                 id: 1,
-                title: "CRM Consulting",
-                description: `Grow your business with expert advice and custom solutions designed for your business. Let’s grow together.`,
+                titleEnglish: "CRM Consulting",
+                titleArabic: "استشارات نظام إدارة علاقات العملاء (CRM)",
+                descriptionEnglish: `Grow your business with expert advice and custom solutions designed for your business. Let’s grow together.`,
+                descriptionArabic:
+                  "ارتقِ بأعمالك إلى آفاق جديدة من خلال الاستفادة من خبرات المتخصصين والحلول الفريدة المخصصة خصيصاً لاحتياجاتك. دعنا ننمو معاً.",
                 icon: () => {
                   return (
                     <svg
@@ -95,8 +113,11 @@ const ProductServices = () => {
               },
               {
                 id: 2,
-                title: "CRM Platform Customization",
-                description: `We customize and tailor platforms to fit your industry and help you manage customer relationships better.`,
+                titleEnglish: "CRM Platform Customization",
+                titleArabic: "تخصيص منصة نظام إدارة علاقات العملاء (CRM)",
+                descriptionArabic:
+                  "نقوم بتخصيص المنصات لتتناسب مع عملك ونساعدك على تحسين إدارة علاقات العملاء.",
+                descriptionEnglish: `We customize and tailor platforms to fit your industry and help you manage customer relationships better.`,
                 icon: () => {
                   return (
                     <svg
@@ -119,8 +140,11 @@ const ProductServices = () => {
               },
               {
                 id: 3,
-                title: "CRM Migration",
-                description: `Get a smooth migration at TSC. Upgrade your platform to the latest and greatest with 100% data integrity and no downtime.`,
+                titleEnglish: "CRM Migration",
+                titleArabic: "نقل نظام إدارة علاقات العملاء (CRM)",
+                descriptionEnglish: `Get a smooth migration at TSC. Upgrade your platform to the latest and greatest with 100% data integrity and no downtime.`,
+                descriptionArabic:
+                  "احصل على نقل سلس. قم بترقية منصتك إلى النسخ الأحدث والأكثر تطورًا مع ضمان تكامل كامل للبيانات ودون أي انقطاع ملحوظ.",
                 icon: () => {
                   return (
                     <svg
@@ -143,8 +167,11 @@ const ProductServices = () => {
               },
               {
                 id: 4,
-                title: "CRM Integration",
-                description: `Get 360-degree customer management with modern and useful integrations like chatbots, analytics tools, and IoT feeds.`,
+                titleEnglish: "CRM Integration",
+                titleArabic: "تكامل نظام إدارة علاقات العملاء (CRM)",
+                descriptionEnglish: `Get 360-degree customer management with modern and useful integrations like chatbots, analytics tools, and IoT feeds.`,
+                descriptionArabic:
+                  "احصل على إدارة شاملة للعملاء مع أدوات عصرية مثل روبوتات المحادثة، أدوات التحليل، وتحديثات إنترنت الأشياء.",
                 icon: () => {
                   return (
                     <svg
@@ -174,8 +201,11 @@ const ProductServices = () => {
               },
               {
                 id: 5,
-                title: "CRM Testing",
-                description: `Test performance and usability with our testing service. By using our service you can prevent your business from inconsistencies and defects.`,
+                titleEnglish: "CRM Testing",
+                titleArabic: "اختبار نظام إدارة علاقات العملاء (CRM)",
+                descriptionEnglish: `Test performance and usability with our testing service. By using our service you can prevent your business from inconsistencies and defects.`,
+                descriptionArabic:
+                  "اختبر تجربة الأداء وسهولة الاستخدام من خلال خدمة الاختبار التي نقدمها. باستخدام هذه الخدمة، يمكنك حماية عملك من المشاكل والعيوب.",
                 icon: () => {
                   return (
                     <svg
@@ -198,7 +228,8 @@ const ProductServices = () => {
               },
               {
                 id: 6,
-                title: "Get in touch to know more",
+                titleArabic: "تواصل معنا لمعرفة المزيد",
+                titleEnglish: "Get in touch to know more",
               },
             ].map((card) => {
               return <ServiceCard card={card} key={card?.id} minHeight={100} />;

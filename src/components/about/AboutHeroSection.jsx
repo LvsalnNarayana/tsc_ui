@@ -2,9 +2,35 @@ import React from "react";
 
 import { Box, Stack, Container, Typography } from "@mui/material";
 
+import { useLanguage } from "../../LanguageContext";
 import AboutHeroPattern from "../SVGComponents/AboutHeroPattern";
 
 const AboutHeroSection = () => {
+  const { language } = useLanguage();
+
+  const text = {
+    ar: {
+      title: "",
+      subtitle: "",
+      description: "",
+    },
+    en: {
+      title: "About Us",
+      subtitle: "People with purpose\nand value",
+      description: `At TSC we are a startup with a purpose to deliver transformative
+      IT solutions. Our mission is to enable businesses through
+      technology, quality and client centricity. As we start this
+      journey we are committed to our clients and helping them achieve
+      their goals. Our team consists of developers, engineers,
+      designers, QA experts and seasoned executive leaders – all with
+      15+ years of experience. We have delivered impressive results and
+      built long term relationships with global clients and we are
+      growing stronger every day.`,
+    },
+  };
+
+  const t = text[language];
+
   return (
     <>
       <Stack
@@ -30,18 +56,18 @@ const AboutHeroSection = () => {
           fontWeight={500}
           sx={{
             zIndex: 2,
-            background:
-              "linear-gradient(180deg, rgb(255,255,255) 0%, rgb(4,11,18) 100%)",
-            // eslint-disable-next-line perfectionist/sort-objects
             color: "transparent",
             whiteSpace: "nowrap",
-            backgroundClip: "text",
             WebkitBackgroundClip: "text",
             textFillColor: "transparent",
             WebkitTextFillColor: "transparent",
+            background:
+              "linear-gradient(180deg, rgb(255,255,255) 0%, rgb(4,11,18) 100%)",
+            // eslint-disable-next-line perfectionist/sort-objects
+            backgroundClip: "text",
           }}
         >
-          About Us
+          {t.title}
         </Typography>
       </Stack>
       <Container maxWidth="desktop">
@@ -89,7 +115,7 @@ const AboutHeroSection = () => {
                 fontWeight={400}
                 lineHeight={1.2}
               >
-                About Us
+                {t.title}
               </Typography>
             </Box>
 
@@ -106,9 +132,7 @@ const AboutHeroSection = () => {
               lineHeight={1.2}
               className="responsive-text"
             >
-              People with purpose
-              <br />
-              and value
+              {t.subtitle}
             </Typography>
 
             <Typography
@@ -128,15 +152,7 @@ const AboutHeroSection = () => {
               className="lato"
               letterSpacing={1}
             >
-              At TSC we are a startup with a purpose to deliver transformative
-              IT solutions. Our mission is to enable businesses through
-              technology, quality and client centricity. As we start this
-              journey we are committed to our clients and helping them achieve
-              their goals. Our team consists of developers, engineers,
-              designers, QA experts and seasoned executive leaders – all with
-              15+ years of experience. We have delivered impressive results and
-              built long term relationships with global clients and we are
-              growing stronger every day.
+              {t.description}
             </Typography>
           </Stack>
         </Stack>

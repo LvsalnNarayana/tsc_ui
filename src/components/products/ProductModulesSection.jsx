@@ -3,7 +3,45 @@ import React from "react";
 
 import { Box, Stack, Container, Typography } from "@mui/material";
 
+import { useLanguage } from "../../LanguageContext";
+
 const ProductModulesSection = () => {
+  const { language } = useLanguage();
+
+  // Multilingual content
+  const content = {
+    ar: {
+      title: "الانظمة المخصصة",
+      subtitle: "الانظمة التي نطورها لمبيعاتك",
+      description: ` طور نظامك حسب احتياجاتك، سواء كنت ترغب في إعداد التقارير والتحليلات، أو أتمتة سير العمل، أو إضافة ميزات خاصة بك. نحن نقدم لك كل ما يلزم لتحسين منصتك والحصول على رؤى أعمق عن العملاء ونمو المبيعات.`,
+      modules: [
+        { id: 1, name: "التسويق" },
+        { id: 2, name: "المبيعات" },
+        { id: 3, name: "خدمة الموظفين " },
+        { id: 4, name: "أتمتة سير العمل" },
+        { id: 5, name: "تكامل الدردشة " },
+        { id: 6, name: "إدارة العملاء المحتملين" },
+      ],
+    },
+    en: {
+      title: "Custom Modules",
+      subtitle: "Modules We Develop for Your Sales",
+      description: `Add more to your system with custom modules. Whether you need
+      reporting and analytics modules, workflow automation modules, or industry-specific modules, we have got you covered. Optimize your
+      platform for deeper customer insights and sales growth.`,
+      modules: [
+        { id: 1, name: "Marketing Module" },
+        { id: 2, name: "Sales Module" },
+        { id: 3, name: "Personal Service Module" },
+        { id: 4, name: "Workflow Module" },
+        { id: 5, name: "Chat Integration Module" },
+        { id: 6, name: "Leads Management Module" },
+      ],
+    },
+  };
+
+  const selectedContent = content[language];
+
   return (
     <Container maxWidth="desktop">
       <Stack
@@ -26,14 +64,14 @@ const ProductModulesSection = () => {
           lineHeight={1.2}
           textAlign="center"
           sx={{
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
             background: "linear-gradient(180deg, #FFF 0%, #040B12 139.86%)",
             // eslint-disable-next-line perfectionist/sort-objects
             backgroundClip: "text",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
           }}
         >
-          Custom Modules
+          {selectedContent.title}
         </Typography>
         <Typography
           fontSize={{
@@ -46,13 +84,14 @@ const ProductModulesSection = () => {
           textAlign="center"
           color="#ffffff80"
           className="lato responsive-text"
+          width={{
+            laptop: "60%",
+            desktop: "60%",
+            tablet: "100%",
+            mobile: "100%",
+          }}
         >
-          Add more to your system with custom modules. Whether you need
-          reporting and analytics modules,
-          <br /> workflow automation modules or industry-specific modules we
-          have got you covered. Optimize your
-          <br />
-          platform for deeper customer insights and sales growth.
+          {selectedContent.description}
         </Typography>
         <Typography
           fontSize={{
@@ -65,7 +104,7 @@ const ProductModulesSection = () => {
           textAlign="center"
           color="rgba(255, 255, 255, 0.24)"
         >
-          Modules We Develop for Your Sales
+          {selectedContent.subtitle}
         </Typography>
         <Stack
           gap={2}
@@ -75,17 +114,10 @@ const ProductModulesSection = () => {
           alignItems="center"
           justifyContent="flex-start"
         >
-          {[
-            { id: 1, name: "Marketing Module" },
-            { id: 2, name: "Sales Module" },
-            { id: 3, name: "Personal Service Module" },
-            { id: 4, name: "Workflow Module" },
-            { id: 5, name: "Chat Integration Module" },
-            { id: 6, name: "Leads Management Module" },
-          ]?.map((module) => {
+          {selectedContent.modules.map((module) => {
             return (
               <Stack
-                key={module?.id}
+                key={module.id}
                 p={2}
                 gap={2}
                 mb={4}
@@ -128,7 +160,7 @@ const ProductModulesSection = () => {
                   fontWeight={400}
                   variant="body1"
                 >
-                  {module?.name}
+                  {module.name}
                 </Typography>
                 <Box
                   className="right-arrow-animation"

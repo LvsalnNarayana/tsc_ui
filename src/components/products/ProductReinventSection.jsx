@@ -1,11 +1,12 @@
+/* eslint-disable operator-linebreak */
 import React from "react";
-import Lottie from "lottie-react";
 
-import { Stack, Button, Typography, useMediaQuery } from "@mui/material";
+import { Stack, Typography, useMediaQuery } from "@mui/material";
 
-import reinventJson from "../../assets/Reinvent Your Business.json";
+import { useLanguage } from "../../LanguageContext";
 
 const ProductReinventSection = () => {
+  const { language } = useLanguage();
   const mobileView = useMediaQuery((mobileTheme) => {
     return mobileTheme.breakpoints.down("tablet");
   });
@@ -29,16 +30,6 @@ const ProductReinventSection = () => {
       sx={{ position: "relative" }}
     >
       {(desktopView || laptopView) && (
-        // <Lottie
-        //   animationData={reinventJson}
-        //   style={{
-        //     top: 0,
-        //     left: 0,
-        //     width: "100%",
-        //     height: "100%",
-        //     position: "absolute",
-        //   }}
-        // />
         <img
           alt="bg"
           src="/reinvent_gif.gif"
@@ -85,7 +76,8 @@ const ProductReinventSection = () => {
         }}
         lineHeight={1.5}
       >
-        Reinvent Your Business
+        {language === "en" && "Reinvent Your Business"}
+        {language === "ar" && "ابتكر أعمالك من جديد. "}
       </Typography>
       <Typography
         variant="body1"
@@ -107,8 +99,10 @@ const ProductReinventSection = () => {
         lineHeight={1.5}
         color="#708090"
       >
-        Adapt to changing needs and be the next and best version – a business
-        that not only survives but thrives.
+        {language === "en" &&
+          "Adapt to changing needs and be the next and best version – a business that not only survives but thrives."}
+        {language === "ar" &&
+          "تكيّف مع المتطلبات المتغيرة وكن النسخة التالية والأفضل - شركة لا تقتصر فقط على البقاء، بل تسعى نحو الازدهار."}
       </Typography>
     </Stack>
   );

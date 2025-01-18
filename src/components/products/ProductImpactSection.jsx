@@ -1,8 +1,13 @@
+/* eslint-disable max-lines */
 import React from "react";
 
 import { Box, Stack, Container, Typography } from "@mui/material";
 
+import { useLanguage } from "../../LanguageContext";
+
 const ProductImpactSection = () => {
+  const { language } = useLanguage();
+
   return (
     <Container maxWidth="desktop">
       <Stack
@@ -37,7 +42,8 @@ const ProductImpactSection = () => {
             WebkitTextFillColor: "transparent",
           }}
         >
-          Drive Real Impact on Social Media
+          {language === "en" && " Drive Real Impact on Social Media"}
+          {language === "ar" && "إحداث تأثير فعّال على منصات التواصل"}
         </Typography>
         <Typography
           fontSize={{
@@ -51,10 +57,23 @@ const ProductImpactSection = () => {
           color="#ffffff80"
           className="lato responsive-text"
         >
-          From Engagement to ROI. Save time, get organized and manage your
-          social media with our Social
-          <br /> Media CRM. Measure and drive real business impact from your
-          social campaigns in one place.
+          {language === "en" && (
+            <>
+              From Engagement to ROI. Save time, get organized and manage your
+              social media with our Social
+              <br /> Media CRM. Measure and drive real business impact from your
+              social campaigns in one place.
+            </>
+          )}
+          {language === "ar" && (
+            <>
+              من المشاركة إلى العائد من الاستثمار. احصل على وقت أكبر ونظم شؤونك،
+              وادِر حساباتك على وسائل التواصل الاجتماعي باستخدام إدارة علاقات
+              <br />
+              العملاء. قيّم تأثير أعمالك ونتائج حملاتك الاجتماعية في منصة واحده
+              متكاملة
+            </>
+          )}
         </Typography>
 
         <Stack
@@ -83,9 +102,10 @@ const ProductImpactSection = () => {
           {[
             {
               id: 1,
-              title: "Manage Your Social Content",
-              description: `Everything you need to manage your content and grow your brand across all major social media platforms.
-`,
+              titleEnglish: "Manage Your Social Content",
+              titleArabic: "إدارة المحتوى الخاص بوسائل التواصل لديك",
+              descriptionArabic: `كل ما يلزمك لإدارة محتواك وتطوير علامتك التجارية على مختلف منصات التواصل الاجتماعي الأساسية.`,
+              descriptionEnglish: `Everything you need to manage your content and grow your brand across all major social media platforms.`,
               icon: () => {
                 return (
                   <svg
@@ -117,8 +137,10 @@ const ProductImpactSection = () => {
             },
             {
               id: 2,
-              title: "Collaborate with Your Team",
-              description: `No more internal friction and multiple emails and messages to get approvals.`,
+              titleArabic: "تعاون مع فريقك بشكل فعال",
+              titleEnglish: "Collaborate with Your Team",
+              descriptionEnglish: `No more internal friction and multiple emails and messages to get approvals.`,
+              descriptionArabic: `لم يعد من الضروري مواجهة التحديات الداخلية أو التعامل مع العديد من رسائل البريد الإلكتروني والرسائل للحصول على الموافقات.`,
               icon: () => {
                 return (
                   <svg
@@ -138,8 +160,11 @@ const ProductImpactSection = () => {
             },
             {
               id: 3,
-              title: "Give Your Team Actionable Insights",
-              description: `Measure the metrics that matter to your brand. Get the insights and data to write posts and start conversations that grow your business.`,
+              titleEnglish: "Give Your Team Actionable Insights",
+              titleArabic: "زوّد فريقك بأفكار عملية يمكن تنفيذها.",
+              descriptionEnglish: `Measure the metrics that matter to your brand. Get the insights and data to write posts and start conversations that grow your business.`,
+              descriptionArabic: `حدد المقاييس الرئيسية التي تعكس أهمية علامتك    التجارية
+احصل على البيانات والرؤى اللازمة لكتابة المنشورات وبدء المحادثات التي تسهم في نمو أعمالك.`,
               icon: () => {
                 return (
                   <svg
@@ -279,7 +304,8 @@ const ProductImpactSection = () => {
                     lineHeight={1.4}
                     fontWeight={400}
                   >
-                    {livesItem?.title}
+                    {language === "en" && <>{livesItem?.titleEnglish}</>}
+                    {language === "ar" && <>{livesItem?.titleArabic}</>}
                   </Typography>
                   <Typography
                     variant="body1"
@@ -291,7 +317,8 @@ const ProductImpactSection = () => {
                     className="lato"
                     letterSpacing={1}
                   >
-                    {livesItem?.description}
+                    {language === "en" && <>{livesItem?.descriptionEnglish}</>}
+                    {language === "ar" && <>{livesItem?.descriptionArabic}</>}
                   </Typography>
                 </Stack>
               </Stack>

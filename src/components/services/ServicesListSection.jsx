@@ -5,14 +5,16 @@ import React from "react";
 import { Stack, Container, Typography } from "@mui/material";
 
 import ServiceCard from "./ServiceCard";
+import { useLanguage } from "../../LanguageContext";
 
 const ServicesListSection = () => {
+  const { language } = useLanguage();
+
   return (
     <Container maxWidth="desktop">
       <Stack gap={4}>
         <Typography
           variant="h1"
-          align="center"
           fontWeight={400}
           fontSize={{
             laptop: 60,
@@ -23,18 +25,33 @@ const ServicesListSection = () => {
           lineHeight={1.2}
           color="transparent"
           sx={{
-            background: "linear-gradient(180deg, #FFF 0%, #040B12 139.86%)",
-            // eslint-disable-next-line perfectionist/sort-objects
             zIndex: 2,
-            backgroundClip: "text",
+            textAlign: "center",
             WebkitBackgroundClip: "text",
             textFillColor: "transparent",
             WebkitTextFillColor: "transparent",
+            background: "linear-gradient(180deg, #FFF 0%, #040B12 139.86%)",
+            // eslint-disable-next-line perfectionist/sort-objects
+            backgroundClip: "text",
           }}
         >
-          We craft experiences, foster
-          <br /> innovations, and drive acceleration.
+          {language === "en" && (
+            <>
+              We craft experiences, foster
+              <br /> innovations, and drive acceleration.
+            </>
+          )}
+          {language === "ar" && (
+            <span
+              style={{
+                direction: language === "ar" ? "rtl" : "ltr",
+              }}
+            >
+              نحن نعمل على تشكيل التجارب، ونعزز الابتكارات وندفع عجلة التسريع.
+            </span>
+          )}
         </Typography>
+
         <Typography
           fontSize={{
             laptop: 20,
@@ -48,9 +65,22 @@ const ServicesListSection = () => {
           color="rgba(255, 255, 255, 0.80)"
           className="lato"
           letterSpacing={1}
+          sx={{
+            direction: language === "ar" ? "rtl" : "ltr",
+          }}
         >
-          By leveraging innovation and technology, we transform your ideas into
-          reality, propelling your business forward swiftly.
+          {language === "en" && (
+            <>
+              By leveraging innovation and technology, we transform your ideas
+              into reality, propelling your business forward swiftly.
+            </>
+          )}
+          {language === "ar" && (
+            <>
+              نحن نستخدم الابتكار والتقنية لتحويل أفكارك إلى واقع ملموس، وندفع
+              أعمالك إلى الأمام بسرعة.
+            </>
+          )}
         </Typography>
         <Stack
           display="grid"
@@ -71,15 +101,25 @@ const ServicesListSection = () => {
           {[
             {
               id: 1,
-              title: "Mobile Application Development",
-              services: [
+              titleArabic: "إنشاء تطبيقات الهواتف الذكية",
+              titleEnglish: "Mobile Application Development",
+              servicesEnglish: [
                 "iOS App Development",
                 "Android App Development",
                 "Cross-platform App Development",
                 "UI/UX Design",
                 "App Maintenance and Support",
               ],
-              description: `Get innovative mobile solutions for your business. We redefine 
+              descriptionArabic:
+                "احصل على حلول مبتكرة للأجهزة المحمولة تساهم في تطوير أعمالك. نحن نعيد صياغة تجربة المستخدمين من خلال استخدام أحدث التقنيات لتوفير تطبيقات فعّالة وسهلة الاستخدام.استكشف خدماتنا في مجال تطوير تطبيقات الهواتف المحمولة. ",
+              servicesArabic: [
+                " تطوير تطبيقات iOS",
+                " تطوير تطبيقات الأندرويد",
+                " تطوير تطبيقات متعددة المنصات",
+                " تصميم واجهة المستخدم/تجربة المستخدم",
+                " الصيانة والدعم للبرامج",
+              ],
+              descriptionEnglish: `Get innovative mobile solutions for your business. We redefine 
               user appointments using the latest technologies to deliver 
               robust and user-friendly applications. Explore Our Mobile 
               Application Development Services.`,
@@ -102,12 +142,22 @@ const ServicesListSection = () => {
             },
             {
               id: 2,
-              title: "Web Development",
-              description: `Get bespoke web solutions for your online presence. We put user
+              titleArabic: "تطوير الويب",
+              titleEnglish: "Web Development",
+              descriptionArabic:
+                "احصل على حلول مخصصة لتواجدك الرقمي على الإنترنت. نحن نركز على تجربة المستخدم كأولوية، ونعتمد على أحدث التقنيات لتطوير مواقع إلكترونية تتميز بسهولة الاستخدام وأداء عالي. كتشف خدماتنا لتطوير المواقع الإلكترونية",
+              descriptionEnglish: `Get bespoke web solutions for your online presence. We put user
               experience first, using the latest technologies to create
               intuitive and high-performing websites. Explore Our Web
               Development Services`,
-              services: [
+              servicesArabic: [
+                " تطوير مواقع الويب المخصصة",
+                " تطوير الواجهة الأمامية والخلفية",
+                " أنظمة إدارة المحتوى (CMS)",
+                " حلول التجارة الإلكترونية",
+                " صيانة ودعم المواقع الإلكترونية",
+              ],
+              servicesEnglish: [
                 "Custom Website Development",
                 "Front-end and Back-end Development",
                 "Content Management Systems (CMS)",
@@ -135,35 +185,43 @@ const ServicesListSection = () => {
             },
             {
               id: 3,
-              title: "Cloud Technology for Business Growth",
-              description: ` Get business with the cloud. Leverage the cloud for streamlined
+              titleArabic: "الحوسبة السحابية لنمو الأعمال",
+              titleEnglish: "Cloud Technology for Business Growth",
+              descriptionArabic:
+                "استفد من السحابة لتعزيز أداء أعمالك بشكل مبسط. اعتمد على الحلول السحابية المتخصصة في مجالك لضمان مستقبل أسرع وأكثر كفاءة. نحن نهدف إلى تحقيق أقصى استفادة من السحابة لكل بايت من بياناتك. استخدم السحابة كنقطة انطلاق نحو المستقبل.",
+              descriptionEnglish: ` Get business with the cloud. Leverage the cloud for streamlined
               performance. Adopt industry-specific cloud solutions for a faster
               and more efficient future. We maximize the cloud for every byte of
               your business data. Use the cloud as your launchpad for the
               future.`,
               icon: () => {
-                return <svg
-                  width="34"
-                  height="34"
-                  viewBox="0 0 34 34"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9.20898 26.9168C5.68817 26.9168 2.83398 24.0626 2.83398 20.5418C2.83398 17.2218 5.37195 14.4945 8.61362 14.1943C9.27672 10.1607 12.7793 7.0835 17.0007 7.0835C21.222 7.0835 24.7246 10.1607 25.3877 14.1943C28.6293 14.4945 31.1673 17.2218 31.1673 20.5418C31.1673 24.0626 28.3131 26.9168 24.7923 26.9168C18.5734 26.9168 14.6537 26.9168 9.20898 26.9168Z"
-                    fill="white"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>;
+                return (
+                  <svg
+                    width="34"
+                    height="34"
+                    viewBox="0 0 34 34"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9.20898 26.9168C5.68817 26.9168 2.83398 24.0626 2.83398 20.5418C2.83398 17.2218 5.37195 14.4945 8.61362 14.1943C9.27672 10.1607 12.7793 7.0835 17.0007 7.0835C21.222 7.0835 24.7246 10.1607 25.3877 14.1943C28.6293 14.4945 31.1673 17.2218 31.1673 20.5418C31.1673 24.0626 28.3131 26.9168 24.7923 26.9168C18.5734 26.9168 14.6537 26.9168 9.20898 26.9168Z"
+                      fill="white"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                );
               },
             },
             {
               id: 4,
-              title: "E-Commerce Solutions for All Businesses",
-              description: `Reach global markets and engage customers 24/7 with robust and feature-rich online stores. Show your products and services to the world using the latest E-Commerce tools. Let customers explore, trust, and discover your offerings at their convenience.`,
+              titleArabic: "حلول التجارة الإلكترونية لجميع الأعمال",
+              titleEnglish: "E-Commerce Solutions for All Businesses",
+              descriptionEnglish: `Reach global markets and engage customers 24/7 with robust and feature-rich online stores. Show your products and services to the world using the latest E-Commerce tools. Let customers explore, trust, and discover your offerings at their convenience.`,
+              descriptionArabic:
+                "يمكنك التفاعل مع العملاء والوصول إلى الأسواق العالمية على مدار الساعة طوال أيام الأسبوع من خلال متاجر إلكترونية متقدمة ومليئة بالميزات. قم بعرض منتجاتك وخدماتك للعالم باستخدام أحدث أدوات التجارة الإلكترونية، واترك للعملاء حرية الاستكشاف والثقة واكتشاف عروضك في الوقت الذي يناسبهم.",
               icon: () => {
                 return (
                   <svg
@@ -198,17 +256,26 @@ const ServicesListSection = () => {
             },
             {
               id: 5,
-              title: "Quality Assurance and Software Testing",
-              description: `Experience a new level of QA and software testing. We redefine
+              titleArabic: "ضمان الجودة واختبار البرمجيات",
+              titleEnglish: "Quality Assurance and Software Testing",
+              servicesArabic: [
+                " الاختبار الاساسي",
+                " اختبار دورة الحياة الكاملة",
+                " اختبار الأتمتة",
+                " اختبار المنتج",
+              ],
+              descriptionEnglish: `Experience a new level of QA and software testing. We redefine
               user interactions using a data-driven approach to boost speed,
               productivity, and quality across systems and applications.`,
-              service: [
+              serviceEnglish: [
                 "Discover Our Software Testing Services",
                 "Manual Testing",
                 "Full Lifecycle Testing",
                 "Automation Testing",
                 "Product Testing",
               ],
+              descriptionArabic:
+                "اختبر مستوى جديدًا من ضمان الجودة واختبار البرمجيات. نحن نعيد تعريف تفاعلات المستخدم باستخدام نهج قائم على البيانات لتعزيز السرعة والإنتاجية والجودة عبر الأنظمة والتطبيقات. Dاكتشف خدمات اختبار البرمجيات التي نقدمها",
               icon: () => {
                 return (
                   <svg
@@ -243,8 +310,11 @@ const ServicesListSection = () => {
             },
             {
               id: 6,
-              title: "Smart Solutions and HR On-Demand",
-              description: `Stay ahead in a rapidly evolving market—while we manage your workforce with tailored HR as a Service, providing skilled employees on our payroll to meet your business needs efficiently.`,
+              titleArabic: "حلول ذكية للموارد البشرية ",
+              titleEnglish: "Smart Solutions and HR On-Demand",
+              descriptionEnglish: `Stay ahead in a rapidly evolving market—while we manage your workforce with tailored HR as a Service, providing skilled employees on our payroll to meet your business needs efficiently.`,
+              descriptionArabic:
+                "حافظ على تقدمك في سوق سريع التطور - بينما نوفر لك موظفين من خلال مواردنا البشرية كخدمة مصممة خصيصاً لك، ونوفر لك موظفين مهرة على جدول الرواتب لدينا لتلبية احتياجات عملك بكفاءة.",
               icon: () => {
                 return (
                   <svg

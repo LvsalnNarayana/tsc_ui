@@ -2,7 +2,11 @@ import React from "react";
 
 import { Stack, Typography } from "@mui/material";
 
+import { useLanguage } from "../../LanguageContext";
+
 const HomeMarketSection = () => {
+  const { language } = useLanguage();
+
   return (
     <Stack
       py={20}
@@ -47,8 +51,13 @@ const HomeMarketSection = () => {
         className="responsive-text"
         sx={{ zIndex: 2 }}
       >
-        Win the market where competitors are
-        <br /> getting stronger, smarter and faster.
+        {language === "en" && (
+          <>
+            Win the market where competitors are
+            <br /> getting stronger, smarter and faster.
+          </>
+        )}
+        {language === "ar" && <>عزز استراتيجيتك الاجتماعية مع TSC Social!</>}
       </Typography>
     </Stack>
   );

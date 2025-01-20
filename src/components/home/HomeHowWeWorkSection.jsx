@@ -3,6 +3,7 @@ import React from "react";
 
 import { Stack, Container, Typography, useMediaQuery } from "@mui/material";
 
+import { useLanguage } from "../../LanguageContext";
 import HowWeWorkSVG from "../SVGComponents/HowWeWorkSVG";
 
 const HomeHowWeWorkSection = () => {
@@ -18,6 +19,9 @@ const HomeHowWeWorkSection = () => {
   const desktopView = useMediaQuery((desktopTheme) => {
     return desktopTheme.breakpoints.up("desktop");
   });
+
+  const { language } = useLanguage();
+
   return (
     <Container maxWidth="desktop">
       <Stack
@@ -54,12 +58,22 @@ const HomeHowWeWorkSection = () => {
           }}
           className="responsive-text"
         >
-          We guide your journey in adapting to evolving
-          <br /> business demands, creating tangible value for
-          <br /> your organization and customers.
+          {language === "en" && (
+            <>
+              We guide your journey in adapting to evolving
+              <br /> business demands, creating tangible value for
+              <br /> your organization and customers.
+            </>
+          )}
+          {language === "ar" && (
+            <>
+              نحن نرشدك في التكيف مع متطلبات الأعمال
+              <br /> المتغيرة. مما يخلق قيمة ملموسة لمنظومتك وعملائك.
+            </>
+          )}
         </Typography>
-        {(desktopView||laptopView) &&<HowWeWorkSVG />}
-        {(mobileView||tabletView) &&<img alt="hww" src="/hww_mob.svg" />}
+        {(desktopView || laptopView) && <HowWeWorkSVG />}
+        {(mobileView || tabletView) && <img alt="hww" src="/hww_mob.svg" />}
       </Stack>
     </Container>
   );

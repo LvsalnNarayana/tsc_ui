@@ -12,9 +12,12 @@ import {
   Typography,
 } from "@mui/material";
 
+import { useLanguage } from "../../LanguageContext";
+
 const HomeSmartSolutionSection = () => {
   const containerRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(1);
+  const { language } = useLanguage();
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -90,7 +93,8 @@ const HomeSmartSolutionSection = () => {
               WebkitTextFillColor: "transparent",
             }}
           >
-            Smart Solution
+            {language === "en" && "Smart Solution"}
+            {language === "ar" && "الحلول الذكية"}
           </Typography>
           <Typography
             mb={6}
@@ -112,10 +116,24 @@ const HomeSmartSolutionSection = () => {
             color="rgba(255, 255, 255, 0.80)"
             letterSpacing="1px"
           >
-            Explore our comprehensive range of innovative services designed
-            <br /> to elevate your business capabilities across various domains,
-            <br />
-            ensuring optimal efficiency and client satisfaction.
+            {language === "en" && (
+              <>
+                Explore our comprehensive range of innovative services designed
+                <br /> to elevate your business capabilities across various
+                domains,
+                <br />
+                ensuring optimal efficiency and client satisfaction.
+              </>
+            )}
+            {language === "ar" && (
+              <>
+                اكتشف مجموعة واسعة من الخدمات المبتكرة التي تم تصميمها لتطوير
+                <br />
+                وتحسين قدرات عملك في مجالات متعددة، يضمن لك ذلك تحقيق أقصى كفاءة
+                <br />
+                ورضا العملاء.
+              </>
+            )}
           </Typography>
 
           <Stack

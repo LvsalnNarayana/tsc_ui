@@ -6,10 +6,13 @@ import { Box, Stack, Container, Typography } from "@mui/material";
 
 import phoneJson from "../../assets/phone-02.json";
 import cloudJson from "../../assets/cloud-01.json";
+import { useLanguage } from "../../LanguageContext";
 import laptopJson from "../../assets/laptop-02.json";
 import cartJson from "../../assets/shopping-cart-01.json";
 
 const HomeInnovativeServicesSection = () => {
+  const { language } = useLanguage();
+
   return (
     <Stack sx={{ backgroundColor: "#06101A" }}>
       <Container maxWidth="desktop">
@@ -34,10 +37,10 @@ const HomeInnovativeServicesSection = () => {
               desktop: 60,
             }}
             textAlign={{
-              laptop: "left",
-              desktop: "left",
               mobile: "center",
               tablet: "center",
+              laptop: language === "ar" ? "right" : "left",
+              desktop: language === "ar" ? "right" : "left",
             }}
             width="100%"
             sx={{
@@ -48,61 +51,88 @@ const HomeInnovativeServicesSection = () => {
               WebkitTextFillColor: "transparent",
             }}
           >
-            Innovative Services
+            {language === "en" && "Innovative Services"}
+            {language === "ar" && "الخدمات المبتكرة"}
           </Typography>
           <Typography
             mb={3}
             fontSize={18}
             width={{
-              laptop: "60%",
-              desktop: "60%",
               mobile: "100%",
               tablet: "100%",
+              laptop: language === "ar" ? "100%" : "60%",
+              desktop: language === "ar" ? "100%" : "60%",
             }}
             textAlign={{
-              laptop: "left",
-              desktop: "left",
               mobile: "center",
               tablet: "center",
+              laptop: language === "ar" ? "right" : "left",
+              desktop: language === "ar" ? "right" : "left",
             }}
             lineHeight={1.5}
             className="lato responsive-text"
             color="rgba(255, 255, 255, 0.80)"
             letterSpacing="1px"
           >
-            Our range of innovative services is designed to deliver maximum
-            value in technology,
-            <br /> user experience, and client satisfaction. We ensure our
-            clients get maximum ROl on their
-            <br /> innovation investments and scale exponentially.
+            {language === "en" && (
+              <>
+                Our range of innovative services is designed to deliver maximum
+                value in technology,
+                <br /> user experience, and client satisfaction. We ensure our
+                clients get maximum ROl on their
+                <br /> innovation investments and scale exponentially.
+              </>
+            )}
+            {language === "ar" && (
+              <>
+                صُمِّمَت مجموعة خدماتنا المبتكرة لتقديم أقصى قيمة في مجال
+                <br />
+                التقنية وتجربة المستخدم ورضا العملاء. نحن نضمن لعملائنا الحصول
+                <br />
+                على أقصى عائد استثمار على استثماراتهم في الابتكار وتوسيع نطاقها
+                بشكل كبير.
+              </>
+            )}
           </Typography>
           {[
             {
               id: 1,
               icon: phoneJson,
-              title: "Mobile App Development",
-              description:
+              titleArabic: "الخدمات المبتكرة",
+              titleEnglish: "Mobile App Development",
+              descriptionEnglish:
                 "Grab attention with robust user-friendly mobile app solutions \n built with the latest technologies.",
+              descriptionArabic:
+                "اجذب الانتباه مع حلول تطبيقات الجوال الفعالة التي  \n  تتميز بسهولة الاستخدام والمصممة بأحدث التقنيات.",
             },
             {
               id: 2,
               icon: laptopJson,
-              title: "Web Development",
-              description:
+              titleArabic: "تطوير الويب",
+              titleEnglish: "Web Development",
+              descriptionEnglish:
                 "Boost your online presence with our premium services. We build \n fast, intuitive websites and online solutions for any complexity.",
+              descriptionArabic:
+                "عزز وجودك على الإنترنت من خلال خدماتنا المتميزة. نحن ننشئ مواقع إلكترونية  \n سريعة وسهلة الاستخدام بالإضافة إلى حلول إلكترونية لجميع التحديات.",
             },
             {
               id: 3,
               icon: cartJson,
-              title: "E-commerce Services",
-              description:
+              titleArabic: "الاستشارات السحابية",
+              titleEnglish: "E-commerce Services",
+              descriptionArabic:
+                "استفد أكثر من عملك مع متجر إلكتروني غني بالميزات. استمتع بحلول مخصصة ومتوافقة مع  \n الأجهزة المحمولة مما يعزز تجربة التسوق لديك ويحقق نتائج متميزة.",
+              descriptionEnglish:
                 "Get more from your business with a feature-rich eStore. Enjoy\n customized, mobile-friendly solutions that enhance the shopping \nexperience and deliver results.",
             },
             {
               id: 4,
               icon: cloudJson,
-              title: "Cloud Consulting",
-              description:
+              titleEnglish: "Cloud Consulting",
+              titleArabic: "الاستشارات السحابية",
+              descriptionArabic:
+                "حوّل أعمالك باستخدام حلول السحابة المخصصة. استغل معرفتنا في مجال  \n البنية التحتية السحابية، والبرمجيات، والتخزين، وخدمات الأمان.",
+              descriptionEnglish:
                 "Transform your business with industry-specific cloud solutions.\n Leverage our cloud infrastructure, software, storage, and\n security services expertise.",
             },
           ]?.map((service) => {
@@ -130,7 +160,7 @@ const HomeInnovativeServicesSection = () => {
                   laptop: 1,
                   desktop: 1,
                 }}
-                direction="row"
+                direction={language === "ar" ? "row-reverse" : "row"}
                 justifyContent="center"
                 alignItems="center"
                 sx={{
@@ -174,7 +204,7 @@ const HomeInnovativeServicesSection = () => {
                       tablet: 2,
                       desktop: 4,
                     }}
-                    direction="row"
+                    direction={language === "ar" ? "row-reverse" : "row"}
                     justifyContent="flex-start"
                     alignItems="center"
                   >
@@ -193,28 +223,36 @@ const HomeInnovativeServicesSection = () => {
                       }}
                       lineHeight="120%"
                     >
-                      {service?.title}
+                      {language === "en" && <>{service?.titleEnglish}</>}
+                      {language === "ar" && <>{service?.titleArabic}</>}
                     </Typography>
-                    <Box
-                      className="right-arrow-animation"
-                      component="img"
-                      src="/blue_right_arrow.png"
-                      width={{
-                        laptop: 60,
-                        mobile: 20,
-                        tablet: 20,
-                        desktop: 60,
-                      }}
-                      height={{
-                        laptop: 60,
-                        mobile: 20,
-                        tablet: 20,
-                        desktop: 60,
-                      }}
+                    <Stack
                       sx={{
-                        transition: "transform 0.3s ease-in-out",
+                        transform:
+                          language === "ar" ? "rotate(180deg)" : "rotate(0deg)",
                       }}
-                    />
+                    >
+                      <Box
+                        className="right-arrow-animation"
+                        component="img"
+                        src="/blue_right_arrow.png"
+                        width={{
+                          laptop: 60,
+                          mobile: 20,
+                          tablet: 20,
+                          desktop: 60,
+                        }}
+                        height={{
+                          laptop: 60,
+                          mobile: 20,
+                          tablet: 20,
+                          desktop: 60,
+                        }}
+                        sx={{
+                          transition: "transform 0.3s ease-in-out",
+                        }}
+                      />
+                    </Stack>
                   </Stack>
                   <Typography
                     fontSize={{
@@ -223,7 +261,7 @@ const HomeInnovativeServicesSection = () => {
                       tablet: 14,
                       desktop: 18,
                     }}
-                    textAlign="left"
+                    textAlign={language === "ar" ? "right" : "left"}
                     lineHeight={{
                       laptop: 2,
                       desktop: 2,
@@ -233,7 +271,13 @@ const HomeInnovativeServicesSection = () => {
                     className="lato responsive-text"
                     fontWeight={400}
                     dangerouslySetInnerHTML={{
-                      __html: service?.description.replace(/\n/gu, "<br />"),
+                      __html:
+                        language === "ar"
+                          ? service?.descriptionArabic.replace(/\n/gu, "<br />")
+                          : service?.descriptionEnglish.replace(
+                              /\n/gu,
+                              "<br />"
+                            ),
                     }}
                   />
                 </Stack>

@@ -1,8 +1,13 @@
+/* eslint-disable operator-linebreak */
 import React from "react";
 
 import { Stack, Typography } from "@mui/material";
 
+import { useLanguage } from "../../LanguageContext";
+
 const HomeSustainabilitySection = () => {
+  const { language } = useLanguage();
+
   return (
     <Stack
       my={10}
@@ -37,7 +42,8 @@ const HomeSustainabilitySection = () => {
         textAlign="center"
         sx={{ zIndex: 2 }}
       >
-        Cloud-Powered Sustainability
+        {language === "en" && "Cloud-Powered Sustainability"}
+        {language === "ar" && "الاستدامة المدعومة بالسحابة"}
       </Typography>
       <Typography
         variant="body1"
@@ -46,7 +52,9 @@ const HomeSustainabilitySection = () => {
         textAlign="center"
         sx={{ zIndex: 2 }}
       >
-        Embrace Green Initiatives at the Heart of Our Business
+        {language === "en" &&
+          "Embrace Green Initiatives at the Heart of Our Business"}
+        {language === "ar" && "احتضان المبادرات الخضراء في قلب أعمالنا"}
       </Typography>
     </Stack>
   );

@@ -1,12 +1,16 @@
+/* eslint-disable operator-linebreak */
+/* eslint-disable complexity */
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import { Box, Stack, Button, Container, Typography } from "@mui/material";
 
+import { useLanguage } from "../../LanguageContext";
 import HeroBackground from "../Backgrounds/HeroBackground";
 
 const HomeHeroSection = () => {
   const navigate = useNavigate();
+  const { language } = useLanguage();
 
   return (
     <Stack
@@ -40,10 +44,10 @@ const HomeHeroSection = () => {
       <Container maxWidth="desktop">
         <Stack
           direction={{
-            laptop: "row",
-            desktop: "row",
             tablet: "column",
             mobile: "column",
+            laptop: language === "ar" ? "row-reverse" : "row",
+            desktop: language === "ar" ? "row-reverse" : "row",
           }}
           justifyContent="space-between"
           alignItems="center"
@@ -58,7 +62,7 @@ const HomeHeroSection = () => {
             }}
             direction="column"
             justifyContent="flex-start"
-            alignItems="flex-start"
+            alignItems={language === "ar" ? "flex-end" : "flex-start"}
           >
             <Typography
               variant="body1"
@@ -74,7 +78,8 @@ const HomeHeroSection = () => {
               }}
               fontWeight={100}
             >
-              Transform your
+              {language === "en" && "Transform your"}
+              {language === "ar" && "حول أعمالك مع"}
             </Typography>
             <Typography
               variant="body1"
@@ -89,8 +94,10 @@ const HomeHeroSection = () => {
                 display: "inline-block",
               }}
               fontWeight="bold"
+              textAlign={language === "ar" ? "right" : "left"}
             >
-              Business
+              {language === "en" && "Businesses"}
+              {language === "ar" && "حلولنا التقنية"}
             </Typography>
             <Typography
               variant="body1"
@@ -105,8 +112,10 @@ const HomeHeroSection = () => {
                 display: "inline-block",
               }}
               fontWeight="normal"
+              textAlign={language === "ar" ? "right" : "left"}
             >
-              With TSC
+              {language === "en" && "with TSC"}
+              {language === "ar" && "مع TSC"}
             </Typography>
             <Typography
               variant="body1"
@@ -119,9 +128,22 @@ const HomeHeroSection = () => {
               }}
               className="lato responsive-text"
               fontWeight="normal"
+              textAlign={language === "ar" ? "right" : "left"}
             >
-              Empower, Innovate, and Accelerate with TSC—Pioneering Businesses
-              <br /> in Ever-Evolving Technology Landscapes
+              {language === "en" && (
+                <>
+                  Empower, Innovate, and Accelerate with TSC—Pioneering
+                  Businesses
+                  <br /> in Ever-Evolving Technology Landscapes
+                </>
+              )}
+              {language === "ar" && (
+                <>
+                  مكن وسائل التواصل الاجتماعي الخاصة بك مع TSC Social وقم بجدولة
+                  <br />
+                  ومراقبة وإعداد التقارير دون عناء لبناء علامة تجارية رائعة.
+                </>
+              )}
             </Typography>
             <Stack
               mt={4}
@@ -129,8 +151,8 @@ const HomeHeroSection = () => {
               justifyContent={{
                 mobile: "flex-start",
                 tablet: "flex-start",
-                laptop: "flex-start",
-                desktop: "flex-start",
+                laptop: language === "ar" ? "flex-end" : "flex-start",
+                desktop: language === "ar" ? "flex-end" : "flex-start",
               }}
               width="100%"
               alignItems="center"
@@ -155,7 +177,8 @@ const HomeHeroSection = () => {
                   navigate("/services");
                 }}
               >
-                Our Services
+                {language === "en" && "Our Services"}
+                {language === "ar" && "خِدْمة"}
               </Button>
               <Button
                 sx={{
@@ -192,7 +215,8 @@ const HomeHeroSection = () => {
                   }
                 }}
               >
-                Get In Touch
+                {language === "en" && "Get In Touch"}
+                {language === "ar" && "تواصل معنا"}
                 <img alt="arrow" src="/ArrowUpRight.svg" />
               </Button>
             </Stack>

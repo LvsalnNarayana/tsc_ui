@@ -1,18 +1,28 @@
+/* eslint-disable operator-linebreak */
 import React from "react";
 
 import { Box, Stack, Container, Typography } from "@mui/material";
 
+import { useLanguage } from "../../LanguageContext";
+
 const HomeEvolutionSection = () => {
+  const { language } = useLanguage();
+
   return (
     <Container maxWidth="desktop">
       <Stack
-        pt={5}
+        pt={{
+          laptop: 10,
+          tablet: 10,
+          mobile: 10,
+          desktop: 10,
+        }}
         pb={10}
         gap={{
-          laptop: 5,
-          tablet: 5,
-          mobile: 5,
-          desktop: 5,
+          laptop: 10,
+          tablet: 10,
+          mobile: 10,
+          desktop: 10,
         }}
         direction="column"
         justifyContent="center"
@@ -29,25 +39,34 @@ const HomeEvolutionSection = () => {
           lineHeight={1.2}
           textAlign="center"
           sx={{
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            direction: language === "ar" ? "rtl" : "ltr",
             background: "linear-gradient(180deg, #FFF 0%, #040B12 139.86%)",
             // eslint-disable-next-line perfectionist/sort-objects
             backgroundClip: "text",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
           }}
         >
-          Embrace Evolution
+          {language === "en" && "Embrace Evolution"}
+          {language === "ar" && "احتضان التطور"}
         </Typography>
         <Typography
+          fontSize={{
+            laptop: 16,
+            tablet: 18,
+            mobile: 18,
+            desktop: 16,
+          }}
+          lineHeight={1.2}
           textAlign="center"
-          fontSize={18}
-          lineHeight={1.5}
-          color="rgba(255, 255, 255, 0.70)"
-          className="lato responsive-text"
+          sx={{
+            direction: language === "ar" ? "rtl" : "ltr",
+          }}
         >
-          Our innovative digital solutions that empower your business to thrive
-          in the
-          <br /> modern landscape
+          {language === "en" &&
+            "Our innovative digital solutions that empower your business to thrive in the modern landscape"}
+          {language === "ar" &&
+            "حلولنا الرقمية المبتكرة التي تمكن أعمالك من الازدهار في المشهد الحديث"}
         </Typography>
         <Stack
           direction={{
@@ -65,8 +84,8 @@ const HomeEvolutionSection = () => {
             width={{
               tablet: "100%",
               mobile: "100%",
-              laptop: "fit-content",
-              desktop: "fit-content",
+              laptop: "100%",
+              desktop: "100%",
             }}
             direction="column"
             alignItems="center"
@@ -85,15 +104,16 @@ const HomeEvolutionSection = () => {
               height={60}
             />
             <Typography fontSize={22} fontWeight={400} textAlign="center">
-              Innovative Led Solutions
+              {language === "en" && "Innovative Led Solutions"}
+              {language === "ar" && "ابتكارات جديدة"}
             </Typography>
           </Stack>
           <Stack
             width={{
               tablet: "100%",
               mobile: "100%",
-              laptop: "fit-content",
-              desktop: "fit-content",
+              laptop: "100%",
+              desktop: "100%",
             }}
             direction="column"
             alignItems="center"
@@ -112,15 +132,16 @@ const HomeEvolutionSection = () => {
               height={60}
             />
             <Typography fontSize={22} fontWeight={400} textAlign="center">
-              Vast Technology Landscape
+              {language === "en" && "Vast Technology Landscape"}
+              {language === "ar" && "مهارات تقنية عميقة"}
             </Typography>
           </Stack>
           <Stack
             width={{
               tablet: "100%",
               mobile: "100%",
-              laptop: "fit-content",
-              desktop: "fit-content",
+              laptop: "100%",
+              desktop: "100%",
             }}
             direction="column"
             alignItems="center"
@@ -139,7 +160,8 @@ const HomeEvolutionSection = () => {
               height={60}
             />
             <Typography fontSize={22} fontWeight={400} textAlign="center">
-              Diverse Industry Experience
+              {language === "en" && "Diverse Industry Experience"}
+              {language === "ar" && "المعرفة في مجالات الصناعة"}
             </Typography>
           </Stack>
         </Stack>

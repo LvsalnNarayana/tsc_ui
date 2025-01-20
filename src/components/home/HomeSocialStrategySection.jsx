@@ -4,6 +4,7 @@ import Lottie from "lottie-react";
 
 import { Stack, Button, Typography, useMediaQuery } from "@mui/material";
 
+import { useLanguage } from "../../LanguageContext";
 import reinventJson from "../../assets/Reinvent Your Business.json";
 
 const HomeSocialStrategySection = () => {
@@ -19,6 +20,8 @@ const HomeSocialStrategySection = () => {
   const desktopView = useMediaQuery((desktopTheme) => {
     return desktopTheme.breakpoints.up("desktop");
   });
+
+  const { language } = useLanguage();
 
   return (
     <Stack
@@ -86,8 +89,13 @@ const HomeSocialStrategySection = () => {
         }}
         lineHeight={1.5}
       >
-        Supercharge Your Social Strategy
-        <br /> with TSC Social!
+        {language === "en" && (
+          <>
+            Supercharge Your Social Strategy
+            <br /> with TSC Social!
+          </>
+        )}
+        {language === "ar" && <>عزز استراتيجيتك الاجتماعية مع TSC Social!</>}
       </Typography>
       <Button
         sx={{
@@ -113,7 +121,8 @@ const HomeSocialStrategySection = () => {
           }
         }}
       >
-        Get Started Today!
+        {language === "en" && "Get Started Today!"}
+        {language === "ar" && "ابدأ اليوم!"}
       </Button>
     </Stack>
   );

@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 /* eslint-disable max-lines */
 /* eslint-disable operator-linebreak */
 import React from "react";
@@ -12,8 +13,10 @@ import {
 } from "@mui/material";
 
 import ArrowGif from "../../assets/Arrow gif.json";
+import { useLanguage } from "../../LanguageContext";
 
 const HomeWorkflowProcessSection = () => {
+  const { language } = useLanguage();
   const laptopView = useMediaQuery((laptopTheme) => {
     return laptopTheme.breakpoints.between("laptop", "desktop");
   });
@@ -40,7 +43,8 @@ const HomeWorkflowProcessSection = () => {
           WebkitTextFillColor: "transparent",
         }}
       >
-        Our Workflow Process
+        {language === "en" && "Our Workflow Process"}
+        {language === "ar" && "عملية سير العمل لدينا الاكتشاف"}
       </Typography>
 
       <Stack
@@ -70,10 +74,10 @@ const HomeWorkflowProcessSection = () => {
             mobile: "100%",
           }}
           direction={{
-            laptop: "row",
-            desktop: "row",
             mobile: "column",
             tabley: "column",
+            laptop: language === "ar" ? "row-reverse" : "row",
+            desktop: language === "ar" ? "row-reverse" : "row",
           }}
           justifyContent="flex-start"
           alignItems="flex-start"
@@ -140,7 +144,7 @@ const HomeWorkflowProcessSection = () => {
               desktop: 4,
             }}
             direction="column"
-            alignItems="flex-start"
+            alignItems={language === "ar" ? "flex-end" : "flex-start"}
             justifyContent="flex-start"
           >
             <Typography
@@ -152,8 +156,10 @@ const HomeWorkflowProcessSection = () => {
               }}
               fontWeight={500}
               lineHeight={1.4}
+              textAlign={language === "ar" ? "right" : "left"}
             >
-              Discover
+              {language === "en" && "Discover"}
+              {language === "ar" && "الاكتشاف"}
             </Typography>
             <Typography
               fontSize={{
@@ -164,9 +170,20 @@ const HomeWorkflowProcessSection = () => {
               }}
               fontWeight={300}
               lineHeight={1.4}
+              textAlign={language === "ar" ? "right" : "left"}
             >
-              We start by understanding your business challenges, expectations,
-              and success criteria for the solution.
+              {language === "en" && (
+                <>
+                  We start by understanding your business challenges,
+                  expectations, and success criteria for the solution.
+                </>
+              )}
+              {language === "ar" && (
+                <>
+                  نبدأ بفهم تحديات عملك ومعايير النجاح التي ترغب في تحقيقها من
+                  الحل.
+                </>
+              )}
             </Typography>
           </Stack>
         </Stack>
@@ -204,10 +221,10 @@ const HomeWorkflowProcessSection = () => {
             mobile: "100%",
           }}
           direction={{
-            laptop: "row",
-            desktop: "row",
             mobile: "column",
             tabley: "column",
+            laptop: language === "ar" ? "row-reverse" : "row",
+            desktop: language === "ar" ? "row-reverse" : "row",
           }}
           justifyContent="flex-start"
           alignItems="flex-start"
@@ -262,7 +279,7 @@ const HomeWorkflowProcessSection = () => {
           <Stack
             gap={4}
             direction="column"
-            alignItems="flex-start"
+            alignItems={language === "ar" ? "flex-end" : "flex-start"}
             justifyContent="flex-start"
           >
             <Typography
@@ -274,8 +291,10 @@ const HomeWorkflowProcessSection = () => {
               }}
               fontWeight={500}
               lineHeight={1.4}
+              textAlign={language === "ar" ? "right" : "left"}
             >
-              Planning & Collaboration
+              {language === "en" && "Planning & Collaboration"}
+              {language === "ar" && "التخطيط والتعاون"}
             </Typography>
             <Typography
               fontSize={{
@@ -286,10 +305,21 @@ const HomeWorkflowProcessSection = () => {
               }}
               fontWeight={300}
               lineHeight={1.4}
+              textAlign={language === "ar" ? "right" : "left"}
             >
-              We collaborate to create processes and conduct mock-up sessions to
-              align our team and your business, so we have a shared
-              understanding.
+              {language === "en" && (
+                <>
+                  We collaborate to create processes and conduct mock-up
+                  sessions to align our team and your business, so we have a
+                  shared understanding.
+                </>
+              )}
+              {language === "ar" && (
+                <>
+                  نحن نتعاون لإنشاء عمليات وإجراء جلسات نموذجية لمواءمة فريقنا
+                  مع عملك، بحيث يكون لدينا فهم مشترك.
+                </>
+              )}
             </Typography>
           </Stack>
         </Stack>
@@ -333,10 +363,10 @@ const HomeWorkflowProcessSection = () => {
             mobile: "100%",
           }}
           direction={{
-            laptop: "row",
-            desktop: "row",
             mobile: "column",
             tabley: "column",
+            laptop: language === "ar" ? "row-reverse" : "row",
+            desktop: language === "ar" ? "row-reverse" : "row",
           }}
           justifyContent="flex-start"
           alignItems="flex-start"
@@ -396,7 +426,7 @@ const HomeWorkflowProcessSection = () => {
               desktop: 4,
             }}
             direction="column"
-            alignItems="flex-start"
+            alignItems={language === "ar" ? "flex-end" : "flex-start"}
             justifyContent="flex-start"
           >
             <Typography
@@ -408,8 +438,10 @@ const HomeWorkflowProcessSection = () => {
               }}
               fontWeight={500}
               lineHeight={1.4}
+              textAlign={language === "ar" ? "right" : "left"}
             >
-              Execution & Development
+              {language === "en" && " Execution & Development"}
+              {language === "ar" && "التنفيذ والتطوير"}
             </Typography>
             <Typography
               fontSize={{
@@ -420,10 +452,21 @@ const HomeWorkflowProcessSection = () => {
               }}
               fontWeight={300}
               lineHeight={1.4}
+              textAlign={language === "ar" ? "right" : "left"}
             >
-              We develop and showcase the solution, focusing on coordination,
-              resource management, and reqular stakeholder updates to ensure
-              quality.
+              {language === "en" && (
+                <>
+                  We develop and showcase the solution, focusing on
+                  coordination, resource management, and reqular stakeholder
+                  updates to ensure quality.
+                </>
+              )}
+              {language === "ar" && (
+                <>
+                  نقوم بتطوير الحل وعرضه، مع التركيز على التنسيق وإدارة الموارد
+                  والتحديثات المنتظمة لأصحاب المصلحة لضمان الجودة.
+                </>
+              )}
             </Typography>
           </Stack>
         </Stack>
@@ -462,10 +505,10 @@ const HomeWorkflowProcessSection = () => {
             mobile: "100%",
           }}
           direction={{
-            laptop: "row",
-            desktop: "row",
             mobile: "column",
             tabley: "column",
+            laptop: language === "ar" ? "row-reverse" : "row",
+            desktop: language === "ar" ? "row-reverse" : "row",
           }}
           justifyContent="flex-start"
           alignItems="flex-start"
@@ -520,7 +563,7 @@ const HomeWorkflowProcessSection = () => {
           <Stack
             gap={4}
             direction="column"
-            alignItems="flex-start"
+            alignItems={language === "ar" ? "flex-end" : "flex-start"}
             justifyContent="flex-start"
           >
             <Typography
@@ -532,8 +575,10 @@ const HomeWorkflowProcessSection = () => {
               }}
               fontWeight={500}
               lineHeight={1.4}
+              textAlign={language === "ar" ? "right" : "left"}
             >
-              Testing and Launch
+              {language === "en" && "Testing and Launch"}
+              {language === "ar" && "الاختبار والإطلاق"}
             </Typography>
             <Typography
               fontSize={{
@@ -544,9 +589,20 @@ const HomeWorkflowProcessSection = () => {
               }}
               fontWeight={300}
               lineHeight={1.4}
+              textAlign={language === "ar" ? "right" : "left"}
             >
-              We test thoroughly to ensure the solution meets specifications and
-              delivers on its promise before launch.
+              {language === "en" && (
+                <>
+                  We test thoroughly to ensure the solution meets specifications
+                  and delivers on its promise before launch.
+                </>
+              )}
+              {language === "ar" && (
+                <>
+                  نقوم باختبار دقيق للتأكد من أن الحل يلبي المواصفات ويفي بوعده
+                  قبل الإطلاق.
+                </>
+              )}
             </Typography>
           </Stack>
         </Stack>
@@ -590,10 +646,10 @@ const HomeWorkflowProcessSection = () => {
             mobile: "100%",
           }}
           direction={{
-            laptop: "row",
-            desktop: "row",
             mobile: "column",
             tabley: "column",
+            laptop: language === "ar" ? "row-reverse" : "row",
+            desktop: language === "ar" ? "row-reverse" : "row",
           }}
           justifyContent="flex-start"
           alignItems="flex-start"
@@ -660,7 +716,7 @@ const HomeWorkflowProcessSection = () => {
               desktop: 4,
             }}
             direction="column"
-            alignItems="flex-start"
+            alignItems={language === "ar" ? "flex-end" : "flex-start"}
             justifyContent="flex-start"
           >
             <Typography
@@ -672,8 +728,10 @@ const HomeWorkflowProcessSection = () => {
               }}
               fontWeight={500}
               lineHeight={1.4}
+              textAlign={language === "ar" ? "right" : "left"}
             >
-              Monitoring and Support
+              {language === "en" && "Monitoring and Support"}
+              {language === "ar" && "المراقبة والدعم"}
             </Typography>
             <Typography
               fontSize={{
@@ -684,10 +742,21 @@ const HomeWorkflowProcessSection = () => {
               }}
               fontWeight={300}
               lineHeight={1.4}
+              textAlign={language === "ar" ? "right" : "left"}
             >
-              After launch, we monitor the solution&rsquo;s features,
-              performance, and key metrics to ensure it&apos;s on time, on
-              budget, and scope.
+              {language === "en" && (
+                <>
+                  After launch, we monitor the solution&rsquo;s features,
+                  performance, and key metrics to ensure it&apos;s on time, on
+                  budget, and scope.
+                </>
+              )}
+              {language === "ar" && (
+                <>
+                  بعد الإطلاق، نراقب خصائص الحل وأداءه ومؤشراته الرئيسية للتأكد
+                  من أنه ألتزم بالجدول الزمني والموازنة والنطاق المحدد.
+                </>
+              )}
             </Typography>
           </Stack>
         </Stack>

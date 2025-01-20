@@ -1,3 +1,5 @@
+/* eslint-disable operator-linebreak */
+/* eslint-disable complexity */
 import React from "react";
 
 import {
@@ -8,6 +10,8 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
+
+import { useLanguage } from "../../LanguageContext";
 
 const HomeDriveSection = () => {
   const mobileView = useMediaQuery((mobileTheme) => {
@@ -22,6 +26,7 @@ const HomeDriveSection = () => {
   const desktopView = useMediaQuery((desktopTheme) => {
     return desktopTheme.breakpoints.up("desktop");
   });
+  const { language } = useLanguage();
 
   return (
     <Stack
@@ -35,15 +40,19 @@ const HomeDriveSection = () => {
       <Container maxWidth="desktop">
         <Stack
           direction={{
-            laptop: "row",
-            desktop: "row",
             tablet: "column",
             mobile: "column",
+            laptop: language === "ar" ? "row-reverse" : "row",
+            desktop: language === "ar" ? "row-reverse" : "row",
           }}
           justifyContent="center"
           alignItems="center"
         >
-          <Stack width="100%" gap={3}>
+          <Stack
+            width="100%"
+            gap={3}
+            alignItems={language === "ar" ? "flex-end" : "flex-start"}
+          >
             <Typography
               fontSize={{
                 laptop: 48,
@@ -53,9 +62,20 @@ const HomeDriveSection = () => {
               }}
               fontWeight={500}
               lineHeight={1.2}
+              textAlign={{
+                tablet: "center",
+                mobile: "center",
+                laptop: language === "ar" ? "right" : "left",
+                desktop: language === "ar" ? "right" : "left",
+              }}
             >
-              We Drive Your Business
-              <br /> Forward Strategically
+              {language === "en" && (
+                <>
+                  We Drive Your Business
+                  <br /> Forward Strategically
+                </>
+              )}
+              {language === "ar" && <>ندفع أعمالك بشكل استراتيجي</>}
             </Typography>
             <Typography
               fontSize={16}
@@ -63,15 +83,36 @@ const HomeDriveSection = () => {
               fontWeight={400}
               lineHeight={1.5}
               className="lato responsive-text"
+              textAlign={{
+                tablet: "center",
+                mobile: "center",
+                laptop: language === "ar" ? "right" : "left",
+                desktop: language === "ar" ? "right" : "left",
+              }}
             >
-              Our mission is to fuel the growth journey of our partners by
-              simplifying their
-              <br /> challenges and delivering solutions. When you work with us,
-              our process starts
-              <br /> with deep interaction, requirement analysis, and strategy
-              integration to achieve
-              <br /> your business goals. At TSC, businesses trust us to deliver
-              on our promises.
+              {language === "en" && (
+                <>
+                  Our mission is to fuel the growth journey of our partners by
+                  simplifying their
+                  <br /> challenges and delivering solutions. When you work with
+                  us, our process starts
+                  <br /> with deep interaction, requirement analysis, and
+                  strategy integration to achieve
+                  <br /> your business goals. At TSC, businesses trust us to
+                  deliver on our promises.
+                </>
+              )}
+              {language === "ar" && (
+                <>
+                  تتمثل مهمتنا في تعزيز رحلة نمو شركائنا من خلال تبسيط التحديات
+                  <br />
+                  التي تواجههم وتقديم الحلول. عندما تعمل معنا، تبدأ عمليتنا
+                  <br />
+                  بالتفاعل العميق وتحليل المتطلبات وتكامل الاستراتيجيات لتحقيق
+                  <br />
+                  أهداف عملك. في TSC، تثق الشركات بنا للوفاء بوعودنا.
+                </>
+              )}
             </Typography>
             {(mobileView || tabletView) && (
               <Box
@@ -79,7 +120,7 @@ const HomeDriveSection = () => {
                 src="/drive.png"
                 height={570}
                 width={447}
-                maxWidth={"100%"}
+                maxWidth="100%"
                 sx={{ mx: "auto", borderRadius: "20px" }}
               />
             )}
@@ -89,13 +130,14 @@ const HomeDriveSection = () => {
               fontWeight={500}
               letterSpacing="-0.56px"
               textAlign={{
-                laptop: "left",
-                desktop: "left",
                 tablet: "center",
                 mobile: "center",
+                laptop: language === "ar" ? "right" : "left",
+                desktop: language === "ar" ? "right" : "left",
               }}
             >
-              60% faster time to market
+              {language === "en" && "60% faster time to market"}
+              {language === "ar" && "60% أسرع في وقت الوصول إلى السوق"}
             </Typography>
             <Typography
               fontSize={28}
@@ -103,13 +145,14 @@ const HomeDriveSection = () => {
               fontWeight={500}
               letterSpacing="-0.56px"
               textAlign={{
-                laptop: "left",
-                desktop: "left",
                 tablet: "center",
                 mobile: "center",
+                laptop: language === "ar" ? "right" : "left",
+                desktop: language === "ar" ? "right" : "left",
               }}
             >
-              40% reduction in development costs
+              {language === "en" && "40% reduction in development costs"}
+              {language === "ar" && "40% خفض تكاليف التطوير "}
             </Typography>
             <Button
               sx={{
@@ -122,6 +165,7 @@ const HomeDriveSection = () => {
                 borderRadius: "100px",
                 justifyContent: "center",
                 border: " 1px solid #45BDD6",
+                flexDirection: language === "ar" ? "row-reverse" : "row",
                 mx: {
                   laptop: 0,
                   desktop: 0,
@@ -144,7 +188,8 @@ const HomeDriveSection = () => {
                 }
               }}
             >
-              Let’s talk
+              {language === "en" && "Let’s talk"}
+              {language === "ar" && "دعنا نتحدث"}
               <Stack
                 sx={{
                   py: "6px",
@@ -159,6 +204,9 @@ const HomeDriveSection = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  style={{
+                    transform: language === "ar" ? "rotate(-180deg)" : "",
+                  }}
                 >
                   <path
                     fillRule="evenodd"

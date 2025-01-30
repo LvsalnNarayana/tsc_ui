@@ -1,10 +1,13 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 
-import { Stack, Divider, Container, Typography } from "@mui/material";
+import { Stack, Button, Divider, Container, Typography } from "@mui/material";
+
+import { useLanguage } from "../../LanguageContext";
 
 const Footer = () => {
   const { pathname } = useLocation();
+  const { language, toggleLanguage } = useLanguage();
 
   return (
     <Container maxWidth="desktop">
@@ -98,6 +101,9 @@ const Footer = () => {
           </Stack>
         </Stack>
       </Stack>
+      <Button onClick={toggleLanguage}>
+        {language === "ar" ? "English" : "arabic"}
+      </Button>
       <Divider flexItem sx={{ my: 5, borderColor: "#ffffff40" }} />
       <Stack
         direction={{

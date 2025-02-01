@@ -11,8 +11,9 @@ const AboutHeroSection = () => {
   const text = {
     ar: {
       title: "",
-      subtitle: "",
-      description: "",
+      subtitle: "أشخاص يتمتعون برؤية واضحة ويمتلكون قيمة حقيقية",
+      description:
+        " نحن في شركة تكامل السحابة نهدف إلى تقديم حلول متطورة في مجال تقنية المعلومات. مهمتنا هي دعم الشركات من خلال التقنية والتركيز على الجودة ورضا العميل. منذُ بداية رحلتنا، نحن ملتزمون بمساعدة عملائنا على تحقيق أهدافهم. فريقنا يتكون من مطورين ومهندسين ومصممين وخبراء في الجودة، بالإضافة إلى قادة ذوي خبرة تزيد عن 15 عاماً. لقد حققنا نتائج رائعة وأقمنا علاقات طويلة الأمد مع عملاء دوليين، ونحن نواصل النمو والتطور يومياً",
     },
     en: {
       title: "About Us",
@@ -101,7 +102,19 @@ const AboutHeroSection = () => {
             alignItems="flex-start"
             gap={2}
           >
-            <Box display="flex" alignItems="center" gap={1.5}>
+            <Box
+              width={{
+                laptop: "80%",
+                tablet: "100%",
+                mobile: "100%",
+                desktop: "80%",
+              }}
+              display="flex"
+              justifyContent={language === "ar" ? "flex-end" : "flex-start"}
+              alignItems="center"
+              flexDirection={language === "ar" ? "row-reverse" : "row"}
+              gap={1.5}
+            >
               <Box
                 width={20}
                 height={6}
@@ -131,6 +144,24 @@ const AboutHeroSection = () => {
               fontWeight={500}
               lineHeight={1.2}
               className="responsive-text"
+              textAlign={
+                language === "ar"
+                  ? {
+                      laptop: "right",
+                      desktop: "right",
+                      tablet: "center",
+                      mobile: "center",
+                    }
+                  : "left"
+              }
+              sx={{
+                width: {
+                  laptop: "80%",
+                  tablet: "100%",
+                  mobile: "100%",
+                  desktop: "80%",
+                },
+              }}
             >
               {t.subtitle}
             </Typography>
@@ -138,17 +169,27 @@ const AboutHeroSection = () => {
             <Typography
               variant="body1"
               color="rgba(255, 255, 255, 0.70)"
-              fontSize={16}
+              fontSize={18}
               fontWeight={400}
               lineHeight={1.5}
               sx={{
                 width: {
-                  laptop: 490,
-                  desktop: 490,
+                  laptop: "80%",
                   tablet: "100%",
                   mobile: "100%",
+                  desktop: "80%",
                 },
               }}
+              textAlign={
+                language === "ar"
+                  ? {
+                      laptop: "right",
+                      desktop: "right",
+                      tablet: "center",
+                      mobile: "center",
+                    }
+                  : "left"
+              }
               className="lato"
               letterSpacing={1}
             >

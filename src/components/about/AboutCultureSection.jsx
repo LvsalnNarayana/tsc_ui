@@ -1,10 +1,21 @@
+/* eslint-disable complexity */
+/* eslint-disable operator-linebreak */
+/* eslint-disable max-lines */
 import React from "react";
 
-import { Stack, Container, Typography, useMediaQuery, Button } from "@mui/material";
+import {
+  Stack,
+  Button,
+  Container,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 
+import { useLanguage } from "../../LanguageContext";
 import AboutCultureSVG from "../SVGComponents/AboutCultureSVG";
 
 const AboutCultureSection = () => {
+  const { language } = useLanguage();
   const mobileView = useMediaQuery((mobileTheme) => {
     return mobileTheme.breakpoints.down("tablet");
   });
@@ -33,87 +44,108 @@ const AboutCultureSection = () => {
           desktop: 0,
         }}
       >
-        {(mobileView || tabletView) &&<>
-          <Typography
-            fontSize={{
-              laptop: 60,
-              tablet: 32,
-              mobile: 32,
-              desktop: 60,
-            }}
-            lineHeight={1.2}
-            textAlign="center"
-            sx={{
-              background: "linear-gradient(180deg, #FFF 0%, #040B12 139.86%)",
-              // eslint-disable-next-line perfectionist/sort-objects
-              backgroundClip: "text",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            Our Culture
-          </Typography>
-  
-          <Typography
-            fontSize={{
-              laptop: 18,
-              tablet: 18,
-              mobile: 18,
-              desktop: 18,
-            }}
-            lineHeight={1.5}
-            textAlign="center"
-            color="rgba(255, 255, 255, 0.80)"
-            className="lato"
-          >
-            At TSC we are a startup with a purpose to deliver transformative IT
-            solutions. Our mission is to enable businesses through technology,
-            quality and client centricity. As we start this journey we are
-            committed to our clients and helping them achieve their goals. Our
-            team consists of developers, engineers, designers, QA experts and
-            seasoned executive leaders – all with 15+ years of experience. We have
-            delivered impressive results and built long term relationships with
-            global clients and we are growing stronger every day.
-          </Typography>
-          <Button
-            sx={{
-              gap: 1,
-              py: 1.7,
-              fontSize: 18,
-              lineHeight: 1,
-              color: "#fff",
-              display: "flex",
-              borderRadius: "99px",
-              alignItems: "center",
-              boxShadow: "0px 1px 0px 0px rgba(255, 255, 255, 0.10) inset",
-              background:
-                "linear-gradient(180deg, #525252 -61.82%, #292929 100%)",
-              px: {
-                mobile: 3,
-                tablet: 3,
-                laptop: 6,
-                desktop: 6,
-              },
-            }}
-            onClick={() => {
-              const element = document.getElementById("connect");
-  
-              if (element) {
-                const elementPosition =
-                  element.getBoundingClientRect().top + window.scrollY;
-                const offsetPosition = elementPosition - 87;
-  
-                window.scrollTo({
-                  behavior: "smooth",
-                  top: offsetPosition,
-                });
-              }
-            }}
-          >
-            Join Now
-            <img alt="arrow" src="/ArrowUpRight.svg" />
-          </Button>
-        </>}
+        {(mobileView || tabletView) && (
+          <>
+            <Typography
+              fontSize={{
+                laptop: 60,
+                tablet: 32,
+                mobile: 32,
+                desktop: 60,
+              }}
+              lineHeight={1.2}
+              textAlign="center"
+              sx={{
+                background: "linear-gradient(180deg, #FFF 0%, #040B12 139.86%)",
+                // eslint-disable-next-line perfectionist/sort-objects
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              {language === "en" && "Our Culture"}
+              {language === "ar" && "ثقافتنا"}
+            </Typography>
+
+            <Typography
+              fontSize={{
+                laptop: 18,
+                tablet: 18,
+                mobile: 18,
+                desktop: 18,
+              }}
+              lineHeight={1.5}
+              textAlign="center"
+              color="rgba(255, 255, 255, 0.80)"
+              className="lato"
+            >
+              {language === "en" && (
+                <>
+                  At TSC we are a startup with a purpose to deliver
+                  transformative IT solutions. Our mission is to enable
+                  businesses through technology, quality and client centricity.
+                  As we start this journey we are committed to our clients and
+                  helping them achieve their goals. Our team consists of
+                  developers, engineers, designers, QA experts and seasoned
+                  executive leaders – all with 15+ years of experience. We have
+                  delivered impressive results and built long term relationships
+                  with global clients and we are growing stronger every day.
+                </>
+              )}
+              {language === "ar" && (
+                <>
+                  At TSC we are a startup with a purpose to deliver
+                  transformative IT solutions. Our mission is to enable
+                  businesses through technology, quality and client centricity.
+                  As we start this journey we are committed to our clients and
+                  helping them achieve their goals. Our team consists of
+                  developers, engineers, designers, QA experts and seasoned
+                  executive leaders – all with 15+ years of experience. We have
+                  delivered impressive results and built long term relationships
+                  with global clients and we are growing stronger every day.
+                </>
+              )}
+            </Typography>
+            <Button
+              sx={{
+                gap: 1,
+                py: 1.7,
+                fontSize: 18,
+                lineHeight: 1,
+                color: "#fff",
+                display: "flex",
+                borderRadius: "99px",
+                alignItems: "center",
+                boxShadow: "0px 1px 0px 0px rgba(255, 255, 255, 0.10) inset",
+                background:
+                  "linear-gradient(180deg, #525252 -61.82%, #292929 100%)",
+                px: {
+                  mobile: 3,
+                  tablet: 3,
+                  laptop: 6,
+                  desktop: 6,
+                },
+              }}
+              onClick={() => {
+                const element = document.getElementById("connect");
+
+                if (element) {
+                  const elementPosition =
+                    element.getBoundingClientRect().top + window.scrollY;
+                  const offsetPosition = elementPosition - 87;
+
+                  window.scrollTo({
+                    behavior: "smooth",
+                    top: offsetPosition,
+                  });
+                }
+              }}
+            >
+              Join Now
+              <img alt="arrow" src="/ArrowUpRight.svg" />
+            </Button>
+          </>
+        )}
         <Stack
           width={{
             laptop: 340,
@@ -126,7 +158,7 @@ const AboutCultureSection = () => {
           gap={2}
           sx={{
             top: 0,
-            display: "flex", // Ensures content stretches to the container
+            display: "flex",
             overflow: "hidden",
             borderRadius: "26px",
             alignItems: "center",
@@ -163,7 +195,8 @@ const AboutCultureSection = () => {
           {/* Content */}
           <Stack sx={{ zIndex: 2, position: "relative" }}>
             <Typography fontSize={28} fontWeight={500} lineHeight={1.4}>
-              Ethically Strong
+              {language === "en" && "Ethically Strong"}
+              {language === "ar" && "قوي أخلاقياً"}
             </Typography>
             <Typography
               fontSize={20}
@@ -171,8 +204,11 @@ const AboutCultureSection = () => {
               lineHeight={1.4}
               color="rgba(255, 255, 255, 0.7)"
             >
-              With integrity, respect, and a sense of responsibility, we create
-              an environment where everyone can grow.
+              {language === "en" &&
+                `With integrity, respect, and a sense of responsibility, we create
+              an environment where everyone can grow.`}
+              {language === "ar" &&
+                `من خلال الالتزام بالنزاهة والاحترام والشعور بالمسؤولية، نعمل على إنشاء بيئة تتيح للجميع فرصة النمو والازدهار.`}
             </Typography>
           </Stack>
         </Stack>
@@ -189,7 +225,7 @@ const AboutCultureSection = () => {
           sx={{
             left: 0,
             top: "30%",
-            display: "flex", // Ensures content stretches to the container
+            display: "flex",
             overflow: "hidden",
             borderRadius: "26px",
             alignItems: "center",
@@ -213,10 +249,10 @@ const AboutCultureSection = () => {
               top: -7,
               left: 0,
               zIndex: 0,
-              opacity: 0.2, // Ensures background text is visible
+              opacity: 0.2,
               width: "120%",
               height: "120%",
-              objectFit: "cover", // Ensures the video covers the entire container
+              objectFit: "cover",
               position: "absolute",
             }}
             src="/diversity.mp4"
@@ -225,7 +261,8 @@ const AboutCultureSection = () => {
           {/* Content */}
           <Stack sx={{ zIndex: 2, position: "relative" }}>
             <Typography fontSize={28} fontWeight={500} lineHeight={1.4}>
-              Diversity & Equality
+              {language === "en" && "Diversity & Equality"}
+              {language === "ar" && "التنوع والمساواة"}
             </Typography>
             <Typography
               fontSize={20}
@@ -233,8 +270,11 @@ const AboutCultureSection = () => {
               lineHeight={1.4}
               color="rgba(255, 255, 255, 0.7)"
             >
-              We welcome people from all walks of life and are committed to
-              equal opportunities for all.
+              {language === "en" &&
+                `We welcome people from all walks of life and are committed to
+              equal opportunities for all.`}
+              {language === "ar" &&
+                `نرحب بجميع الأفراد من مختلف مناحي الحياة، ملتزمين بتوفير فرص متكافئة لكل شخص دون استثناء.`}
             </Typography>
           </Stack>
         </Stack>
@@ -285,7 +325,8 @@ const AboutCultureSection = () => {
           {/* Content */}
           <Stack sx={{ zIndex: 2, position: "relative" }}>
             <Typography fontSize={28} fontWeight={500} lineHeight={1.4}>
-              Work & Life
+              {language === "en" && "Work & Life"}
+              {language === "ar" && "العمل والحياة"}
             </Typography>
             <Typography
               fontSize={20}
@@ -293,8 +334,11 @@ const AboutCultureSection = () => {
               lineHeight={1.4}
               color="rgba(255, 255, 255, 0.7)"
             >
-              We support work-life balance through flexible hours, a supportive
-              environment, and fun celebrations.
+              {language === "en" &&
+                `We support work-life balance through flexible hours, a supportive
+              environment, and fun celebrations.`}
+              {language === "ar" &&
+                `نحن نؤمن بأهمية تحقيق توازن مثالي بين الحياة المهنية والحياة الشخصية، ونسعى جاهدين لتوفير ساعات عمل مرنة، وخلق بيئة مشجعة ،تعزز من روح الفريق `}
             </Typography>
           </Stack>
         </Stack>

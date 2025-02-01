@@ -1,8 +1,13 @@
+/* eslint-disable no-irregular-whitespace */
 import React from "react";
 
 import { Box, Stack, Container, Typography } from "@mui/material";
 
+import { useLanguage } from "../../LanguageContext";
+
 const AboutLiveSection = () => {
+  const { language } = useLanguage();
+
   return (
     <Container maxWidth="desktop">
       <Stack py={8} gap={10} alignItems="center">
@@ -23,7 +28,8 @@ const AboutLiveSection = () => {
             WebkitTextFillColor: "transparent",
           }}
         >
-          We Live By
+          {language === "en" && <>We Live By</>}
+          {language === "ar" && <>نحن نلتزم بـــ</>}
         </Typography>
 
         <Stack
@@ -33,12 +39,7 @@ const AboutLiveSection = () => {
             mobile: 2,
             desktop: 7,
           }}
-          gap={{
-            laptop: 6,
-            desktop: 6,
-            tablet: 10,
-            mobile: 10,
-          }}
+          gap={8}
           width="100%"
           direction={{
             laptop: "row",
@@ -52,8 +53,11 @@ const AboutLiveSection = () => {
           {[
             {
               id: 1,
-              title: "Honesty in all dealings",
-              description: `We follow ethical business practices and prioritize trust and
+              titleArabic: "الصدق هو أساس تعاملاتنا",
+              titleEnglish: "Honesty in all dealings",
+              descriptionArabic:
+                "نحن نلتزم بالممارسات التجارية الأخلاقية، ونعتبر الثقة والنزاهة من أولوياتنا في كل ما نقوم به. هذا النهج يعزز من تطوير شراكات طويلة الأمد",
+              descriptionEnglish: `We follow ethical business practices and prioritize trust and
                   integrity in every interaction we have. This leads to long-term
                   partnerships that grow.`,
               icon: () => {
@@ -79,8 +83,11 @@ const AboutLiveSection = () => {
             },
             {
               id: 2,
-              title: "Innovation is key",
-              description: `We believe innovation is the way to global transformation. We go
+              titleEnglish: "Innovation is key",
+              titleArabic: "الابتكار هو المفتاح",
+              descriptionArabic:
+                "نحن نعتقد أن الابتكار هو الطريق للتغيير العالمي. لا نكتفي بتقديم الحلول فقط، بل نستكشف أفكار جديدة ونتجاوز الحدود لنساهم عملائنا في بناء مستقبلهم.",
+              descriptionEnglish: `We believe innovation is the way to global transformation. We go
                   beyond providing solutions; we explore ideas, push limits, and
                   shape the future of our client's businesses.`,
               icon: () => {
@@ -105,8 +112,11 @@ const AboutLiveSection = () => {
             },
             {
               id: 3,
-              title: "Values-Based Culture",
-              description: `At TSC we have a culture where personal values align with our
+              titleEnglish: "Values-Based Culture",
+              titleArabic: "ثقافة مبنية على القيم",
+              descriptionArabic:
+                "في تكامل السحابة، نمارس ثقافة تتناغم فيها القيم الفردية مع أهداف الشركة. هذا الانسجام يساهم في إنشاء بيئة عمل إيجابية تسمح للجميع بتقديم أفضل ما لديهم.",
+              descriptionEnglish: `At TSC we have a culture where personal values align with our
                   company mission. This alignment creates a positive work
                   environment where everyone can bring their best.`,
               icon: () => {
@@ -133,13 +143,13 @@ const AboutLiveSection = () => {
             return (
               <Stack
                 key={livesItem.id}
-                px={5}
+                px={4}
                 py={8}
                 gap={2}
                 justifyContent="center"
                 alignItems="center"
                 sx={{
-                  minWidth: 364,
+                  width: "100%",
                   minHeight: 310,
                   height: "100%",
                   position: "relative",
@@ -212,7 +222,7 @@ const AboutLiveSection = () => {
                   </svg>
                 </Box>
 
-                <Stack width="100%" height="100%" sx={{ zIndex: 3 }}>
+                <Stack width="100%" height="100%" sx={{ zIndex: 3 }} gap={2}>
                   <Stack
                     width={100}
                     height={100}
@@ -237,7 +247,8 @@ const AboutLiveSection = () => {
                     lineHeight={1.4}
                     fontWeight={500}
                   >
-                    {livesItem?.title}
+                    <>{language === "en" && livesItem?.titleEnglish}</>
+                    <> {language === "ar" && livesItem?.titleArabic}</>
                   </Typography>
                   <Typography
                     variant="body1"
@@ -249,7 +260,8 @@ const AboutLiveSection = () => {
                     className="lato"
                     letterSpacing={1}
                   >
-                    {livesItem?.description}
+                    <>{language === "en" && livesItem?.descriptionEnglish}</>
+                    <> {language === "ar" && livesItem?.descriptionArabic}</>
                   </Typography>
                 </Stack>
               </Stack>

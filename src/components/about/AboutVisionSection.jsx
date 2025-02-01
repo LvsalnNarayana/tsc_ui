@@ -2,9 +2,13 @@ import React from "react";
 
 import { Box, Stack, Container, Typography } from "@mui/material";
 
+import { useLanguage } from "../../LanguageContext";
+
 const AboutVisionSection = () => {
+  const { language } = useLanguage();
+
   return (
-    <Container maxWidth="desktop">
+    <Container maxWidth="desktop" sx={{ minHeight: "100vh" }}>
       <Stack
         py={{
           tablet: 8,
@@ -17,6 +21,9 @@ const AboutVisionSection = () => {
           tablet: 15,
           mobile: 15,
           desktop: 10,
+        }}
+        sx={{
+          heigh: "100vh",
         }}
         alignItems="center"
       >
@@ -98,13 +105,29 @@ const AboutVisionSection = () => {
             }}
             fontWeight={400}
             lineHeight={1.2}
-            textAlign="center"
+            textAlign={{
+              tablet: "center",
+              mobile: "center",
+              laptop: language === "ar" ? "right" : "left",
+              desktop: language === "ar" ? "right" : "left",
+            }}
             className="responsive-text"
           >
-            “We are more than a team; we are a community of
-            <br /> people who believe in the power of technology. our
-            <br /> promise to our clients is unbreakable as we work
-            <br /> to build the future they want.”
+            {language === "en" && (
+              <>
+                “We are more than a team; we are a community of people who
+                believe in the power of technology. our promise to our clients
+                is unbreakable as we work to build the future they want.”
+              </>
+            )}
+            {language === "ar" && (
+              <>
+                “نحن لسنا مجرد فريق، بل نحن مجتمع نابض من الأفراد الذين يحملون
+                إيمانًا راسخًا بقوة التقنية. إن التزامنا تجاه عملائنا هو عهد لا
+                يمكن التنازل عنه، ونسعى جاهدين لتحقيق رؤية المستقبل التي يطمحون
+                إليه&quot;
+              </>
+            )}
           </Typography>
           <Typography
             width="90%"
@@ -119,7 +142,8 @@ const AboutVisionSection = () => {
             lineHeight={1.2}
             textAlign="right"
           >
-            -TSC Founder
+            {language === "en" && <>-TSC Founder</>}
+            {language === "ar" && <>-مؤسسيين تكامل السحابة</>}
           </Typography>
         </Stack>
       </Stack>

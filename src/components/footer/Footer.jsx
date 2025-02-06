@@ -167,7 +167,13 @@ const Footer = () => {
         }}
       >
         <Stack direction="row" alignItems="center" gap={4}>
-          {["/about-us", "/services", "/products"]?.includes(pathname) && (
+          {[
+            "/about-us",
+            "/services",
+            "/products",
+            "/privacy-policy",
+            "/terms-conditions",
+          ]?.includes(pathname) && (
             <Typography
               onClick={() => {
                 return navigate("/");
@@ -179,7 +185,13 @@ const Footer = () => {
               Home
             </Typography>
           )}
-          {["/", "/services", "/products"]?.includes(pathname) && (
+          {[
+            "/",
+            "/services",
+            "/products",
+            "/privacy-policy",
+            "/terms-conditions",
+          ]?.includes(pathname) && (
             <Typography
               onClick={() => {
                 return navigate("/about-us");
@@ -191,7 +203,13 @@ const Footer = () => {
               About Us
             </Typography>
           )}
-          {["/about-us", "/", "/products"]?.includes(pathname) && (
+          {[
+            "/about-us",
+            "/",
+            "/products",
+            "/privacy-policy",
+            "/terms-conditions",
+          ]?.includes(pathname) && (
             <Typography
               onClick={() => {
                 return navigate("/services");
@@ -203,7 +221,13 @@ const Footer = () => {
               Services
             </Typography>
           )}
-          {["/about-us", "/services", "/"]?.includes(pathname) && (
+          {[
+            "/about-us",
+            "/services",
+            "/",
+            "/privacy-policy",
+            "/terms-conditions",
+          ]?.includes(pathname) && (
             <Typography
               onClick={() => {
                 return navigate("/products");

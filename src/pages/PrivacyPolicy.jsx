@@ -80,7 +80,7 @@ const PrivacyPolicy = () => {
           the personal data we collect and use as part of engagements with our
           customers and clients.
         </Typography>
-        <Typography variant="body1" fontSize={20} lineHeight={1.5} my={2}>
+        <Typography variant="body1" fontSize={22} lineHeight={1.5} my={2}>
           Information Collection and Use
         </Typography>
         <Typography variant="body1" fontSize={18} lineHeight={1.5} my={1}>
@@ -91,7 +91,7 @@ const PrivacyPolicy = () => {
           this policy. TEKAMIL ALSAHABA COMPANY reserves the right to
           occasionally change the policy at its own discretion.
         </Typography>
-        <Typography variant="body1" fontSize={20} lineHeight={1.5} my={2}>
+        <Typography variant="body1" fontSize={22} lineHeight={1.5} my={2}>
           Information Collection
         </Typography>
         <Typography variant="body1" fontSize={18} lineHeight={1.5} my={1}>
@@ -110,7 +110,7 @@ const PrivacyPolicy = () => {
           fill customer orders. If we have trouble processing an order, the
           information is used to contact the clients/customers.
         </Typography>
-        <Typography variant="body1" fontSize={20} lineHeight={2} my={1}>
+        <Typography variant="body1" fontSize={22} lineHeight={2} my={1}>
           Information Use
         </Typography>
         <Typography variant="body1" fontSize={18} lineHeight={1.5} my={1}>
@@ -172,7 +172,7 @@ const PrivacyPolicy = () => {
           to data on individual transactions to third parties, other than as
           described in this privacy policy.{" "}
         </Typography>
-        <Typography variant="body1" fontSize={20} lineHeight={1.5} my={2}>
+        <Typography variant="body1" fontSize={22} lineHeight={1.5} my={2}>
           Communications of Information
         </Typography>
         <Typography variant="body1" fontSize={18} lineHeight={1.5} my={1}>

@@ -117,10 +117,8 @@ const Footer = () => {
         <Typography
           fontSize={12}
           sx={{
-            "&:hover": {
-              cursor: "pointer",
-              textDecoration: "underline",
-            },
+            cursor: "pointer",
+            textDecoration: "underline",
           }}
           onClick={() => {
             return navigate("/terms-conditions");
@@ -134,10 +132,8 @@ const Footer = () => {
           }}
           fontSize={12}
           sx={{
-            "&:hover": {
-              cursor: "pointer",
-              textDecoration: "underline",
-            },
+            cursor: "pointer",
+            textDecoration: "underline",
           }}
         >
           Privacy Policy

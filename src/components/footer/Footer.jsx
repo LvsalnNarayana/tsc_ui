@@ -20,7 +20,7 @@ const Footer = () => {
           tablet: "column",
         }}
         justifyContent="space-between"
-        alignItems="flex-end"
+        alignItems="center"
         gap={{
           laptop: 0,
           mobile: 5,
@@ -112,32 +112,6 @@ const Footer = () => {
             <img src="/linkedin_footer.svg" alt="logo" width={30} />
           </Stack>
         </Stack>
-      </Stack>
-      <Stack direction="row" alignItems="center" gap={2} my={2}>
-        <Typography
-          fontSize={12}
-          sx={{
-            cursor: "pointer",
-            textDecoration: "underline",
-          }}
-          onClick={() => {
-            return navigate("/terms-conditions");
-          }}
-        >
-          Terms & Conditions
-        </Typography>
-        <Typography
-          onClick={() => {
-            return navigate("/privacy-policy");
-          }}
-          fontSize={12}
-          sx={{
-            cursor: "pointer",
-            textDecoration: "underline",
-          }}
-        >
-          Privacy Policy
-        </Typography>
       </Stack>
       {/* <Button onClick={toggleLanguage}>
         {language === "ar" ? "English" : "arabic"}
@@ -235,6 +209,32 @@ const Footer = () => {
               Products
             </Typography>
           )}
+        </Stack>
+        <Stack direction="row" alignItems="center" gap={2} my={2}>
+          <Typography
+            fontSize={12}
+            sx={{
+              cursor: "pointer",
+              textDecoration: "underline",
+            }}
+            onClick={() => {
+              return navigate("/terms-conditions");
+            }}
+          >
+            Terms & Conditions
+          </Typography>
+          <Typography
+            onClick={() => {
+              return navigate("/privacy-policy");
+            }}
+            fontSize={12}
+            sx={{
+              cursor: "pointer",
+              textDecoration: "underline",
+            }}
+          >
+            Privacy Policy
+          </Typography>
         </Stack>
         <Typography color="#fff" fontSize={16} lineHeight={1.5}>
           © 2023 shantogfx - All Right Reserved

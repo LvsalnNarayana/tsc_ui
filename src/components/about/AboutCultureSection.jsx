@@ -343,7 +343,9 @@ const AboutCultureSection = () => {
           </Stack>
         </Stack>
 
-        {(desktopView || laptopView) && <AboutCultureSVG />}
+        {(desktopView || laptopView) && (
+          <AboutCultureSVG style={{ margin: "auto" }} />
+        )}
       </Stack>
     </Container>
   );

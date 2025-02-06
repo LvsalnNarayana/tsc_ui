@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import { Stack, Button, Divider, Container, Typography } from "@mui/material";
 
@@ -8,6 +8,7 @@ import { useLanguage } from "../../LanguageContext";
 const Footer = () => {
   const { pathname } = useLocation();
   const { language, toggleLanguage } = useLanguage();
+  const navigate = useNavigate();
 
   return (
     <Container maxWidth="desktop">
@@ -112,9 +113,39 @@ const Footer = () => {
           </Stack>
         </Stack>
       </Stack>
-      <Button onClick={toggleLanguage}>
+      <Stack direction="row" alignItems="center" gap={2} my={2}>
+        <Typography
+          fontSize={12}
+          sx={{
+            "&:hover": {
+              cursor: "pointer",
+              textDecoration: "underline",
+            },
+          }}
+          onClick={() => {
+            return navigate("/terms-conditions");
+          }}
+        >
+          Terms & Conditions
+        </Typography>
+        <Typography
+          onClick={() => {
+            return navigate("/privacy-policy");
+          }}
+          fontSize={12}
+          sx={{
+            "&:hover": {
+              cursor: "pointer",
+              textDecoration: "underline",
+            },
+          }}
+        >
+          Privacy Policy
+        </Typography>
+      </Stack>
+      {/* <Button onClick={toggleLanguage}>
         {language === "ar" ? "English" : "arabic"}
-      </Button>
+      </Button> */}
       <Divider flexItem sx={{ my: 5, borderColor: "#ffffff40" }} />
       <Stack
         direction={{
@@ -137,22 +168,50 @@ const Footer = () => {
       >
         <Stack direction="row" alignItems="center" gap={4}>
           {["/about-us", "/services", "/products"]?.includes(pathname) && (
-            <Typography color="#fff" fontSize={16} lineHeight={1.5}>
+            <Typography
+              onClick={() => {
+                return navigate("/");
+              }}
+              color="#fff"
+              fontSize={16}
+              lineHeight={1.5}
+            >
               Home
             </Typography>
           )}
           {["/", "/services", "/products"]?.includes(pathname) && (
-            <Typography color="#fff" fontSize={16} lineHeight={1.5}>
+            <Typography
+              onClick={() => {
+                return navigate("/about-us");
+              }}
+              color="#fff"
+              fontSize={16}
+              lineHeight={1.5}
+            >
               About Us
             </Typography>
           )}
           {["/about-us", "/", "/products"]?.includes(pathname) && (
-            <Typography color="#fff" fontSize={16} lineHeight={1.5}>
+            <Typography
+              onClick={() => {
+                return navigate("/services");
+              }}
+              color="#fff"
+              fontSize={16}
+              lineHeight={1.5}
+            >
               Services
             </Typography>
           )}
           {["/about-us", "/services", "/"]?.includes(pathname) && (
-            <Typography color="#fff" fontSize={16} lineHeight={1.5}>
+            <Typography
+              onClick={() => {
+                return navigate("/products");
+              }}
+              color="#fff"
+              fontSize={16}
+              lineHeight={1.5}
+            >
               Products
             </Typography>
           )}

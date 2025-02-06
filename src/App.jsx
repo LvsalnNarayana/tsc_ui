@@ -13,6 +13,8 @@ import Services from "./pages/Services";
 import ContactUs from "./pages/ContactUs";
 
 import { LanguageProvider } from "./LanguageContext";
+import TermsConditions from "./pages/TermsConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -40,6 +42,8 @@ const App = () => {
             <Route path="/products" element={<Products />} />
             <Route path="/services" element={<Services />} />
             <Route path="/contact-us" element={<ContactUs />} />
+            <Route path="/terms-conditions" element={<TermsConditions />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
           <Footer />
         </Stack>

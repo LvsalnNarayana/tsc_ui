@@ -72,7 +72,10 @@ const HomeHowWeWorkSection = () => {
             </>
           )}
         </Typography>
-        {(desktopView || laptopView) && <HowWeWorkSVG />}
+        {(desktopView || laptopView) && language === "en" && <HowWeWorkSVG />}
+        {(desktopView || laptopView) && language === "ar" && (
+          <img alt="hww" src="/home_arabic.png" />
+        )}
         {(mobileView || tabletView) && <img alt="hww" src="/hww_mob.svg" />}
       </Stack>
     </Container>

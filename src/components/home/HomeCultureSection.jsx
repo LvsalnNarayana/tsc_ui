@@ -45,7 +45,7 @@ const HomeCultureSection = () => {
               <br /> Culture
             </>
           )}
-          {language === "ar" && <>ترسيخ ثقافة تعاونية</>}\
+          {language === "ar" && <>ترسيخ ثقافة تعاونية</>}
         </Typography>
         <Typography
           className="lato responsive-text"

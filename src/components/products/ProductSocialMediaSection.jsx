@@ -105,9 +105,9 @@ const ProductSocialMediaSection = () => {
             {
               id: 2,
               icon: "/control social media_1.mp4",
-              title: "Control Your Social Media Content",
+              titleEnglish: "Control Your Social Media Content",
               titleArabic: "أدر محتوى حساباتك على وسائل التواصل الاجتماعي",
-              description: `Plan and schedule your social media content across all platforms with a simple post scheduler and shared calendars. Manage your content. Customize your post content for each platform. Collaborate with internal and external teams.`,
+              descriptionEnglish: `Plan and schedule your social media content across all platforms with a simple post scheduler and shared calendars. Manage your content. Customize your post content for each platform. Collaborate with internal and external teams.`,
               descriptionArabic:
                 "رتب المحتوى على وسائل التواصل الاجتماعي باستخدام المنصة التي تجعل من السهل جدولة المنشورات وإنشاء تقاويم مشتركة. إدارة المحتوى الخاص بك مهم، لذا تأكد من تخصيص كل منشور للمنصة المناسبة له. تعاون بشكل جيد مع الفرق الداخلية والخارجية.",
             },

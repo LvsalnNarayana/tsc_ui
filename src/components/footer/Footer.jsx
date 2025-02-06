@@ -58,9 +58,20 @@ const Footer = () => {
             </Stack>
           </Stack>
           <Typography color="#fff" fontSize={16} lineHeight={1.5}>
-            St. Omar Ibn Alkhattab 34261,
-            <br />
-            Dammam, Saudi Arabia
+            {language === "en" && (
+              <>
+                St. Omar Ibn Alkhattab 34261,
+                <br />
+                Dammam, Saudi Arabia
+              </>
+            )}
+            {language === "ar" && (
+              <>
+                ش عمر بن الخطاب 34261,
+                <br />
+                الدمام، المملكة العربية السعودية
+              </>
+            )}
           </Typography>
         </Stack>
         <Stack

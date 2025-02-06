@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 /* eslint-disable max-lines */
 import React from "react";
 
@@ -12,7 +13,10 @@ import {
   useMediaQuery,
 } from "@mui/material";
 
+import { useLanguage } from "../../LanguageContext";
+
 const HomeConnectSection = () => {
+  const { language } = useLanguage();
   const mobileView = useMediaQuery((mobileTheme) => {
     return mobileTheme.breakpoints.down("tablet");
   });
@@ -61,7 +65,8 @@ const HomeConnectSection = () => {
           textAlign="center"
           className="responsive-text"
         >
-          Let&apos;s Begin the Dialogue
+          {language === "en" && <>Let&apos;s Begin the Dialogue</>}
+          {language === "ar" && <>فلنبدأ الحوار</>}
         </Typography>
         <Typography
           fontSize={{
@@ -75,8 +80,18 @@ const HomeConnectSection = () => {
           textAlign="center"
           color="rgba(255, 255, 255, 0.80"
         >
-          We’ve helped many businesses transform. Let’s create a success story
-          for your business.
+          {language === "en" && (
+            <>
+              We’ve helped many businesses transform. Let’s create a success
+              story for your business.
+            </>
+          )}
+          {language === "ar" && (
+            <>
+              لقد ساعدنا العديد من الشركات على التحول. لنقم بإنشاء قصة نجاح
+              لعملك.
+            </>
+          )}
         </Typography>
         <Stack
           mt={{
@@ -87,16 +102,21 @@ const HomeConnectSection = () => {
           }}
           gap={10}
           direction={{
-            laptop: "row",
-            desktop: "row",
             mobile: "column",
             tablet: "column",
+            laptop: language === "en" ? "row" : "row-reverse",
+            desktop: language === "en" ? "row" : "row-reverse",
           }}
           alignItems="flex-start"
           justifyContent="flex-start"
         >
-          <Stack width="100%" gap={4}>
+          <Stack
+            width="100%"
+            gap={4}
+            alignItems={language === "ar" ? "flex-end" : "flex-start"}
+          >
             <Stack
+              alignItems={language === "ar" ? "flex-end" : "flex-start"}
               gap={{
                 laptop: 1,
                 mobile: 2,
@@ -114,7 +134,8 @@ const HomeConnectSection = () => {
                 }}
                 lineHeight={1.2}
               >
-                Connect With Us
+                {language === "en" && "Connect With Us"}
+                {language === "ar" && "تواصل معنا"}
               </Typography>
               <Typography
                 fontSize={{
@@ -126,13 +147,22 @@ const HomeConnectSection = () => {
                 lineHeight={1.5}
                 fontWeight={400}
               >
-                Tell us about your requirements. We’ll get back to you soon.
+                {language === "en" && (
+                  <>
+                    Tell us about your requirements. We’ll get back to you soon.
+                  </>
+                )}
+                {language === "ar" && (
+                  <>أخبرنا عن متطلباتك. سوف نعود اليكم قريبا.</>
+                )}
               </Typography>
             </Stack>
             <TextField
-              placeholder="Name*"
+              width="100%"
+              placeholder={language === "ar" ? "*اسم" : "Name*"}
               sx={{
-                height: "58px",
+                width: "100%",
+                height: "52px",
                 borderRadius: "12px",
                 border: "1px solid rgba(65, 196, 218, 0.30)",
                 input: {
@@ -140,14 +170,21 @@ const HomeConnectSection = () => {
                   "&::placeholder": {
                     fontSize: 18,
                     color: "rgba(255, 255, 255, 0.60)",
+                    textAlign: language === "ar" ? "right" : "left",
                   },
                 },
               }}
             />
             <TextField
-              placeholder="Company Name (Optional)"
+              width="100%"
+              placeholder={
+                language === "ar"
+                  ? "اسم الشركة (اختياري)"
+                  : "Company Name (Optional)"
+              }
               sx={{
-                height: "58px",
+                width: "100%",
+                height: "52px",
                 borderRadius: "12px",
                 border: "1px solid rgba(65, 196, 218, 0.30)",
                 input: {
@@ -155,14 +192,19 @@ const HomeConnectSection = () => {
                   "&::placeholder": {
                     fontSize: 18,
                     color: "rgba(255, 255, 255, 0.60)",
+                    textAlign: language === "ar" ? "right" : "left",
                   },
                 },
               }}
             />
             <TextField
-              placeholder="Phone Number*"
+              width="100%"
+              placeholder={
+                language === "ar" ? "رقم التليفون*" : "Phone Number*"
+              }
               sx={{
-                height: "58px",
+                width: "100%",
+                height: "52px",
                 borderRadius: "12px",
                 border: "1px solid rgba(65, 196, 218, 0.30)",
                 input: {
@@ -170,14 +212,21 @@ const HomeConnectSection = () => {
                   "&::placeholder": {
                     fontSize: 18,
                     color: "rgba(255, 255, 255, 0.60)",
+                    textAlign: language === "ar" ? "right" : "left",
                   },
                 },
               }}
             />
             <TextField
-              placeholder="Email Address*"
+              width="100%"
+              placeholder={
+                language === "ar"
+                  ? "عنوان البريد الإلكتروني*"
+                  : "Email Address*"
+              }
               sx={{
-                height: "58px",
+                width: "100%",
+                height: "52px",
                 borderRadius: "12px",
                 border: "1px solid rgba(65, 196, 218, 0.30)",
                 input: {
@@ -185,6 +234,7 @@ const HomeConnectSection = () => {
                   "&::placeholder": {
                     fontSize: 18,
                     color: "rgba(255, 255, 255, 0.60)",
+                    textAlign: language === "ar" ? "right" : "left",
                   },
                 },
               }}
@@ -192,8 +242,13 @@ const HomeConnectSection = () => {
             <TextField
               multiline
               rows={4}
-              placeholder="Describe your requirements*"
+              placeholder={
+                language === "ar"
+                  ? "قم بوصف متطلباتك*"
+                  : "Describe your requirements*"
+              }
               sx={{
+                width: "100%",
                 borderRadius: "12px",
                 "& .MuiOutlinedInput-multiline": {
                   padding: 0,
@@ -204,6 +259,7 @@ const HomeConnectSection = () => {
                   "&::placeholder": {
                     fontSize: 18,
                     color: "rgba(255, 255, 255, 0.60)",
+                    textAlign: language === "ar" ? "right" : "left",
                   },
                 },
                 "& .MuiOutlinedInput-root": {
@@ -219,34 +275,59 @@ const HomeConnectSection = () => {
               }}
             />
 
-            <Stack direction="row" alignItems="center" gap={2}>
+            <Stack
+              direction={language === "ar" ? "row-reverse" : "row"}
+              alignItems="center"
+              gap={2}
+            >
               <Box component="img" src="/link.svg" />
-              <Stack>
-                <Typography fontSize={16} lineHeight={1.2} fontWeight={400}>
-                  Attach File
+              <Stack
+                justifyContent={language === "ar" ? "flex-end" : "flex-start"}
+              >
+                <Typography
+                  fontSize={16}
+                  lineHeight={1.2}
+                  fontWeight={400}
+                  textAlign={language === "ar" ? "right" : "left"}
+                >
+                  {language === "ar" ? "إرفاق الملف" : "Attach File"}
                 </Typography>
                 <Typography
                   fontSize={14}
                   lineHeight={1.2}
                   fontWeight={400}
                   color="rgba(255, 255, 255, 0.80)"
+                  textAlign={language === "ar" ? "right" : "left"}
                 >
-                  (You may upload only doc, docx & pdf file. Max file size:
-                  25MB)
+                  {language === "en" && (
+                    <>
+                      (You may upload only doc, docx & pdf file. Max file size:
+                      25MB)
+                    </>
+                  )}
+                  {language === "ar" && (
+                    <>
+                      (يمكنك تحميل ملفات doc وdocx وpdf فقط. الحد الأقصى لحجم
+                      الملف: 25 ميجابايت)
+                    </>
+                  )}
                 </Typography>
               </Stack>
             </Stack>
             <Button
+              width="100%"
               sx={{
                 py: 1,
                 fontSize: 24,
                 color: "#000",
                 fontWeight: 700,
+                minWidth: "100%",
                 borderRadius: "12px",
                 background: " #41C4DA",
               }}
             >
-              Submit
+              {language === "en" && "Submit"}
+              {language === "ar" && "يُقدِّم"}
             </Button>
           </Stack>
           <Divider
@@ -293,8 +374,13 @@ const HomeConnectSection = () => {
             </Box>
           </Divider>
 
-          <Stack width="100%" gap={4}>
+          <Stack
+            width="100%"
+            gap={4}
+            alignItems={language === "ar" ? "flex-end" : "flex-start"}
+          >
             <Stack
+              alignItems={language === "ar" ? "flex-end" : "flex-start"}
               gap={{
                 laptop: 1,
                 mobile: 2,
@@ -312,7 +398,8 @@ const HomeConnectSection = () => {
                 fontWeight={700}
                 lineHeight={1.5}
               >
-                Quick Connect
+                {language === "en" && "Quick Connect"}
+                {language === "ar" && "اتصال سريع"}
               </Typography>
               <Typography
                 fontSize={{
@@ -325,15 +412,22 @@ const HomeConnectSection = () => {
                 lineHeight={1.5}
                 color="rgba(255, 255, 255, 0.80)"
               >
-                We are just a tap away! Reach out to us for more information
+                {language === "en" && (
+                  <>
+                    We are just a tap away! Reach out to us for more information
+                  </>
+                )}
+                {language === "ar" && (
+                  <>نحن على بعد نقرة واحدة فقط! تواصل معنا لمزيد من المعلومات</>
+                )}
               </Typography>
             </Stack>
             <Stack
+              width="100%"
               gap={2}
               px={4}
-              direction="row"
+              direction={language === "ar" ? "row-reverse" : "row"}
               alignItems="center"
-              justifyContent="flex-start"
               sx={{
                 minHeight: "100px",
                 borderRadius: "12px",
@@ -342,8 +436,14 @@ const HomeConnectSection = () => {
             >
               <Box component="img" src="/email.svg" width={40} />
               <Stack gap={0}>
-                <Typography fontSize={18} fontWeight={500} lineHeight={1}>
-                  Email
+                <Typography
+                  fontSize={18}
+                  fontWeight={500}
+                  lineHeight={1}
+                  textAlign={language === "ar" ? "right" : "left"}
+                >
+                  {language === "en" && "Email"}
+                  {language === "ar" && "بريد إلكتروني"}
                 </Typography>
                 <Typography
                   fontSize={18}
@@ -351,16 +451,17 @@ const HomeConnectSection = () => {
                   lineHeight={1.5}
                   color="#ffffff80"
                 >
-                  contact@tsc.com.sa
+                  {language === "en" && "contact@tsc.com.sa"}
+                  {language === "ar" && "contact@tsc.com.sa"}
                 </Typography>
               </Stack>
             </Stack>
             <Stack
+              width="100%"
               gap={2}
               px={4}
-              direction="row"
+              direction={language === "ar" ? "row-reverse" : "row"}
               alignItems="center"
-              justifyContent="flex-start"
               sx={{
                 minHeight: "100px",
                 borderRadius: "12px",
@@ -369,8 +470,14 @@ const HomeConnectSection = () => {
             >
               <Box component="img" src="/phone.svg" width={40} />
               <Stack gap={0}>
-                <Typography fontSize={18} fontWeight={500} lineHeight={1}>
-                  Call
+                <Typography
+                  fontSize={18}
+                  fontWeight={500}
+                  lineHeight={1}
+                  textAlign={language === "ar" ? "right" : "left"}
+                >
+                  {language === "en" && "Call"}
+                  {language === "ar" && "يتصل"}
                 </Typography>
                 <Typography
                   fontSize={18}
@@ -383,11 +490,11 @@ const HomeConnectSection = () => {
               </Stack>
             </Stack>
             <Stack
+              width="100%"
               gap={2}
               px={4}
-              direction="row"
+              direction={language === "ar" ? "row-reverse" : "row"}
               alignItems="center"
-              justifyContent="flex-start"
               sx={{
                 minHeight: "100px",
                 borderRadius: "12px",
@@ -396,8 +503,14 @@ const HomeConnectSection = () => {
             >
               <Box component="img" src="/teams.svg" width={40} />
               <Stack gap={0}>
-                <Typography fontSize={18} fontWeight={500} lineHeight={1}>
-                  Teams
+                <Typography
+                  fontSize={18}
+                  fontWeight={500}
+                  lineHeight={1}
+                  textAlign={language === "ar" ? "right" : "left"}
+                >
+                  {language === "en" && "Teams"}
+                  {language === "ar" && "فريق"}
                 </Typography>
                 <Typography
                   fontSize={18}

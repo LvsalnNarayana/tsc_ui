@@ -103,7 +103,7 @@ const Footer = () => {
               fontWeight={400}
               color="#fff"
             >
-              +966570111471
+              +966571100020
             </Typography>
           </Stack>
           <Stack direction="row" alignItems="center" gap={4}>

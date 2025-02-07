@@ -451,8 +451,8 @@ const HomeConnectSection = () => {
                   lineHeight={1.5}
                   color="#ffffff80"
                 >
-                  {language === "en" && "contact@tsc.com.sa"}
-                  {language === "ar" && "contact@tsc.com.sa"}
+                  {language === "en" && "info@tsc.com.sa"}
+                  {language === "ar" && "info@tsc.com.sa"}
                 </Typography>
               </Stack>
             </Stack>
@@ -485,7 +485,7 @@ const HomeConnectSection = () => {
                   lineHeight={1.5}
                   color="#ffffff80"
                 >
-                  +966123456
+                  +966571100020
                 </Typography>
               </Stack>
             </Stack>

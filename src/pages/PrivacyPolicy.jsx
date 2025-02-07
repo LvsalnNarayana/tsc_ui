@@ -2,7 +2,7 @@
 /* eslint-disable max-lines */
 import React from "react";
 
-import { Stack, Typography } from "@mui/material";
+import { List, ListItem, ListItemText, Stack, Typography } from "@mui/material";
 
 import AboutHeroPattern from "../components/SVGComponents/AboutHeroPattern";
 
@@ -12,14 +12,16 @@ const PrivacyPolicy = () => {
       width="100%"
       maxWidth="100%"
       sx={{
+        pb: 15,
         color: "#fff",
         position: "relative",
         backgroundColor: "#040B12",
+        fontFamily: "Dubai",
       }}
     >
       <Stack
         style={{
-          height: "40vh",
+          height: "300px",
           display: "flex",
           paddingTop: "87px",
           position: "relative",
@@ -80,7 +82,13 @@ const PrivacyPolicy = () => {
           the personal data we collect and use as part of engagements with our
           customers and clients.
         </Typography>
-        <Typography variant="body1" fontSize={22} lineHeight={1.5} my={2}>
+        <Typography
+          variant="h6"
+          fontSize={26}
+          lineHeight={1.5}
+          my={2}
+          color="#45BDD6"
+        >
           Information Collection and Use
         </Typography>
         <Typography variant="body1" fontSize={18} lineHeight={1.5} my={1}>
@@ -91,7 +99,13 @@ const PrivacyPolicy = () => {
           this policy. TEKAMIL ALSAHABA COMPANY reserves the right to
           occasionally change the policy at its own discretion.
         </Typography>
-        <Typography variant="body1" fontSize={22} lineHeight={1.5} my={2}>
+        <Typography
+          variant="h6"
+          fontSize={26}
+          lineHeight={1.5}
+          my={2}
+          color="#45BDD6"
+        >
           Information Collection
         </Typography>
         <Typography variant="body1" fontSize={18} lineHeight={1.5} my={1}>
@@ -110,51 +124,83 @@ const PrivacyPolicy = () => {
           fill customer orders. If we have trouble processing an order, the
           information is used to contact the clients/customers.
         </Typography>
-        <Typography variant="body1" fontSize={22} lineHeight={2} my={1}>
+        <Typography
+          variant="h6"
+          fontSize={26}
+          lineHeight={1.5}
+          my={2}
+          color="#45BDD6"
+        >
           Information Use
         </Typography>
         <Typography variant="body1" fontSize={18} lineHeight={1.5} my={1}>
           TEKAMIL ALSAHABA COMPANY shall use information collected as part of
           engagement;
         </Typography>
-        <Typography variant="body1" fontSize={18} lineHeight={1.5} my={1}>
-          • To provide clients/customers with information about product
+
+        <List
+          sx={{
+            my: 0,
+            pl: 4,
+            py: 0,
+            fontSize: 20,
+            lineHeight: 1.5,
+            listStyleType: "disc",
+          }}
+        >
+          <ListItem sx={{ display: "list-item" }}>
+            <ListItemText
+              primary="To provide clients/customers with information about product
           upgrades, new products, services, newsletters, informative emails, and
-          research on future product ideas or improvements;
-        </Typography>
-        <Typography variant="body1" fontSize={18} lineHeight={1.5} my={1}>
-          • To assist TEKAMIL ALSAHABA COMPANY in creating content that is
-          relevant to clients/customers;
-        </Typography>
-        <Typography variant="body1" fontSize={18} lineHeight={1.5} my={1}>
-          • To assist TEKAMIL ALSAHABA COMPANY in creating better products and
-          services to meet clients/customer’s needs;
-        </Typography>
-        <Typography variant="body1" fontSize={18} lineHeight={1.5} my={1}>
-          • To allow clients/customers to purchase, download, and manage product
+          research on future product ideas or improvements;"
+            />
+          </ListItem>
+          <ListItem sx={{ display: "list-item" }}>
+            <ListItemText
+              primary=" To assist TEKAMIL ALSAHABA COMPANY in creating content that is
+          relevant to clients/customers;"
+            />
+          </ListItem>
+          <ListItem sx={{ display: "list-item" }}>
+            <ListItemText
+              primary="To assist TEKAMIL ALSAHABA COMPANY in creating better products and
+          services to meet clients/customer’s needs;"
+            />
+          </ListItem>
+          <ListItem sx={{ display: "list-item" }}>
+            <ListItemText
+              primary="To allow clients/customers to purchase, download, and manage product
           licenses, obtain access to services or otherwise engage in activities
-          selected by clients/customers;
-        </Typography>
-        <Typography variant="body1" fontSize={18} lineHeight={1.5} my={1}>
-          • To help TEKAMIL ALSAHABA COMPANY share software, services or product
-          information important to its clients/customers
-        </Typography>
-        <Typography variant="body1" fontSize={18} lineHeight={1.5} my={1}>
-          • Cookies – A cookie is a piece of data stored on the user’s computer
+          selected by clients/customers;"
+            />
+          </ListItem>
+          <ListItem sx={{ display: "list-item" }}>
+            <ListItemText
+              primary="To help TEKAMIL ALSAHABA COMPANY share software, services or product
+          information important to its clients/customers"
+            />
+          </ListItem>
+          <ListItem sx={{ display: "list-item" }}>
+            <ListItemText
+              primary="Cookies – A cookie is a piece of data stored on the user’s computer
           tied to information about the user. Usage of a cookie is in no way
           linked to any personally identifiable information while on our site.
           We use session ID cookies. For the session ID cookie, once users close
-          the browser, the cookie simply terminates.
-        </Typography>
-        <Typography variant="body1" fontSize={18} lineHeight={1.5} my={1}>
-          • Cookies are used to maintain the identity of users with our site
+          the browser, the cookie simply terminates."
+            />
+          </ListItem>
+          <ListItem sx={{ display: "list-item" }}>
+            <ListItemText
+              primary="Cookies are used to maintain the identity of users with our site
           after users log in with a username and password. This allows the users
           to identify themselves (log in) once rather than multiple times per
           web session. You can choose to disable cookies by following the
           procedure suggested by your particular browser. If you choose to
           disable cookies in your browser, you may still be able to access our
-          site depending on where you are on our site.
-        </Typography>
+          site depending on where you are on our site."
+            />
+          </ListItem>
+        </List>
         <Typography variant="body1" fontSize={18} lineHeight={1.5} my={1}>
           This information shall be compiled and analyzed to enhance our
           products and services and shall not be used in any way used to
@@ -172,7 +218,13 @@ const PrivacyPolicy = () => {
           to data on individual transactions to third parties, other than as
           described in this privacy policy.{" "}
         </Typography>
-        <Typography variant="body1" fontSize={22} lineHeight={1.5} my={2}>
+        <Typography
+          variant="h6"
+          fontSize={26}
+          lineHeight={1.5}
+          my={2}
+          color="#45BDD6"
+        >
           Communications of Information
         </Typography>
         <Typography variant="body1" fontSize={18} lineHeight={1.5} my={1}>

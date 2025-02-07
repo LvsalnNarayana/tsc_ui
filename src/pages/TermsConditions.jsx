@@ -20,14 +20,16 @@ const TermsConditions = () => {
       width="100%"
       maxWidth="100%"
       sx={{
+        pb: 15,
         color: "#fff",
+        fontFamily: "Dubai",
         position: "relative",
         backgroundColor: "#040B12",
       }}
     >
       <Stack
         style={{
-          height: "40vh",
+          height: "300px",
           display: "flex",
           paddingTop: "87px",
           position: "relative",
@@ -69,9 +71,14 @@ const TermsConditions = () => {
           conditions outlined herein.
         </Typography>
         <Divider sx={{ my: 2 }} />
-
         <Box>
-          <Typography variant="h6" fontSize={18} lineHeight={1.5} my={2}>
+          <Typography
+            variant="h6"
+            fontSize={26}
+            lineHeight={1.5}
+            my={2}
+            color="#45BDD6"
+          >
             1. Introduction
           </Typography>
           <Typography variant="body1" fontSize={18} lineHeight={1.5}>
@@ -82,7 +89,14 @@ const TermsConditions = () => {
         </Box>
 
         <Box>
-          <Typography variant="h5" fontSize={18} lineHeight={1.5} my={2}>
+          <Typography
+            variant="h6"
+            fontSize={26}
+            lineHeight={1.5}
+            mt={3}
+            mb={2}
+            color="#45BDD6"
+          >
             2. Intellectual Property Rights
           </Typography>
           <Typography variant="body1" fontSize={18} lineHeight={1.5}>
@@ -93,13 +107,20 @@ const TermsConditions = () => {
         </Box>
 
         <Box>
-          <Typography variant="h5" fontSize={18} lineHeight={1.5} my={2}>
+          <Typography
+            variant="h6"
+            fontSize={26}
+            lineHeight={1.5}
+            mt={3}
+            mb={2}
+            color="#45BDD6"
+          >
             3. License to Use Website
           </Typography>
           <List
             sx={{
               my: 0,
-              pl: 3,
+              pl: 4,
               py: 0,
               fontSize: 18,
               lineHeight: 1.5,
@@ -122,7 +143,14 @@ const TermsConditions = () => {
         </Box>
 
         <Box>
-          <Typography variant="h5" fontSize={18} lineHeight={1.5} my={2}>
+          <Typography
+            variant="h6"
+            fontSize={26}
+            lineHeight={1.5}
+            mt={3}
+            mb={2}
+            color="#45BDD6"
+          >
             4. Limitations of Liability
           </Typography>
           <Typography variant="body1" fontSize={18} lineHeight={1.5}>
@@ -132,7 +160,14 @@ const TermsConditions = () => {
         </Box>
 
         <Box>
-          <Typography variant="h5" fontSize={18} lineHeight={1.5} my={2}>
+          <Typography
+            variant="h6"
+            fontSize={26}
+            lineHeight={1.5}
+            mt={3}
+            mb={2}
+            color="#45BDD6"
+          >
             5. Links
           </Typography>
           <Typography variant="body1" fontSize={18} lineHeight={1.5}>
@@ -142,7 +177,14 @@ const TermsConditions = () => {
         </Box>
 
         <Box>
-          <Typography variant="h5" fontSize={18} lineHeight={1.5} my={2}>
+          <Typography
+            variant="h6"
+            fontSize={26}
+            lineHeight={1.5}
+            mt={3}
+            mb={2}
+            color="#45BDD6"
+          >
             6. Variation
           </Typography>
           <Typography variant="body1" fontSize={18} lineHeight={1.5}>
@@ -152,7 +194,14 @@ const TermsConditions = () => {
         </Box>
 
         <Box>
-          <Typography variant="h5" fontSize={18} lineHeight={1.5} my={2}>
+          <Typography
+            variant="h6"
+            fontSize={26}
+            lineHeight={1.5}
+            mt={3}
+            mb={2}
+            color="#45BDD6"
+          >
             7. Entire Agreement
           </Typography>
           <Typography variant="body1" fontSize={18} lineHeight={1.5}>
@@ -162,7 +211,14 @@ const TermsConditions = () => {
         </Box>
 
         <Box>
-          <Typography variant="h5" fontSize={18} lineHeight={1.5} my={2}>
+          <Typography
+            variant="h6"
+            fontSize={26}
+            lineHeight={1.5}
+            mt={3}
+            mb={2}
+            color="#45BDD6"
+          >
             8. Law and Jurisdiction
           </Typography>
           <Typography variant="body1" fontSize={18} lineHeight={1.5}>

@@ -12,11 +12,14 @@ import {
   Typography,
   ListItemText,
   useMediaQuery,
+  Button,
 } from "@mui/material";
-
+import { useLanguage } from "../../LanguageContext";
+import TranslateIcon from "@mui/icons-material/Translate";
 const Header = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  const { language, toggleLanguage } = useLanguage();
   const mobileView = useMediaQuery((theme) => {
     return theme.breakpoints.down("tablet");
   });
@@ -189,6 +192,10 @@ const Header = () => {
                   </Link>
                 );
               })}
+              <Button onClick={toggleLanguage} sx={{color:"white"}}>
+                <TranslateIcon fontSize="small" />
+                {language === "en" ? "Arabic" : "English"}
+              </Button>
             </Stack>
           )}
           <Drawer anchor="right" open={drawerOpen} onClose={handleDrawerToggle}>

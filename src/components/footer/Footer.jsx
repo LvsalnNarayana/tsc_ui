@@ -92,7 +92,7 @@ const Footer = () => {
               fontWeight={400}
               color="#fff"
             >
-              Moath@tsc.com.sa
+              info@tsc.com.sa
             </Typography>
           </Stack>
           <Stack direction="row" alignItems="center" gap={2}>
@@ -237,7 +237,7 @@ const Footer = () => {
           </Typography>
         </Stack>
         <Typography color="#fff" fontSize={16} lineHeight={1.5}>
-          © 2023 shantogfx - All Right Reserved
+          © 2023 - All Right Reserved
         </Typography>
       </Stack>
     </Container>

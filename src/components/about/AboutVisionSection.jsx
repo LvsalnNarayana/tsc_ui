@@ -44,7 +44,8 @@ const AboutVisionSection = () => {
             WebkitTextFillColor: "transparent",
           }}
         >
-          Our Vision
+          {language === "en" && "Our Vision"}
+          {language === "ar" && "Our Vision"}
         </Typography>
         <Stack
           p={9}

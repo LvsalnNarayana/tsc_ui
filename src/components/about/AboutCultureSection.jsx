@@ -13,6 +13,7 @@ import {
 
 import { useLanguage } from "../../LanguageContext";
 import AboutCultureSVG from "../SVGComponents/AboutCultureSVG";
+import AboutCultureArabicSVG from "../SVGComponents/AboutCultureArabicSVG";
 
 const AboutCultureSection = () => {
   const { language } = useLanguage();
@@ -94,15 +95,10 @@ const AboutCultureSection = () => {
               )}
               {language === "ar" && (
                 <>
-                  At TSC we are a startup with a purpose to deliver
-                  transformative IT solutions. Our mission is to enable
-                  businesses through technology, quality and client centricity.
-                  As we start this journey we are committed to our clients and
-                  helping them achieve their goals. Our team consists of
-                  developers, engineers, designers, QA experts and seasoned
-                  executive leaders – all with 15+ years of experience. We have
-                  delivered impressive results and built long term relationships
-                  with global clients and we are growing stronger every day.
+                  في تكامل السحابة، نؤمن بأهمية التنوع والفرص المتساوية واحترام
+                  خصوصية الجميع. هذا يجعلنا نشعر بالتعاون والدعم، مما يجعلنا
+                  كعائلة واحدة. معاً، نجعل كل يوم أفضل ونحتفل بالعمل والحياة
+                  والانجازات.
                 </>
               )}
             </Typography>
@@ -147,6 +143,8 @@ const AboutCultureSection = () => {
           </>
         )}
         <Stack
+          alignItems="flex-start"
+          justifyContent="center"
           width={{
             laptop: 340,
             desktop: 340,
@@ -193,12 +191,18 @@ const AboutCultureSection = () => {
           />
 
           {/* Content */}
-          <Stack sx={{ zIndex: 2, position: "relative" }}>
-            <Typography fontSize={28} fontWeight={500} lineHeight={1.4}>
+          <Stack gap={1} sx={{ zIndex: 2, position: "relative" }}>
+            <Typography
+              fontSize={28}
+              fontWeight={500}
+              lineHeight={1.4}
+              textAlign={language === "ar" ? "right" : "left"}
+            >
               {language === "en" && "Ethically Strong"}
               {language === "ar" && "قوي أخلاقياً"}
             </Typography>
             <Typography
+              textAlign={language === "ar" ? "right" : "left"}
               fontSize={20}
               fontWeight={300}
               lineHeight={1.4}
@@ -213,6 +217,8 @@ const AboutCultureSection = () => {
           </Stack>
         </Stack>
         <Stack
+          alignItems="flex-start"
+          justifyContent="center"
           width={{
             laptop: 340,
             desktop: 340,
@@ -259,12 +265,18 @@ const AboutCultureSection = () => {
           />
 
           {/* Content */}
-          <Stack sx={{ zIndex: 2, position: "relative" }}>
-            <Typography fontSize={28} fontWeight={500} lineHeight={1.4}>
+          <Stack gap={1} sx={{ zIndex: 2, position: "relative" }}>
+            <Typography
+              fontSize={28}
+              fontWeight={500}
+              lineHeight={1.4}
+              textAlign={language === "ar" ? "right" : "left"}
+            >
               {language === "en" && "Diversity & Equality"}
               {language === "ar" && "التنوع والمساواة"}
             </Typography>
             <Typography
+              textAlign={language === "ar" ? "right" : "left"}
               fontSize={20}
               fontWeight={300}
               lineHeight={1.4}
@@ -279,6 +291,8 @@ const AboutCultureSection = () => {
           </Stack>
         </Stack>
         <Stack
+          alignItems="flex-start"
+          justifyContent="center"
           width={{
             laptop: 340,
             desktop: 340,
@@ -323,12 +337,18 @@ const AboutCultureSection = () => {
           />
 
           {/* Content */}
-          <Stack sx={{ zIndex: 2, position: "relative" }}>
-            <Typography fontSize={28} fontWeight={500} lineHeight={1.4}>
+          <Stack gap={1} sx={{ zIndex: 2, position: "relative" }}>
+            <Typography
+              fontSize={28}
+              fontWeight={500}
+              lineHeight={1.4}
+              textAlign={language === "ar" ? "right" : "left"}
+            >
               {language === "en" && "Work & Life"}
               {language === "ar" && "العمل والحياة"}
             </Typography>
             <Typography
+              textAlign={language === "ar" ? "right" : "left"}
               fontSize={20}
               fontWeight={300}
               lineHeight={1.4}
@@ -344,7 +364,14 @@ const AboutCultureSection = () => {
         </Stack>
 
         {(desktopView || laptopView) && (
-          <AboutCultureSVG style={{ margin: "auto" }} />
+          <>
+            {language === "en" && (
+              <AboutCultureSVG style={{ margin: "auto" }} />
+            )}
+            {language === "ar" && (
+              <AboutCultureArabicSVG style={{ margin: "auto" }} />
+            )}
+          </>
         )}
       </Stack>
     </Container>

@@ -156,7 +156,8 @@ const HomeDriveSection = () => {
             </Typography>
             <Button
               sx={{
-                p: "10px",
+                px: "16px",
+                py: "10px",
                 gap: "16px",
                 display: "flex",
                 color: " #45BDD6",
@@ -165,6 +166,7 @@ const HomeDriveSection = () => {
                 borderRadius: "100px",
                 justifyContent: "center",
                 border: " 1px solid #45BDD6",
+                backgroundColor: "transparent",
                 flexDirection: language === "ar" ? "row-reverse" : "row",
                 mx: {
                   laptop: 0,

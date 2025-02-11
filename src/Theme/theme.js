@@ -1,4 +1,4 @@
-const generateThemeOptions = (appTheme) => {
+const generateThemeOptions = (appTheme, language) => {
   const mode = appTheme.mode || "light";
   const primaryColor = "#005093";
   const secondaryColor = "#ED502E";
@@ -29,7 +29,7 @@ const generateThemeOptions = (appTheme) => {
     },
     typography: {
       overflow: "hidden",
-      fontFamily: ["Dubai"],
+      fontFamily: language === "ar" ? ["Ara ES Nawar Regular"] : ["Dubai"],
       body2: {
         noWrap: true,
         lineHeight: 1,
@@ -87,10 +87,10 @@ const generateThemeOptions = (appTheme) => {
 
       MuiCssBaseline: {
         styleOverrides: {
-          FontFace: {
-            fontFamily: "Dubai",
-            src: "url(../assets/fonts/Dubai-Light.ttf)",
-          },
+          // FontFace: {
+          //   fontFamily: "Dubai",
+          //   src: "url(../assets/fonts/Dubai-Light.ttf)",
+          // },
           body: {
             scrollbarColor: "#dadada",
 

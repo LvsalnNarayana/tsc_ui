@@ -1,13 +1,13 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import { Stack, Button, Divider, Container, Typography } from "@mui/material";
+import { Stack, Divider, Container, Typography } from "@mui/material";
 
 import { useLanguage } from "../../LanguageContext";
 
 const Footer = () => {
   const { pathname } = useLocation();
-  const { language, toggleLanguage } = useLanguage();
+  const { language } = useLanguage();
   const navigate = useNavigate();
 
   return (
@@ -143,8 +143,12 @@ const Footer = () => {
             "/products",
             "/privacy-policy",
             "/terms-conditions",
+            "/contact-us",
           ]?.includes(pathname) && (
             <Typography
+              sx={{
+                cursor: "pointer",
+              }}
               onClick={() => {
                 return navigate("/");
               }}
@@ -161,8 +165,12 @@ const Footer = () => {
             "/products",
             "/privacy-policy",
             "/terms-conditions",
+            "/contact-us",
           ]?.includes(pathname) && (
             <Typography
+              sx={{
+                cursor: "pointer",
+              }}
               onClick={() => {
                 return navigate("/about-us");
               }}
@@ -179,8 +187,12 @@ const Footer = () => {
             "/products",
             "/privacy-policy",
             "/terms-conditions",
+            "/contact-us",
           ]?.includes(pathname) && (
             <Typography
+              sx={{
+                cursor: "pointer",
+              }}
               onClick={() => {
                 return navigate("/services");
               }}
@@ -197,8 +209,12 @@ const Footer = () => {
             "/",
             "/privacy-policy",
             "/terms-conditions",
+            "/contact-us",
           ]?.includes(pathname) && (
             <Typography
+              sx={{
+                cursor: "pointer",
+              }}
               onClick={() => {
                 return navigate("/products");
               }}

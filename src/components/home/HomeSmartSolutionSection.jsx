@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 /* eslint-disable max-lines */
 /* eslint-disable operator-linebreak */
 import { useScroll, useTransform } from "framer-motion";
@@ -71,8 +72,8 @@ const HomeSmartSolutionSection = () => {
             top: {
               laptop: "0px",
               desktop: "0px",
-              tablet: "20px",
-              mobile: "20px",
+              tablet: "90px",
+              mobile: "90px",
             },
           }}
         >
@@ -254,22 +255,40 @@ const HomeSmartSolutionSection = () => {
                   mobile: "flex-start",
                   desktop: "flex-start",
                 }}
-                alignItems="flex-start"
+                alignItems={language === "en" ? "flex-start" : "flex-end"}
                 flexGrow={1}
                 height="100%"
               >
-                <Typography
-                  fontSize={{
-                    laptop: 40,
-                    tablet: 24,
-                    mobile: 24,
-                    desktop: 40,
-                  }}
-                  fontWeight="normal"
-                >
-                  {currentSlide === 1 && "Social Media CRM"}
-                  {currentSlide === 2 && "Custom CRM Development"}
-                </Typography>
+                {language === "en" && (
+                  <Typography
+                    fontSize={{
+                      laptop: 40,
+                      tablet: 24,
+                      mobile: 24,
+                      desktop: 40,
+                    }}
+                    fontWeight="normal"
+                  >
+                    {currentSlide === 1 && "Social Media CRM"}
+                    {currentSlide === 2 && "Custom CRM Development"}
+                  </Typography>
+                )}
+                {language === "ar" && (
+                  <Typography
+                    fontSize={{
+                      laptop: 40,
+                      tablet: 24,
+                      mobile: 24,
+                      desktop: 40,
+                    }}
+                    fontWeight="normal"
+                    textAlign="right"
+                  >
+                    {currentSlide === 1 &&
+                      "إدارة علاقات العملاء عبر وسائل التواصل الاجتماعي"}
+                    {currentSlide === 2 && "تطوير إدارة علاقات العملاء المخصصة"}
+                  </Typography>
+                )}
                 <Typography
                   className="lato"
                   fontSize={{
@@ -281,40 +300,95 @@ const HomeSmartSolutionSection = () => {
                   lineHeight={1.5}
                   color="rgba(255, 255, 255, 0.80)"
                   letterSpacing="1px"
+                  textAlign={language === "ar" ? "right" : "left"}
                 >
-                  {currentSlide === 1 &&
-                    "Engage and retain customers with our advanced Social Media CRM solutions. Harness the power of social platforms to build meaningful relationships and drive business growth."}
+                  {currentSlide === 1 && (
+                    <>
+                      {language === "en" && (
+                        <>
+                          Engage and retain customers with our advanced Social
+                          Media CRM solutions. Harness the power of social
+                          platforms to build meaningful relationships and drive
+                          business growth.
+                        </>
+                      )}
+                      {language === "ar" && (
+                        <>
+                          قم بإشراك عملائك والحفاظ عليهم باستخدام حلولنا
+                          المتطورة لإدارة علاقات العملاء عبر وسائل التواصل
+                          الاجتماعي. استثمر في قوة المنصات الاجتماعية لبناء
+                          علاقات هادفة وتعزيز نمو الأعمال.
+                        </>
+                      )}
+                    </>
+                  )}
                   {currentSlide === 2 && (
                     <>
-                      Does your business require precise CRM for unique
-                      workflows? We offer custom and latest CRM solutions,
-                      intuitive, feature-rich, and powered with advanced
-                      analytics. Simplify your processes, get insights, and
-                      build better relationships.
-                      <br />
-                      <b>When you work with us:</b>
+                      {language === "en" && (
+                        <>
+                          Does your business require precise CRM for unique
+                          workflows? We offer custom and latest CRM solutions,
+                          intuitive, feature-rich, and powered with advanced
+                          analytics. Simplify your processes, get insights, and
+                          build better relationships.
+                          <br />
+                          <b>When you work with us:</b>
+                        </>
+                      )}
+                      {language === "ar" && (
+                        <>
+                          هل يحتاج عملك إلى إدارة دقيقة لعلاقات العملاء تتناسب
+                          مع سير العمل الخاص بك؟ نحن نوفر حلولاً مخصصة وحديثة
+                          لإدارة علاقات العملاء، تتميز بسهولة الاستخدام
+                          واحتوائها على ميزات متعددة، بالإضافة إلى دعمها
+                          بتحليلات متطورة. يمكنك من خلالها تحسين الإجراءات،
+                          والحصول على رؤى أعمق، وبناء علاقات أفضل.
+                        </>
+                      )}
                     </>
                   )}
                 </Typography>
                 {currentSlide === 2 && (
-                  <ul
-                    style={{
-                      lineHeight: 1.5,
-                      paddingLeft: "20px",
-                      letterSpacing: "1px",
-                      color: "rgba(255, 255, 255, 0.80)",
-                    }}
-                    className="lato"
-                  >
-                    <li>Get custom CRM Apps and cloud-based SaaS.</li>
-                    <li>
-                      Personalized Workflow Automation to improve customer
-                      experience.
-                    </li>
-                    <li>
-                      Build and deploy custom CRM modules as per your needs.
-                    </li>
-                  </ul>
+                  <>
+                    {language === "ar" && (
+                      <ul
+                        style={{
+                          lineHeight: 1.5,
+                          paddingLeft: "20px",
+                          letterSpacing: "1px",
+                          color: "rgba(255, 255, 255, 0.80)",
+                        }}
+                        className="lato"
+                      >
+                        <li>
+                          احصل على تطبيقات CRM المخصصة والحلول السحابية المعتمدة
+                          على SaaS.
+                        </li>
+                        <li>أتمتة العمليات المخصصة لتعزيز تجربة العملاء.</li>
+                        <li>تطوير وحدات CRM مخصصة وتطبيقها وفقًا لمتطلباتك.</li>
+                      </ul>
+                    )}
+                    {language === "en" && (
+                      <ul
+                        style={{
+                          lineHeight: 1.5,
+                          paddingLeft: "20px",
+                          letterSpacing: "1px",
+                          color: "rgba(255, 255, 255, 0.80)",
+                        }}
+                        className="lato"
+                      >
+                        <li>Get custom CRM Apps and cloud-based SaaS.</li>
+                        <li>
+                          Personalized Workflow Automation to improve customer
+                          experience.
+                        </li>
+                        <li>
+                          Build and deploy custom CRM modules as per your needs.
+                        </li>
+                      </ul>
+                    )}
+                  </>
                 )}
                 <Button
                   sx={{
@@ -351,7 +425,8 @@ const HomeSmartSolutionSection = () => {
                     }
                   }}
                 >
-                  Know More
+                  {language === "en" && <> Know More</>}
+                  {language === "ar" && <> اعرف المزيد</>}
                 </Button>
               </Stack>
             </Stack>
@@ -375,9 +450,9 @@ const HomeSmartSolutionSection = () => {
               WebkitMaskSize: "100% 100%",
               WebkitMaskRepeat: "no-repeat",
               maskImage:
-                "linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.3))",
+                "linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.1))",
               WebkitMaskImage:
-                "linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.3))",
+                "linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.1))",
             }}
           />
         </Stack>

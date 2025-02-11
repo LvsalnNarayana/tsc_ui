@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
+import TranslateIcon from "@mui/icons-material/Translate";
 import {
   Box,
   List,
   Stack,
   Drawer,
+  Button,
   ListItem,
   Container,
   IconButton,
   Typography,
   ListItemText,
   useMediaQuery,
-  Button,
 } from "@mui/material";
+
 import { useLanguage } from "../../LanguageContext";
-import TranslateIcon from "@mui/icons-material/Translate";
+
 const Header = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -192,7 +194,10 @@ const Header = () => {
                   </Link>
                 );
               })}
-              <Button onClick={toggleLanguage} sx={{color:"white"}}>
+              <Button
+                onClick={toggleLanguage}
+                sx={{ color: "white", backgroundColor: "transparent" }}
+              >
                 <TranslateIcon fontSize="small" />
                 {language === "en" ? "Arabic" : "English"}
               </Button>
@@ -211,11 +216,12 @@ const Header = () => {
                 {links.map((link) => {
                   return (
                     <ListItem
-                      button
+                      sx={{ cursor: "pointer" }}
                       key={link.path}
                       onClick={handleDrawerToggle}
                     >
                       <Typography
+                        component="span"
                         onClick={() => {
                           return navigate(link.path, { replace: true });
                         }}
@@ -232,6 +238,24 @@ const Header = () => {
                     </ListItem>
                   );
                 })}
+                <ListItem sx={{ cursor: "pointer" }} onClick={toggleLanguage}>
+                  <TranslateIcon fontSize="small" />
+                  <Typography
+                    component="span"
+                    style={{
+                      fontSize: 16,
+                      width: "100%",
+                      color: "white",
+                      fontWeight: 400,
+                      marginLeft: "10px",
+                      textDecoration: "none",
+                    }}
+                  >
+                    <ListItemText
+                      primary={language === "en" ? "Arabic" : "English"}
+                    />
+                  </Typography>
+                </ListItem>
               </List>
             </Box>
           </Drawer>

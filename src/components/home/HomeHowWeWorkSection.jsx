@@ -43,8 +43,8 @@ const HomeHowWeWorkSection = () => {
         <Typography
           fontSize={{
             laptop: 60,
-            tablet: 32,
-            mobile: 32,
+            tablet: 40,
+            mobile: 40,
             desktop: 60,
           }}
           lineHeight={1.2}
@@ -76,7 +76,20 @@ const HomeHowWeWorkSection = () => {
         {(desktopView || laptopView) && language === "ar" && (
           <img alt="hww" src="/home_arabic.png" />
         )}
-        {(mobileView || tabletView) && <img alt="hww" src="/hww_mob.svg" />}
+        {language === "en" && (
+          <>
+            {(mobileView || tabletView) && (
+              <img alt="hww" width="80%" src="/hww_mob.svg" />
+            )}
+          </>
+        )}
+        {language === "ar" && (
+          <>
+            {(mobileView || tabletView) && (
+              <img alt="hww" width="80%" src="/hww_mob_ar.svg" />
+            )}
+          </>
+        )}
       </Stack>
     </Container>
   );

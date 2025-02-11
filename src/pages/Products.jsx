@@ -102,7 +102,7 @@ const Products = () => {
         <ProductReinventSection />
         <ProductPersonalized />
         <ProductServices />
-        <ProductModulesSection />
+        {/* <ProductModulesSection /> */}
         <ProductHelpSection />
         <ProductEvolutionSection />
         <HomeConnectSection />

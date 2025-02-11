@@ -376,16 +376,19 @@ const ServiceCard = ({ card, minHeight }) => {
         )}
         <Button
           sx={{
-            p: "10px",
+            py: "10px",
+            px: "16px",
             mx: "auto",
             gap: "16px",
             display: "flex",
+            fontSize: "16px",
             color: " #45BDD6",
             width: "fit-content",
             alignItems: "center",
             borderRadius: "100px",
             justifyContent: "center",
             border: " 1px solid #45BDD6",
+            backgroundColor: "transparent",
             textAlign: language === "ar" ? "right" : "left",
           }}
           onClick={() => {

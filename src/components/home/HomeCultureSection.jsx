@@ -39,12 +39,7 @@ const HomeCultureSection = () => {
             WebkitTextFillColor: "transparent",
           }}
         >
-          {language === "en" && (
-            <>
-              Cultivating a Collaborative
-              <br /> Culture
-            </>
-          )}
+          {language === "en" && <>Cultivating a Collaborative Culture</>}
           {language === "ar" && <>ترسيخ ثقافة تعاونية</>}
         </Typography>
         <Typography
@@ -194,7 +189,7 @@ const HomeCultureSection = () => {
                       </Typography>
                       <Divider
                         flexItem
-                        sx={{ borderWidth: 1, borderColor: "#262626" }}
+                        sx={{ my: 2, borderWidth: 1, borderColor: "#262626" }}
                       />
                     </Stack>
                   </Stack>

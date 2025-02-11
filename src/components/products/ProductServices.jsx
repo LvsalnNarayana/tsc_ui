@@ -10,6 +10,8 @@ const ProductServices = () => {
 
   return (
     <Stack
+      pb={10}
+      pt={5}
       width="100%"
       direction="row"
       justifyContent="center"

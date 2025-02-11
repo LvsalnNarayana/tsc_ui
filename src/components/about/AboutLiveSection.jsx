@@ -10,7 +10,7 @@ const AboutLiveSection = () => {
 
   return (
     <Container maxWidth="desktop">
-      <Stack py={8} gap={10} alignItems="center">
+      <Stack pb={10} gap={10} alignItems="center">
         <Typography
           fontSize={{
             laptop: 60,

@@ -422,106 +422,133 @@ const HomeConnectSection = () => {
                 )}
               </Typography>
             </Stack>
-            <Stack
-              width="100%"
-              gap={2}
-              px={4}
-              direction={language === "ar" ? "row-reverse" : "row"}
-              alignItems="center"
-              sx={{
-                minHeight: "100px",
-                borderRadius: "12px",
-                border: "1.6px solid rgba(65, 196, 218, 0.30)",
+            <a
+              href="mailto:info@tsc.com.sa"
+              style={{
+                width: "100%",
+                color: "inherit",
+                textDecoration: "none",
               }}
             >
-              <Box component="img" src="/email.svg" width={40} />
-              <Stack gap={0}>
-                <Typography
-                  fontSize={18}
-                  fontWeight={500}
-                  lineHeight={1}
-                  textAlign={language === "ar" ? "right" : "left"}
-                >
-                  {language === "en" && "Email"}
-                  {language === "ar" && "بريد إلكتروني"}
-                </Typography>
-                <Typography
-                  fontSize={18}
-                  fontWeight={300}
-                  lineHeight={1.5}
-                  color="#ffffff80"
-                >
-                  {language === "en" && "info@tsc.com.sa"}
-                  {language === "ar" && "info@tsc.com.sa"}
-                </Typography>
+              <Stack
+                width="100%"
+                gap={2}
+                px={4}
+                direction={language === "ar" ? "row-reverse" : "row"}
+                alignItems="center"
+                sx={{
+                  minHeight: "100px",
+                  borderRadius: "12px",
+                  border: "1.6px solid rgba(65, 196, 218, 0.30)",
+                }}
+              >
+                <Box component="img" src="/email.svg" width={40} />
+                <Stack gap={1}>
+                  <Typography
+                    fontSize={18}
+                    fontWeight={500}
+                    lineHeight={1}
+                    textAlign={language === "ar" ? "right" : "left"}
+                  >
+                    {language === "en" && "Email"}
+                    {language === "ar" && "بريد إلكتروني"}
+                  </Typography>
+                  <Typography
+                    fontSize={18}
+                    fontWeight={300}
+                    lineHeight={1.5}
+                    color="#ffffff80"
+                  >
+                    {language === "en" && "info@tsc.com.sa"}
+                    {language === "ar" && "info@tsc.com.sa"}
+                  </Typography>
+                </Stack>
               </Stack>
-            </Stack>
-            <Stack
-              width="100%"
-              gap={2}
-              px={4}
-              direction={language === "ar" ? "row-reverse" : "row"}
-              alignItems="center"
-              sx={{
-                minHeight: "100px",
-                borderRadius: "12px",
-                border: "1.6px solid rgba(65, 196, 218, 0.30)",
+            </a>
+            <a
+              href="tel:+966571100020"
+              style={{
+                width: "100%",
+                color: "inherit",
+                textDecoration: "none",
               }}
             >
-              <Box component="img" src="/phone.svg" width={40} />
-              <Stack gap={0}>
-                <Typography
-                  fontSize={18}
-                  fontWeight={500}
-                  lineHeight={1}
-                  textAlign={language === "ar" ? "right" : "left"}
-                >
-                  {language === "en" && "Call"}
-                  {language === "ar" && "يتصل"}
-                </Typography>
-                <Typography
-                  fontSize={18}
-                  fontWeight={300}
-                  lineHeight={1.5}
-                  color="#ffffff80"
-                >
-                  +966571100020
-                </Typography>
+              <Stack
+                width="100%"
+                gap={2}
+                px={4}
+                direction={language === "ar" ? "row-reverse" : "row"}
+                alignItems="center"
+                sx={{
+                  minHeight: "100px",
+                  borderRadius: "12px",
+                  border: "1.6px solid rgba(65, 196, 218, 0.30)",
+                }}
+              >
+                <Box component="img" src="/phone.svg" width={40} />
+                <Stack gap={1}>
+                  <Typography
+                    fontSize={18}
+                    fontWeight={500}
+                    lineHeight={1}
+                    textAlign={language === "ar" ? "right" : "left"}
+                  >
+                    {language === "en" && "Call"}
+                    {language === "ar" && "يتصل"}
+                  </Typography>
+                  <Typography
+                    fontSize={18}
+                    fontWeight={300}
+                    lineHeight={1.5}
+                    color="#ffffff80"
+                  >
+                    +966571100020
+                  </Typography>
+                </Stack>
               </Stack>
-            </Stack>
-            <Stack
-              width="100%"
-              gap={2}
-              px={4}
-              direction={language === "ar" ? "row-reverse" : "row"}
-              alignItems="center"
-              sx={{
-                minHeight: "100px",
-                borderRadius: "12px",
-                border: "1.6px solid rgba(65, 196, 218, 0.30)",
+            </a>
+            <a
+              href="msteams://teams.microsoft.com/l/chat/0/0?users=Teams.tsc"
+              style={{
+                width: "100%",
+                color: "inherit",
+                textDecoration: "none",
               }}
             >
-              <Box component="img" src="/teams.svg" width={40} />
-              <Stack gap={0}>
-                <Typography
-                  fontSize={18}
-                  fontWeight={500}
-                  lineHeight={1}
-                  textAlign={language === "ar" ? "right" : "left"}
-                >
-                  {language === "en" && "Teams"}
-                  {language === "ar" && "فريق"}
-                </Typography>
-                <Typography
-                  fontSize={18}
-                  fontWeight={300}
-                  lineHeight={1.5}
-                  color="#ffffff80"
-                >
-                  Teams.tsc
-                </Typography>
+              <Stack
+                width="100%"
+                gap={2}
+                px={4}
+                direction={language === "ar" ? "row-reverse" : "row"}
+                alignItems="center"
+                sx={{
+                  minHeight: "100px",
+                  borderRadius: "12px",
+                  border: "1.6px solid rgba(65, 196, 218, 0.30)",
+                }}
+              >
+                <Box component="img" src="/teams.svg" width={40} />
+                <Stack gap={1}>
+                  <Typography
+                    fontSize={18}
+                    fontWeight={500}
+                    lineHeight={1}
+                    textAlign={language === "ar" ? "right" : "left"}
+                  >
+                    {language === "en" && "Teams"}
+                    {language === "ar" && "فريق"}
+                  </Typography>
+                  <Typography
+                    fontSize={18}
+                    fontWeight={300}
+                    lineHeight={1.5}
+                    color="#ffffff80"
+                  >
+                    Teams.tsc
+                  </Typography>
+                </Stack>
               </Stack>
-            </Stack>
+            </a>
           </Stack>
         </Stack>
       </Stack>

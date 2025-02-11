@@ -22,7 +22,14 @@
   src: url("./assets/fonts/Dubai-Regular.ttf") format("truetype");
   font-weight: normal;
 }
-
+@font-face {
+  font-family: "Ara ES Nawar Regular";
+  src: url("./assets/fonts/Ara_Nawar.ttf") format("truetype");
+  font-weight: normal;
+}
+.arabic_font {
+  font-family: "Ara ES Nawar Regular", sans-serif !important;
+}
 * {
   margin: 0;
   padding: 0;
@@ -60,12 +67,12 @@
   }
 }
 
-.icon-hover-fill{
+.icon-hover-fill {
   fill: white;
 }
-.icon-hover-stroke{
+.icon-hover-stroke {
   stroke: white;
 }
-.icon-hover-filter{
-  filter: brightness(0) saturate(100%) invert(1),
+.icon-hover-filter {
+  filter: brightness(0) saturate(100%) invert(1);
 }

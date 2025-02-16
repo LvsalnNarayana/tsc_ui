@@ -107,7 +107,7 @@ const ProductsHeroSection = () => {
               <>
                 We’ll help you get the most out of
                 <br /> technology,
-                <span style={{ color: "#45BDD6" }}>act smart</span>, and grow
+                <span style={{ color: "#45BDD6" }}> act smart</span>, and grow
                 fast.
               </>
             )}
@@ -120,6 +120,7 @@ const ProductsHeroSection = () => {
           </Typography>
           <Button
             sx={{
+              px: 2,
               gap: 1,
               py: 1.7,
               fontSize: 18,
@@ -131,12 +132,6 @@ const ProductsHeroSection = () => {
               boxShadow: "0px 1px 0px 0px rgba(255, 255, 255, 0.10) inset",
               background:
                 "linear-gradient(180deg, #525252 -61.82%, #292929 100%)",
-              px: {
-                mobile: 3,
-                tablet: 3,
-                laptop: 6,
-                desktop: 6,
-              },
             }}
             onClick={() => {
               const element = document.getElementById("connect");
@@ -153,7 +148,7 @@ const ProductsHeroSection = () => {
               }
             }}
           >
-            {language === "en" && <>Lets talk</>}
+            {language === "en" && <>Let&apos;s talk</>}
             {language === "ar" && <> تواصل معنا</>}
             <img alt="arrow" src="/ArrowUpRight.svg" />
           </Button>

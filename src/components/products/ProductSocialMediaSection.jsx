@@ -42,30 +42,8 @@ const ProductSocialMediaSection = () => {
             WebkitTextFillColor: "transparent",
           }}
         >
-          {language === "en" && "Drive Real Impact on Social Media"}
+          {language === "en" && "Features to Save Time"}
           {language === "ar" && "إحداث تأثير فعّال على منصات التواصل"}
-        </Typography>
-        <Typography
-          fontSize={{
-            laptop: 18,
-            tablet: 16,
-            mobile: 16,
-            desktop: 18,
-          }}
-          lineHeight={1.5}
-          textAlign="center"
-          color="#ffffff80"
-          className="lato responsive-text"
-        >
-          {language === "en" && (
-            <>
-              From Engagement to ROI. Save time, get organized and manage your
-              social
-              <br /> media with our Social Media CRM. Measure and drive real
-              business impact from your social campaigns in one place.
-            </>
-          )}
-          {language === "ar" && <></>}
         </Typography>
 
         <Stack
@@ -98,7 +76,7 @@ const ProductSocialMediaSection = () => {
               titleEnglish: "Measure and Prove Your Social Media ROI",
               titleArabic:
                 "قياس وإثبات عائد الاستثمار على وسائل التواصل الاجتماعي",
-              descriptionEnglish: `You know social media is more than brand awareness. Now you can prove it by finding out what posts and conversations drive sales, leads, and traffic. Pull data from Google Analytics. Tie your social media to real revenue goals. Know where to spend your budget.`,
+              descriptionEnglish: `You know social media is more than brand awareness. Now you can prove it by finding out which posts and conversations drive sales, leads, and traffic. Tie your social media to real revenue goals. Know where to spend your budget.`,
               descriptionArabic:
                 "وسائل التواصل الاجتماعي ليست فقط لتعزيز الوعي بالعلامة التجارية، بل يمكن إثبات فعاليتها من خلال تحليل المنشورات والمحادثات التي تساهم في زيادة المبيعات والعملاء المحتملين وحركة المرور. استخدم بيانات Google Analytics لتحديد الأداء. اربط حسابات وسائل التواصل الاجتماعي بأهداف الإيرادات الحقيقية، وتعرف على كيفية توزيع ميزانيتك.",
             },
@@ -116,9 +94,9 @@ const ProductSocialMediaSection = () => {
               titleArabic: "استمع إلى المحادثات الحيوية ",
               icon: "/Listen to the Conversations that Matter.mp4",
               titleEnglish: "Listen to the Conversations that Matter",
+              descriptionEnglish: `Monitor and track mentions of your brand, industry, and competitors. Capture conversations from social networks, social media content. Measure and protect your brand reputation. Get insight for content. Find out what your customers want and increase brand loyalty.`,
               descriptionArabic:
                 "تابع المنشورات الخاصة بعلامتك التجارية ومجالك ومنافسيك. استمع إلى المحادثات على وسائل التواصل الاجتماعي والمواقع الإخبارية والمدونات. قيّم سمعة علامتك التجارية وحافظ عليها. احصل على أفكار لمحتواك. تعرف على احتياجات عملائك وزد من ولائهم لعلامتك التجارية.",
-              descriptionEnglish: `Monitor and track mentions of your brand, industry, and competitors. Capture conversations from social networks, news sites, and blogs. Measure and protect your brand reputation. Get inspiration for content. Find out what your customers want and increase brand loyalty.`,
             },
             {
               id: 4,
@@ -242,6 +220,7 @@ const ProductSocialMediaSection = () => {
         </Stack>
         <Button
           sx={{
+            px: 2,
             gap: 1,
             py: 1.7,
             fontSize: 18,
@@ -253,12 +232,6 @@ const ProductSocialMediaSection = () => {
             boxShadow: "0px 1px 0px 0px rgba(255, 255, 255, 0.10) inset",
             background:
               "linear-gradient(180deg, #525252 -61.82%, #292929 100%)",
-            px: {
-              mobile: 3,
-              tablet: 3,
-              laptop: 6,
-              desktop: 6,
-            },
           }}
           onClick={() => {
             const element = document.getElementById("connect");

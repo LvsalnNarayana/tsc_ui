@@ -183,28 +183,6 @@ const Footer = () => {
           )}
           {[
             "/about-us",
-            "/",
-            "/products",
-            "/privacy-policy",
-            "/terms-conditions",
-            "/contact-us",
-          ]?.includes(pathname) && (
-            <Typography
-              sx={{
-                cursor: "pointer",
-              }}
-              onClick={() => {
-                return navigate("/services");
-              }}
-              color="#fff"
-              fontSize={16}
-              lineHeight={1.5}
-            >
-              Services
-            </Typography>
-          )}
-          {[
-            "/about-us",
             "/services",
             "/",
             "/privacy-policy",
@@ -223,6 +201,28 @@ const Footer = () => {
               lineHeight={1.5}
             >
               Products
+            </Typography>
+          )}
+          {[
+            "/about-us",
+            "/",
+            "/products",
+            "/privacy-policy",
+            "/terms-conditions",
+            "/contact-us",
+          ]?.includes(pathname) && (
+            <Typography
+              sx={{
+                cursor: "pointer",
+              }}
+              onClick={() => {
+                return navigate("/services");
+              }}
+              color="#fff"
+              fontSize={16}
+              lineHeight={1.5}
+            >
+              Services
             </Typography>
           )}
         </Stack>

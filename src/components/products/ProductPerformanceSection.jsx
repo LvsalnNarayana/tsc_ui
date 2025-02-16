@@ -112,7 +112,7 @@ const ProductPerformanceSection = () => {
             >
               {language === "en" && (
                 <>
-                  Stay ahead in performance’s
+                  Stay ahead in performance
                   <br /> new frontier.
                 </>
               )}

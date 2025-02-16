@@ -52,6 +52,12 @@ const ProductImpactSection = () => {
             mobile: 16,
             desktop: 18,
           }}
+          width={{
+            laptop: "60%",
+            desktop: "60%",
+            tablet: "100%",
+            mobile: "100%",
+          }}
           lineHeight={1.5}
           textAlign="center"
           color="#ffffff80"
@@ -60,9 +66,8 @@ const ProductImpactSection = () => {
           {language === "en" && (
             <>
               From Engagement to ROI. Save time, get organized and manage your
-              social media with our Social
-              <br /> Media CRM. Measure and drive real business impact from your
-              social campaigns in one place.
+              social media with our Social Media CRM. Measure and drive real
+              business impact from your social campaigns in one place.
             </>
           )}
           {language === "ar" && (

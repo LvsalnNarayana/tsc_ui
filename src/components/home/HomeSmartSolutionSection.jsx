@@ -270,7 +270,7 @@ const HomeSmartSolutionSection = () => {
                     fontWeight="normal"
                   >
                     {currentSlide === 1 && "Social Media CRM"}
-                    {currentSlide === 2 && "Custom CRM Development"}
+                    {currentSlide === 2 && "Custom Social Media CRM"}
                   </Typography>
                 )}
                 {language === "ar" && (
@@ -327,10 +327,10 @@ const HomeSmartSolutionSection = () => {
                       {language === "en" && (
                         <>
                           Does your business require precise CRM for unique
-                          workflows? We offer custom and latest CRM solutions,
-                          intuitive, feature-rich, and powered with advanced
-                          analytics. Simplify your processes, get insights, and
-                          build better relationships.
+                          workflows? We offer custom and latest CRM solutions
+                          that are intuitive, feature-rich, and powered with
+                          advanced analytics. Simplify your processes, get
+                          insights, and build better relationships.
                           <br />
                           <b>When you work with us:</b>
                         </>
@@ -348,7 +348,7 @@ const HomeSmartSolutionSection = () => {
                     </>
                   )}
                 </Typography>
-                {currentSlide === 2 && (
+                {/* {currentSlide === 2 && (
                   <>
                     {language === "ar" && (
                       <ul
@@ -389,7 +389,7 @@ const HomeSmartSolutionSection = () => {
                       </ul>
                     )}
                   </>
-                )}
+                )} */}
                 <Button
                   sx={{
                     py: 1.7,

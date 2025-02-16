@@ -54,7 +54,7 @@ const HomeMarketSection = () => {
         {language === "en" && (
           <>
             Win the market where competitors are
-            <br /> getting stronger, smarter and faster.
+            <br /> Getting stronger, smarter and faster.
           </>
         )}
         {language === "ar" && <>عزز استراتيجيتك الاجتماعية مع TSC Social!</>}

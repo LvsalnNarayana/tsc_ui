@@ -88,7 +88,7 @@ const AboutLiveSection = () => {
               descriptionArabic:
                 "نحن نعتقد أن الابتكار هو الطريق للتغيير العالمي. لا نكتفي بتقديم الحلول فقط، بل نستكشف أفكار جديدة ونتجاوز الحدود لنساهم عملائنا في بناء مستقبلهم.",
               descriptionEnglish: `We believe innovation is the way to global transformation. We go
-                  beyond providing solutions; we explore ideas, push limits, and
+                  beyond providing solutions, we explore ideas, push limits, and
                   shape the future of our client's businesses.`,
               icon: () => {
                 return (
@@ -116,7 +116,7 @@ const AboutLiveSection = () => {
               titleArabic: "ثقافة مبنية على القيم",
               descriptionArabic:
                 "في تكامل السحابة، نمارس ثقافة تتناغم فيها القيم الفردية مع أهداف الشركة. هذا الانسجام يساهم في إنشاء بيئة عمل إيجابية تسمح للجميع بتقديم أفضل ما لديهم.",
-              descriptionEnglish: `At TSC we have a culture where personal values align with our
+              descriptionEnglish: `At TSC, we have a culture where personal values align with our
                   company mission. This alignment creates a positive work
                   environment where everyone can bring their best.`,
               icon: () => {

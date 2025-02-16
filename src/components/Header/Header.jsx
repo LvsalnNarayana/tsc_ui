@@ -194,13 +194,13 @@ const Header = () => {
                   </Link>
                 );
               })}
-              <Button
+              {/* <Button
                 onClick={toggleLanguage}
                 sx={{ color: "white", backgroundColor: "transparent" }}
               >
                 <TranslateIcon fontSize="small" />
                 {language === "en" ? "Arabic" : "English"}
-              </Button>
+              </Button> */}
             </Stack>
           )}
           <Drawer anchor="right" open={drawerOpen} onClose={handleDrawerToggle}>
@@ -238,7 +238,7 @@ const Header = () => {
                     </ListItem>
                   );
                 })}
-                <ListItem sx={{ cursor: "pointer" }} onClick={toggleLanguage}>
+                {/* <ListItem sx={{ cursor: "pointer" }} onClick={toggleLanguage}>
                   <TranslateIcon fontSize="small" />
                   <Typography
                     component="span"
@@ -255,7 +255,7 @@ const Header = () => {
                       primary={language === "en" ? "Arabic" : "English"}
                     />
                   </Typography>
-                </ListItem>
+                </ListItem> */}
               </List>
             </Box>
           </Drawer>

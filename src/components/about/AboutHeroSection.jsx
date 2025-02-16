@@ -18,14 +18,14 @@ const AboutHeroSection = () => {
     en: {
       title: "About Us",
       subtitle: "People with purpose\nand value",
-      description: `At TSC we are a startup with a purpose to deliver transformative
+      description: `At TSC, we are a startup with a purpose to deliver transformative
       IT solutions. Our mission is to enable businesses through
-      technology, quality and client centricity. As we start this
+      technology, quality, and client centricity. As we start this
       journey we are committed to our clients and helping them achieve
       their goals. Our team consists of developers, engineers,
-      designers, QA experts and seasoned executive leaders – all with
+      designers, QA experts, and seasoned executive leaders – all with
       15+ years of experience. We have delivered impressive results and
-      built long term relationships with global clients and we are
+      built long-term relationships with global clients and we are
       growing stronger every day.`,
     },
   };
@@ -48,11 +48,17 @@ const AboutHeroSection = () => {
         <Typography
           variant="h1"
           align="center"
+          // fontSize={{
+          //   tablet: 55,
+          //   mobile: 55,
+          //   laptop: 140,
+          //   desktop: 140,
+          // }}
           fontSize={{
-            tablet: 55,
-            mobile: 55,
-            laptop: 140,
-            desktop: 140,
+            laptop: 60,
+            tablet: 32,
+            mobile: 32,
+            desktop: 60,
           }}
           fontWeight={500}
           sx={{

@@ -111,7 +111,7 @@ const HomeInnovativeServicesSection = () => {
               titleArabic: "تطوير الويب",
               titleEnglish: "Web Development",
               descriptionEnglish:
-                "Boost your online presence with our premium services. We build \n fast, intuitive websites and online solutions for any complexity.",
+                "Boost your online presence with our premium services. We build \n fast, intuitive websites, and online solutions for any complexity.",
               descriptionArabic:
                 "عزز وجودك على الإنترنت من خلال خدماتنا المتميزة. نحن ننشئ مواقع إلكترونية  \n سريعة وسهلة الاستخدام بالإضافة إلى حلول إلكترونية لجميع التحديات.",
             },
@@ -123,7 +123,7 @@ const HomeInnovativeServicesSection = () => {
               descriptionArabic:
                 "استفد أكثر من عملك مع متجر إلكتروني غني بالميزات. استمتع بحلول مخصصة ومتوافقة مع  \n الأجهزة المحمولة مما يعزز تجربة التسوق لديك ويحقق نتائج متميزة.",
               descriptionEnglish:
-                "Get more from your business with a feature-rich eStore. Enjoy\n customized, mobile-friendly solutions that enhance the shopping \nexperience and deliver results.",
+                "Maximize your business potential with a feature-rich eStore. Our customized, mobilefriendly solutions enhance the shopping experience and drive results.",
             },
             {
               id: 4,

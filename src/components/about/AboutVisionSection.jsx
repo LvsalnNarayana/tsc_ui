@@ -117,7 +117,7 @@ const AboutVisionSection = () => {
             {language === "en" && (
               <>
                 “We are more than a team; we are a community of people who
-                believe in the power of technology. our promise to our clients
+                believe in the power of technology. Our promise to our clients
                 is unbreakable as we work to build the future they want.”
               </>
             )}

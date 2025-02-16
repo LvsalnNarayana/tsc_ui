@@ -34,6 +34,12 @@ const HomeConnectSection = () => {
     <Container
       sx={{
         zIndex: 2,
+        px: {
+          mobile: 4,
+          tablet: 4,
+          laptop: 30,
+          desktop: 30,
+        },
       }}
       id="connect"
     >
@@ -162,13 +168,22 @@ const HomeConnectSection = () => {
               placeholder={language === "ar" ? "*اسم" : "Name*"}
               sx={{
                 width: "100%",
-                height: "52px",
+                height: "45px",
                 borderRadius: "12px",
                 border: "1px solid rgba(65, 196, 218, 0.30)",
+                "& .MuiInputBase-root": {
+                  height: "45px",
+                },
+                "& .Mui-focused .MuiOutlinedInput-notchedOutline ": {
+                  outline: "none",
+                  borderRadius: "12px",
+                  border: "1px solid rgba(65, 196, 218, 0.80)",
+                },
                 input: {
+                  py: 1.5,
                   color: "#fff",
                   "&::placeholder": {
-                    fontSize: 18,
+                    fontSize: 16,
                     color: "rgba(255, 255, 255, 0.60)",
                     textAlign: language === "ar" ? "right" : "left",
                   },
@@ -184,13 +199,22 @@ const HomeConnectSection = () => {
               }
               sx={{
                 width: "100%",
-                height: "52px",
+                height: "45px",
                 borderRadius: "12px",
                 border: "1px solid rgba(65, 196, 218, 0.30)",
+                "& .MuiInputBase-root": {
+                  height: "45px",
+                },
+                "& .Mui-focused .MuiOutlinedInput-notchedOutline ": {
+                  outline: "none",
+                  borderRadius: "12px",
+                  border: "1px solid rgba(65, 196, 218, 0.80)",
+                },
                 input: {
+                  py: 1.5,
                   color: "#fff",
                   "&::placeholder": {
-                    fontSize: 18,
+                    fontSize: 16,
                     color: "rgba(255, 255, 255, 0.60)",
                     textAlign: language === "ar" ? "right" : "left",
                   },
@@ -204,13 +228,22 @@ const HomeConnectSection = () => {
               }
               sx={{
                 width: "100%",
-                height: "52px",
+                height: "45px",
                 borderRadius: "12px",
                 border: "1px solid rgba(65, 196, 218, 0.30)",
+                "& .MuiInputBase-root": {
+                  height: "45px",
+                },
+                "& .Mui-focused .MuiOutlinedInput-notchedOutline ": {
+                  outline: "none",
+                  borderRadius: "12px",
+                  border: "1px solid rgba(65, 196, 218, 0.80)",
+                },
                 input: {
+                  py: 1.5,
                   color: "#fff",
                   "&::placeholder": {
-                    fontSize: 18,
+                    fontSize: 16,
                     color: "rgba(255, 255, 255, 0.60)",
                     textAlign: language === "ar" ? "right" : "left",
                   },
@@ -226,13 +259,22 @@ const HomeConnectSection = () => {
               }
               sx={{
                 width: "100%",
-                height: "52px",
+                height: "45px",
                 borderRadius: "12px",
                 border: "1px solid rgba(65, 196, 218, 0.30)",
+                "& .MuiInputBase-root": {
+                  height: "45px",
+                },
+                "& .Mui-focused .MuiOutlinedInput-notchedOutline ": {
+                  outline: "none",
+                  borderRadius: "12px",
+                  border: "1px solid rgba(65, 196, 218, 0.80)",
+                },
                 input: {
+                  py: 1.5,
                   color: "#fff",
                   "&::placeholder": {
-                    fontSize: 18,
+                    fontSize: 16,
                     color: "rgba(255, 255, 255, 0.60)",
                     textAlign: language === "ar" ? "right" : "left",
                   },
@@ -257,7 +299,7 @@ const HomeConnectSection = () => {
                   color: "#fff",
                   padding: "0px",
                   "&::placeholder": {
-                    fontSize: 18,
+                    fontSize: 16,
                     color: "rgba(255, 255, 255, 0.60)",
                     textAlign: language === "ar" ? "right" : "left",
                   },
@@ -373,7 +415,6 @@ const HomeConnectSection = () => {
               <Typography fontSize={12}>OR</Typography>
             </Box>
           </Divider>
-
           <Stack
             width="100%"
             gap={4}
@@ -508,7 +549,7 @@ const HomeConnectSection = () => {
               </Stack>
             </a>
             <a
-              href="msteams://teams.microsoft.com/l/chat/0/0?users=Teams.tsc"
+              href="https://teams.microsoft.com/l/team/19%3AIbW8P1haAq7fyc1Znmj1AJDnqIduBjmjVkAe1Uf16Ts1%40thread.tacv2/conversations?groupId=5b896b84-756b-435a-8848-84b47520c4f6&tenantId=66f8f7fc-3bc1-476c-993a-b0b3e1185e5c"
               style={{
                 width: "100%",
                 color: "inherit",

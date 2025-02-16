@@ -86,7 +86,7 @@ const ServiceHeroSection = () => {
       </Typography>
       <Button
         sx={{
-          px: 6,
+          px: 2,
           py: 1.7,
           fontSize: 18,
           lineHeight: 1,

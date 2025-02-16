@@ -51,7 +51,7 @@ const HomeCultureSection = () => {
         >
           {language === "en" && (
             <>
-              At TSC we create an environment where learning, growth, and
+              At TSC, we create an environment where learning, growth, and
               innovation thrive for
               <br /> everyone, so we have a high-performing team that exceeds
               expectations.
@@ -93,7 +93,7 @@ const HomeCultureSection = () => {
               descriptionArabic:
                 "نجاح عملائنا هو نجاحنا، ونحن ندعمهم طوال رحلتهم.",
               descriptionEnglish:
-                "We have transparent relationships with our clients based on shared goals and mutual respect.",
+                "We build transparent relationships with our clients, founded on shared goals and mutual respect.",
             },
             {
               numberArabic: "0٤",

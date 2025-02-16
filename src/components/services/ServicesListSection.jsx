@@ -103,6 +103,9 @@ const ServicesListSection = () => {
               id: 1,
               titleArabic: "إنشاء تطبيقات الهواتف الذكية",
               titleEnglish: "Mobile Application Development",
+              descriptionEnglish: `Get innovative mobile solutions for your business. We redefine 
+              user appointments using the latest technologies to deliver 
+              robust and user-friendly applications.`,
               servicesEnglish: [
                 "iOS App Development",
                 "Android App Development",
@@ -119,10 +122,6 @@ const ServicesListSection = () => {
                 " تصميم واجهة المستخدم/تجربة المستخدم",
                 " الصيانة والدعم للبرامج",
               ],
-              descriptionEnglish: `Get innovative mobile solutions for your business. We redefine 
-              user appointments using the latest technologies to deliver 
-              robust and user-friendly applications. Explore Our Mobile 
-              Application Development Services.`,
               icon: () => {
                 return (
                   <svg

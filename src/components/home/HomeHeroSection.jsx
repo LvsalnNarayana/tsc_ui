@@ -215,7 +215,7 @@ const HomeHeroSection = () => {
                   }
                 }}
               >
-                {language === "en" && "Get In Touch"}
+                {language === "en" && "Get Started"}
                 {language === "ar" && "تواصل معنا"}
                 <img alt="arrow" src="/ArrowUpRight.svg" />
               </Button>

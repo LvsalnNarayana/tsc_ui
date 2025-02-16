@@ -309,9 +309,9 @@ const HomeWorkflowProcessSection = () => {
             >
               {language === "en" && (
                 <>
-                  We collaborate to create processes and conduct mock-up
-                  sessions to align our team and your business, so we have a
-                  shared understanding.
+                  We work collaboratively to design processes and conduct
+                  mock-up sessions, ensuring alignment between our team and your
+                  business for a shared understanding
                 </>
               )}
               {language === "ar" && (
@@ -457,7 +457,7 @@ const HomeWorkflowProcessSection = () => {
               {language === "en" && (
                 <>
                   We develop and showcase the solution, focusing on
-                  coordination, resource management, and reqular stakeholder
+                  coordination, resource management, and regular stakeholder
                   updates to ensure quality.
                 </>
               )}

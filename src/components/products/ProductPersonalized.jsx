@@ -193,6 +193,7 @@ const ProductPersonalized = () => {
       </Stack>
       <Button
         sx={{
+          px: 2,
           gap: 1,
           mb: 10,
           py: 1.7,
@@ -206,12 +207,6 @@ const ProductPersonalized = () => {
           alignItems: "center",
           boxShadow: "0px 1px 0px 0px rgba(255, 255, 255, 0.10) inset",
           background: "linear-gradient(180deg, #525252 -61.82%, #292929 100%)",
-          px: {
-            mobile: 3,
-            tablet: 3,
-            laptop: 6,
-            desktop: 6,
-          },
         }}
         onClick={() => {
           const element = document.getElementById("connect");

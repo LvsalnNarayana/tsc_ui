@@ -56,22 +56,39 @@ const ProductsHeroSection = () => {
           position: "absolute",
         }}
       />
-      <img
-        alt="product-hero"
-        src={
-          laptopView || desktopView
-            ? "/product_hero.gif"
-            : "/product_hero_mob.gif"
-        }
+      {/* {(laptopView || desktopView) && (
+        <video
+          src="/product_hero.mov"
+          style={{
+            top: 0,
+            left: 0,
+            zIndex: "-1",
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            position: "absolute",
+          }}
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      )} */}
+      <video
+        src="/product_hero.mov"
         style={{
           top: 0,
           left: 0,
-          zIndex: -1,
+          zIndex: "-1",
           width: "100%",
           height: "100%",
-          // objectFit: "cover",
+          objectFit: "cover",
           position: "absolute",
         }}
+        autoPlay
+        muted
+        loop
+        playsInline
       />
       <Container maxWidth="desktop">
         <Stack

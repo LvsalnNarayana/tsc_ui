@@ -331,8 +331,6 @@ const HomeSmartSolutionSection = () => {
                           that are intuitive, feature-rich, and powered with
                           advanced analytics. Simplify your processes, get
                           insights, and build better relationships.
-                          <br />
-                          <b>When you work with us:</b>
                         </>
                       )}
                       {language === "ar" && (

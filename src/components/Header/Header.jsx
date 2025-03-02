@@ -194,13 +194,13 @@ const Header = () => {
                   </Link>
                 );
               })}
-              {/* <Button
+              <Button
                 onClick={toggleLanguage}
                 sx={{ color: "white", backgroundColor: "transparent" }}
               >
                 <TranslateIcon fontSize="small" />
                 {language === "en" ? "Arabic" : "English"}
-              </Button> */}
+              </Button>
             </Stack>
           )}
           <Drawer anchor="right" open={drawerOpen} onClose={handleDrawerToggle}>
